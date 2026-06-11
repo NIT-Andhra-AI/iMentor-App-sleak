@@ -1,0 +1,81 @@
+[workspace]
+members = [
+    "crates/inference",
+    "crates/wiki",
+    "crates/rag",
+    "crates/storage",
+    "crates/telemetry",
+    "crates/agents",
+    "crates/chatbot-test",
+    "crates/model-bench",
+    "src-tauri",
+]
+# Only the app crates are built by default (cargo build / cargo tauri build).
+# Benchmark and test tooling must be invoked explicitly:
+#   cargo build -p model-bench
+#   cargo build -p rag-bench  (bin inside model-bench)
+#   cargo build -p chatbot-test
+default-members = [
+    "crates/inference",
+    "crates/wiki",
+    "crates/rag",
+    "crates/storage",
+    "crates/telemetry",
+    "crates/agents",
+    "src-tauri",
+]
+resolver = "2"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+
+# ── Test profile — run all tests at release speed ──────────────────────────────
+# `cargo test` uses the `dev` profile by default (no -O3, no LTO).
+# For inference / perf tests this gives 10–20× slower results and makes
+# timing-sensitive assertions unreliable.  Override to release-equivalent
+# opt-level so `cargo test` and `cargo test --release` behave consistently.
+[profile.test]
+opt-level = 3
+# No LTO here — test binaries link many crates together and LTO makes
+# incremental recompilation very slow during test iteration.
+
+# ── Dev-mode inference performance ─────────────────────────────────────────────
+# cargo tauri dev compiles in debug by default, making LLM inference 20-50× slow.
+# These overrides keep those crates optimised in debug while everything else
+# stays in fast-incremental debug mode.
+[profile.dev.package.llama-cpp-2]
+opt-level = 3
+
+[profile.dev.package.inference]
+opt-level = 3
+
+[workspace.dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+tracing = "0.1"
+uuid = { version = "1", features = ["v4"] }
+thiserror = "2"
+tracing-core = "0.1"
+hf-hub = { version = "0.5.0" }
+criterion = "0.5.1"
+pprof = "0.13.0"
+bindgen = "0.72.1"
+cc = "1.2.61"
+clap = "4.6.0"
+encoding_rs = "0.8.35"
+tracing-subscriber = { version = "0.3", features = ["json"] }
+
+[patch.crates-io]
+llama-cpp-2 = { path = "llama-cpp-rs-local/llama-cpp-2" }
+llama-cpp-sys-2 = { path = "llama-cpp-rs-local/llama-cpp-sys-2" }
+
+[workspace.lints.rust]
+missing_docs = { level = "warn" }
+missing_debug_implementations = { level = "warn" }
+
+[workspace.lints.clippy]
+pedantic = { level = "warn" }

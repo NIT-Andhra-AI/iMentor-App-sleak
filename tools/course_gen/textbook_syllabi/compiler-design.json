@@ -1,0 +1,251 @@
+{
+  "course": "compiler-design",
+  "title": "Compiler Design: Principles, Techniques, and Tools",
+  "textbook_refs": [
+    "Aho, Lam, Sethi, Ullman: Compilers (Dragon Book) 2nd Ed",
+    "Cooper & Torczon: Engineering a Compiler 3rd Ed",
+    "Appel: Modern Compiler Implementation"
+  ],
+  "topics": [
+    {
+      "slug": "compiler-overview-phases",
+      "title": "Compiler Architecture: Phases, Passes, and Toolchain Overview",
+      "section": "Introduction",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "formal-languages",
+      "title": "Formal Languages: Regular, Context-Free, and Context-Sensitive Grammars",
+      "section": "Formal Theory",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "regular-expressions-theory",
+      "title": "Regular Expressions: Syntax, Semantics, and Kleene's Theorem",
+      "section": "Lexical Analysis",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "nfa-dfa-construction",
+      "title": "NFA to DFA Construction: Subset Construction and Minimization",
+      "section": "Lexical Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dfa-minimization",
+      "title": "DFA Minimization: Hopcroft's Algorithm and Table-Filling Method",
+      "section": "Lexical Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "tokenization-patterns",
+      "title": "Tokenization: Token Patterns, Lexeme Recognition, and Reserved Words",
+      "section": "Lexical Analysis",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "context-free-grammars",
+      "title": "Context-Free Grammars: Derivations, Parse Trees, and Ambiguity",
+      "section": "Syntax Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "cfg-transformations",
+      "title": "CFG Transformations: Eliminating Ambiguity, Left Recursion, and Left Factoring",
+      "section": "Syntax Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "first-follow-sets",
+      "title": "FIRST and FOLLOW Sets: Computing Parsing Table Entries",
+      "section": "Syntax Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "top-down-parsing-ll",
+      "title": "Top-Down Parsing: Recursive Descent and LL(1) Parsers",
+      "section": "Syntax Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bottom-up-parsing-lr",
+      "title": "Bottom-Up Parsing: Shift-Reduce Parsing and LR(0) Automata",
+      "section": "Syntax Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "slr-lalr-parsing",
+      "title": "SLR(1) and LALR(1) Parsers: Construction and Conflict Resolution",
+      "section": "Syntax Analysis",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "lr1-canonical-parsing",
+      "title": "Canonical LR(1) Parsers and Comparison with LALR(1)",
+      "section": "Syntax Analysis",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "error-recovery-parsing",
+      "title": "Error Recovery in Parsers: Panic Mode and Phrase-Level Recovery",
+      "section": "Syntax Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "ast-construction",
+      "title": "Abstract Syntax Tree Construction and Traversal Strategies",
+      "section": "Intermediate Representation",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "symbol-table-design",
+      "title": "Symbol Table Design: Scope Rules, Hashing, and Block Structure",
+      "section": "Semantic Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "type-systems",
+      "title": "Type Systems: Type Rules, Soundness, and Completeness",
+      "section": "Semantic Analysis",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "type-checking-inference",
+      "title": "Type Checking and Type Inference: Hindley-Milner Algorithm",
+      "section": "Semantic Analysis",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "scope-binding-analysis",
+      "title": "Scope Analysis and Name Binding: Static vs Dynamic Scoping",
+      "section": "Semantic Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "semantic-actions",
+      "title": "Semantic Actions in Parsers: Syntax-Directed Translation Schemes",
+      "section": "Semantic Analysis",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "three-address-code",
+      "title": "Three-Address Code: Quadruples, Triples, and SSA Form",
+      "section": "Intermediate Code",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "ssa-form",
+      "title": "Static Single Assignment (SSA) Form: Construction and Dominance Frontiers",
+      "section": "Intermediate Code",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "control-flow-analysis",
+      "title": "Control Flow Analysis: Basic Blocks, CFG Construction, and Dominators",
+      "section": "Code Optimization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "data-flow-analysis",
+      "title": "Data Flow Analysis: Reaching Definitions, Live Variables, and Available Expressions",
+      "section": "Code Optimization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "loop-optimizations",
+      "title": "Loop Optimizations: Induction Variables, Loop Invariant Code Motion, and Unrolling",
+      "section": "Code Optimization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "peephole-optimization",
+      "title": "Peephole Optimization: Window-Based Local Transformations",
+      "section": "Code Optimization",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "register-allocation",
+      "title": "Register Allocation: Graph Coloring, Spilling, and Coalescing",
+      "section": "Code Generation",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "instruction-selection",
+      "title": "Instruction Selection: Tree Pattern Matching and IBURG",
+      "section": "Code Generation",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "instruction-scheduling",
+      "title": "Instruction Scheduling: List Scheduling and Software Pipelining",
+      "section": "Code Generation",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "calling-conventions",
+      "title": "Calling Conventions, Stack Frames, and Function Prologue/Epilogue",
+      "section": "Runtime",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "runtime-environments",
+      "title": "Runtime Environments: Activation Records, Heap Management, and Closures",
+      "section": "Runtime",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "garbage-collection",
+      "title": "Garbage Collection: Mark-Sweep, Reference Counting, and Generational GC",
+      "section": "Runtime",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "jit-compilation",
+      "title": "Just-in-Time Compilation: Tracing JIT, Method JIT, and Deoptimization",
+      "section": "Advanced Compilation",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "interprocedural-analysis",
+      "title": "Interprocedural Analysis: Call Graphs, Inlining, and Points-To Analysis",
+      "section": "Advanced Compilation",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "linking-loading",
+      "title": "Linking and Loading: Object Files, Relocation, and Dynamic Linking",
+      "section": "Runtime",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "compiler-tools-flex-bison",
+      "title": "Compiler Construction Tools: Flex, Bison, and ANTLR",
+      "section": "Practical Compiler Construction",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "llvm-architecture",
+      "title": "LLVM Architecture: IR, Pass Manager, and Backend Code Generation",
+      "section": "Modern Compilers",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "wasm-compilation",
+      "title": "WebAssembly Compilation: Stack Machine IR and Portability",
+      "section": "Modern Compilers",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "language-implementation-patterns",
+      "title": "Language Implementation Patterns: Interpreters, Transpilers, and VMs",
+      "section": "Modern Compilers",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Compiler Design Interview Questions and Career Paths",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

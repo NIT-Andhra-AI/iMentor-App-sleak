@@ -1,0 +1,78 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+    <title>K-means Clustering</title>
+    <desc>An animation showing the convergence of K-means clustering with 3 clusters. Centroids move iteratively to the mean of their assigned data points.</desc>
+    <style>
+        .bg { fill: #f8fafc; }
+        .title { font-family: system-ui, sans-serif; font-size: 24px; text-anchor: middle; fill: #334155; }
+        .desc-text { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #475569; }
+
+        .c1 { fill: #60a5fa; } /* Blue */
+        .c2 { fill: #4ade80; } /* Green */
+        .c3 { fill: #a78bfa; } /* Purple */
+
+        .centroid-1, .centroid-2, .centroid-3 {
+            stroke-width: 3;
+            stroke-linecap: round;
+        }
+        .centroid-1 { stroke: #2563eb; animation: move-c1 10s infinite alternate ease-in-out; }
+        .centroid-2 { stroke: #16a34a; animation: move-c2 10s infinite alternate ease-in-out; }
+        .centroid-3 { stroke: #7c3aed; animation: move-c3 10s infinite alternate ease-in-out; }
+        
+        .point { animation-duration: 10s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-direction: alternate; }
+        .p1 { animation-name: color-p1; }
+        .p2 { animation-name: color-p2; }
+        .p3 { animation-name: color-p3; }
+        .p4 { animation-name: color-p4; }
+        .p5 { animation-name: color-p5; }
+        .p6 { animation-name: color-p6; }
+        .p7 { animation-name: color-p7; }
+        .p8 { animation-name: color-p8; }
+        .p9 { animation-name: color-p9; }
+
+        @keyframes move-c1 {
+            0%, 20% { transform: translate(150px, 200px); }
+            50%, 100% { transform: translate(220px, 150px); }
+        }
+        @keyframes move-c2 {
+            0%, 20% { transform: translate(300px, 120px); }
+            50%, 100% { transform: translate(400px, 130px); }
+        }
+        @keyframes move-c3 {
+            0%, 20% { transform: translate(450px, 250px); }
+            50%, 100% { transform: translate(350px, 260px); }
+        }
+
+        @keyframes color-p1 { 0%, 20% { fill: #9ca3af; } 50%, 100% { fill: #60a5fa; } }
+        @keyframes color-p2 { 0%, 20% { fill: #9ca3af; } 50%, 100% { fill: #60a5fa; } }
+        @keyframes color-p3 { 0%, 20% { fill: #9ca3af; } 50%, 100% { fill: #60a5fa; } }
+
+        @keyframes color-p4 { 0%, 20% { fill: #9ca3af; } 50%, 100% { fill: #4ade80; } }
+        @keyframes color-p5 { 0%, 20% { fill: #9ca3af; } 50%, 100% { fill: #4ade80; } }
+        @keyframes color-p6 { 0%, 20% { fill: #9ca3af; } 50%, 100% { fill: #4ade80; } }
+        
+        @keyframes color-p7 { 0%, 20% { fill: #9ca3af; } 50%, 100% { fill: #a78bfa; } }
+        @keyframes color-p8 { 0%, 20% { fill: #9ca3af; } 50%, 100% { fill: #a78bfa; } }
+        @keyframes color-p9 { 0%, 20% { fill: #9ca3af; } 50%, 100% { fill: #a78bfa; } }
+    </style>
+    <rect width="640" height="360" class="bg" />
+    <text x="320" y="30" class="title">K-means Clustering</text>
+    <text x="320" y="55" class="desc-text">Data points are assigned to the nearest centroid, and centroids update their position.</text>
+
+    <!-- Data points -->
+    <circle class="point p1" cx="200" cy="110" r="8" />
+    <circle class="point p2" cx="250" cy="180" r="8" />
+    <circle class="point p3" cx="180" cy="160" r="8" />
+    
+    <circle class="point p4" cx="420" cy="100" r="8" />
+    <circle class="point p5" cx="380" cy="180" r="8" />
+    <circle class="point p6" cx="450" cy="150" r="8" />
+    
+    <circle class="point p7" cx="300" cy="280" r="8" />
+    <circle class="point p8" cx="400" cy="240" r="8" />
+    <circle class="point p9" cx="380" cy="300" r="8" />
+
+    <!-- Centroids -->
+    <g class="centroid-1"><path d="M -10 -10 L 10 10 M 10 -10 L -10 10" /></g>
+    <g class="centroid-2"><path d="M -10 -10 L 10 10 M 10 -10 L -10 10" /></g>
+    <g class="centroid-3"><path d="M -10 -10 L 10 10 M 10 -10 L -10 10" /></g>
+</svg>

@@ -1,0 +1,143 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+    <title>Merge Sort Algorithm</title>
+    <desc>An animation showing the recursive splitting and merging steps of the Merge Sort algorithm.</desc>
+    <style>
+        .bg { fill: #f8fafc; }
+        .box { stroke: #94a3b8; stroke-width: 1; fill: #e2e8f0; }
+        .text { font-family: system-ui, sans-serif; font-size: 18px; text-anchor: middle; dominant-baseline: middle; fill: #1e293b; }
+        .title { font-family: system-ui, sans-serif; font-size: 24px; text-anchor: middle; fill: #334155; }
+        .desc-text { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #475569; }
+
+        .arr { transition: transform 0.5s ease-in-out; }
+
+        @keyframes split-1 {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-80px, 50px); }
+            100% { transform: translate(-80px, 50px); }
+        }
+        @keyframes split-2 {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(80px, 50px); }
+            100% { transform: translate(80px, 50px); }
+        }
+        @keyframes split-3 {
+            20% { transform: translate(-80px, 50px); }
+            40% { transform: translate(-120px, 100px); }
+            100% { transform: translate(-120px, 100px); }
+        }
+        @keyframes split-4 {
+            20% { transform: translate(-80px, 50px); }
+            40% { transform: translate(-40px, 100px); }
+            100% { transform: translate(-40px, 100px); }
+        }
+        @keyframes split-5 {
+            20% { transform: translate(80px, 50px); }
+            40% { transform: translate(40px, 100px); }
+            100% { transform: translate(40px, 100px); }
+        }
+        @keyframes split-6 {
+            20% { transform: translate(80px, 50px); }
+            40% { transform: translate(120px, 100px); }
+            100% { transform: translate(120px, 100px); }
+        }
+        
+        @keyframes merge-1 {
+            40%, 60% { transform: translate(-120px, 100px); }
+            80% { transform: translate(-80px, 50px); opacity: 0;}
+            100% { transform: translate(-80px, 50px); opacity: 0;}
+        }
+        @keyframes merge-2 {
+            40%, 60% { transform: translate(-40px, 100px); }
+            80% { transform: translate(-80px, 50px); opacity: 0;}
+            100% { transform: translate(-80px, 50px); opacity: 0;}
+        }
+        @keyframes merge-3 {
+            40%, 60% { transform: translate(40px, 100px); }
+            80% { transform: translate(80px, 50px); opacity: 0;}
+            100% { transform: translate(80px, 50px); opacity: 0;}
+        }
+        @keyframes merge-4 {
+            40%, 60% { transform: translate(120px, 100px); }
+            80% { transform: translate(80px, 50px); opacity: 0;}
+            100% { transform: translate(80px, 50px); opacity: 0;}
+        }
+        
+        @keyframes merge-final {
+            80%, 90% { transform: translateY(50px); }
+            100% { transform: translateY(0); }
+        }
+        
+        .disappear { animation: disappear 1s forwards; animation-delay: 6s; }
+        @keyframes disappear{ to { opacity: 0; } }
+
+        .sorted-final { opacity: 0; animation: appear 1s forwards; animation-delay: 8s; }
+        @keyframes appear { to { opacity: 1; } }
+
+    </style>
+    <rect width="640" height="360" class="bg" />
+    <text x="320" y="30" class="title">Merge Sort</text>
+    <text x="320" y="55" class="desc-text">Array is recursively split, then merged in sorted order.</text>
+
+    <g transform="translate(160, 100)">
+        <!-- Initial Array -->
+        <g class="arr" style="animation: split-1 10s infinite;">
+            <rect x="0" y="0" width="40" height="40" class="box" /><text x="20" y="20" class="text">8</text>
+            <rect x="40" y="0" width="40" height="40" class="box" /><text x="60" y="20" class="text">3</text>
+        </g>
+        <g class="arr" style="animation: split-2 10s infinite;">
+            <rect x="80" y="0" width="40" height="40" class="box" /><text x="100" y="20" class="text">5</text>
+            <rect x="120" y="0" width="40" height="40" class="box" /><text x="140" y="20" class="text">1</text>
+        </g>
+        
+        <!-- Split Level 1 -->
+        <g class="arr" style="animation: split-3 10s infinite;">
+            <rect x="0" y="0" width="40" height="40" class="box" /><text x="20" y="20" class="text">8</text>
+        </g>
+        <g class="arr" style="animation: split-4 10s infinite;">
+            <rect x="40" y="0" width="40" height="40" class="box" /><text x="60" y="20" class="text">3</text>
+        </g>
+        <g class="arr" style="animation: split-5 10s infinite;">
+            <rect x="80" y="0" width="40" height="40" class="box" /><text x="100" y="20" class="text">5</text>
+        </g>
+        <g class="arr" style="animation: split-6 10s infinite;">
+            <rect x="120" y="0" width="40" height="40" class="box" /><text x="140" y="20" class="text">1</text>
+        </g>
+
+        <!-- Merged back -->
+        <g class="disappear">
+            <g style="animation: merge-1 10s infinite;">
+                <rect x="0" y="0" width="40" height="40" class="box" /><text x="20" y="20" class="text">8</text>
+            </g>
+            <g style="animation: merge-2 10s infinite;">
+                <rect x="40" y="0" width="40" height="40" class="box" /><text x="60" y="20" class="text">3</text>
+            </g>
+            <g style="animation: merge-3 10s infinite;">
+                <rect x="80" y="0" width="40" height="40" class="box" /><text x="100" y="20" class="text">5</text>
+            </g>
+            <g style="animation: merge-4 10s infinite;">
+                <rect x="120" y="0" width="40" height="40" class="box" /><text x="140" y="20" class="text">1</text>
+            </g>
+        </g>
+        
+        <!-- Final merged array (conceptual) -->
+        <g class="sorted-final" transform="translate(80, 0)">
+             <g style="animation: merge-final 10s infinite">
+                <g transform="translate(-80, 0)">
+                    <rect x="0" y="0" width="40" height="40" class="box" style="fill: #a7f3d0;"/><text x="20" y="20" class="text">3</text>
+                    <rect x="40" y="0" width="40" height="40" class="box" style="fill: #a7f3d0;"/><text x="60" y="20" class="text">8</text>
+                </g>
+                <g transform="translate(0, 0)">
+                    <rect x="80" y="0" width="40" height="40" class="box" style="fill: #a7f3d0;"/><text x="100" y="20" class="text">1</text>
+                    <rect x="120" y="0" width="40" height="40" class="box" style="fill: #a7f3d0;"/><text x="140" y="20" class="text">5</text>
+                </g>
+             </g>
+        </g>
+        
+        <g class="sorted-final" style="animation-delay: 9s;">
+            <rect x="0" y="0" width="40" height="40" class="box" style="fill: #6ee7b7;"/><text x="20" y="20" class="text">1</text>
+            <rect x="40" y="0" width="40" height="40" class="box" style="fill: #6ee7b7;"/><text x="60" y="20" class="text">3</text>
+            <rect x="80" y="0" width="40" height="40" class="box" style="fill: #6ee7b7;"/><text x="100" y="20" class="text">5</text>
+            <rect x="120" y="0" width="40" height="40" class="box" style="fill: #6ee7b7;"/><text x="140" y="20" class="text">8</text>
+        </g>
+    </g>
+</svg>

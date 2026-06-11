@@ -1,0 +1,285 @@
+{
+  "id": "jntuk-dbms-java",
+  "title": "Database Management Systems & Java (JNTUK R20)",
+  "version": "1.0.0",
+  "description": "JNTUK R20 Year 2 Sem 2 — DBMS covering ER modelling, SQL, normalization, transactions, and concurrency; Java programming covering OOP, Collections, JDBC — aligned to JNTUK B.Tech CSE R20 syllabus.",
+  "placement_domains": [
+    "Software Engineer",
+    "Database Engineer",
+    "Backend Developer"
+  ],
+  "wiki_page_count": 18,
+  "module_count": 5,
+  "built_with": "jntuk-r20-manual",
+  "built_at": "2026-06-11",
+  "tags": [
+    "dbms",
+    "java",
+    "sql",
+    "jntuk",
+    "r20",
+    "year2"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Database Management Systems & Java (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "DBMS & Java — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "DBMS & Java — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "dbms-intro",
+          "title": "Introduction to DBMS: File System vs DBMS, Data Abstraction, DBMS Architecture",
+          "type": "concept"
+        },
+        {
+          "slug": "er-model",
+          "title": "Entity-Relationship Model: Entities, Attributes, Relationships, ER Diagrams",
+          "type": "concept"
+        },
+        {
+          "slug": "relational-model",
+          "title": "Relational Model: Relations, Tuples, Keys, Integrity Constraints",
+          "type": "concept"
+        },
+        {
+          "slug": "sql-fundamentals",
+          "title": "SQL Fundamentals: DDL, DML, DCL, TCL — CREATE, INSERT, UPDATE, DELETE",
+          "type": "concept"
+        },
+        {
+          "slug": "sql-advanced",
+          "title": "Advanced SQL: Joins, Subqueries, Views, Indexes, Aggregate Functions",
+          "type": "concept"
+        },
+        {
+          "slug": "normalization",
+          "title": "Normalization: 1NF, 2NF, 3NF, BCNF — Functional Dependencies and Decomposition",
+          "type": "concept"
+        },
+        {
+          "slug": "transactions-concurrency",
+          "title": "Transactions and Concurrency: ACID Properties, Isolation Levels, Deadlocks",
+          "type": "concept"
+        },
+        {
+          "slug": "indexing-hashing",
+          "title": "Indexing and Hashing: B+ Tree Index, Dense vs Sparse, Hash Indexing",
+          "type": "concept"
+        },
+        {
+          "slug": "java-oop-review",
+          "title": "Java OOP Review: Classes, Inheritance, Polymorphism, Interfaces",
+          "type": "concept"
+        },
+        {
+          "slug": "java-collections-jntuk",
+          "title": "Java Collections Framework: List, Set, Map, Queue, Comparable, Comparator",
+          "type": "concept"
+        },
+        {
+          "slug": "java-exceptions-io",
+          "title": "Java Exception Handling and File I/O: try-catch, BufferedReader, Scanner",
+          "type": "concept"
+        },
+        {
+          "slug": "jdbc-connectivity",
+          "title": "JDBC: Connecting Java to MySQL — Statement, PreparedStatement, ResultSet",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "dbms-sql-lab",
+          "title": "DBMS Lab: SQL Queries — DDL, DML, Joins, Subqueries on Student Database",
+          "type": "lab"
+        },
+        {
+          "slug": "java-lab-programs",
+          "title": "Java Lab: OOP Programs — Student, Library, Banking System",
+          "type": "lab"
+        },
+        {
+          "slug": "dbms-quiz",
+          "title": "DBMS MCQ Quiz: ER Model, SQL, Normalization — JNTUK Pattern",
+          "type": "quiz"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "dbms-java-placement",
+          "title": "Placement Guide: DBMS and Java Interview Questions for JNTUK Students",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Database Management Systems & Java (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "DBMS & Java — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "DBMS & Java — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "dbms-intro",
+          "title": "Introduction to DBMS: File System vs DBMS, Data Abstraction, DBMS Architecture",
+          "type": "concept"
+        },
+        {
+          "slug": "er-model",
+          "title": "Entity-Relationship Model: Entities, Attributes, Relationships, ER Diagrams",
+          "type": "concept"
+        },
+        {
+          "slug": "relational-model",
+          "title": "Relational Model: Relations, Tuples, Keys, Integrity Constraints",
+          "type": "concept"
+        },
+        {
+          "slug": "sql-fundamentals",
+          "title": "SQL Fundamentals: DDL, DML, DCL, TCL — CREATE, INSERT, UPDATE, DELETE",
+          "type": "concept"
+        },
+        {
+          "slug": "sql-advanced",
+          "title": "Advanced SQL: Joins, Subqueries, Views, Indexes, Aggregate Functions",
+          "type": "concept"
+        },
+        {
+          "slug": "normalization",
+          "title": "Normalization: 1NF, 2NF, 3NF, BCNF — Functional Dependencies and Decomposition",
+          "type": "concept"
+        },
+        {
+          "slug": "transactions-concurrency",
+          "title": "Transactions and Concurrency: ACID Properties, Isolation Levels, Deadlocks",
+          "type": "concept"
+        },
+        {
+          "slug": "indexing-hashing",
+          "title": "Indexing and Hashing: B+ Tree Index, Dense vs Sparse, Hash Indexing",
+          "type": "concept"
+        },
+        {
+          "slug": "java-oop-review",
+          "title": "Java OOP Review: Classes, Inheritance, Polymorphism, Interfaces",
+          "type": "concept"
+        },
+        {
+          "slug": "java-collections-jntuk",
+          "title": "Java Collections Framework: List, Set, Map, Queue, Comparable, Comparator",
+          "type": "concept"
+        },
+        {
+          "slug": "java-exceptions-io",
+          "title": "Java Exception Handling and File I/O: try-catch, BufferedReader, Scanner",
+          "type": "concept"
+        },
+        {
+          "slug": "jdbc-connectivity",
+          "title": "JDBC: Connecting Java to MySQL — Statement, PreparedStatement, ResultSet",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "dbms-sql-lab",
+          "title": "DBMS Lab: SQL Queries — DDL, DML, Joins, Subqueries on Student Database",
+          "type": "lab"
+        },
+        {
+          "slug": "java-lab-programs",
+          "title": "Java Lab: OOP Programs — Student, Library, Banking System",
+          "type": "lab"
+        },
+        {
+          "slug": "dbms-quiz",
+          "title": "DBMS MCQ Quiz: ER Model, SQL, Normalization — JNTUK Pattern",
+          "type": "quiz"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "dbms-java-placement",
+          "title": "Placement Guide: DBMS and Java Interview Questions for JNTUK Students",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

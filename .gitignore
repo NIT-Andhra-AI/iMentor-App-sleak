@@ -1,0 +1,112 @@
+# Rust build artifacts
+/target
+**/target/
+
+# Models — large binary files, not committed
+/models/
+*.gguf
+bundled_model/
+dist/
+
+# Frontend
+/frontend/node_modules
+/frontend/dist
+**/node_modules/
+
+# Python virtual environments
+admin-venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Course raw source files (PDFs used to generate wiki — too large for git)
+assets/courses/*/raw/
+
+# Course ZIP temp files (generated for upload, not source)
+/server/course_bundles/
+
+# Server database (runtime state, not source)
+/server/studentai.db
+/server/api/studentai.db
+
+# Benchmark results (generated output, not source)
+/bench-results/
+
+# Test output (generated)
+/tests/metrics_report.json
+/tests/desktop-e2e/artifacts/
+/tests/desktop-e2e/test-results/
+/tests/desktop-e2e/playwright-report/
+
+# Environment secrets
+.env
+*.env
+
+# Logs
+*.log
+nohup.out
+
+# Session / editor artifacts
+.DS_Store
+Thumbs.db
+
+# Plan / session notes (session-specific, not project docs)
+docs/build-plan.md
+
+# AI and Workspace co-existence exclusions
+.claude/
+target/
+.env
+
+# Generated config files — produced by scripts/gen-config.py from workspace.toml.
+# Edit workspace.toml, not these files.
+src-tauri/build_config.toml
+src-tauri/models.toml
+src-tauri/tauri.conf.json
+src-tauri/tauri-withmodel.conf.json
+src-tauri/tauri-gpu-withmodel.conf.json
+
+# Admin SPA build output
+server/dashboard/dist/
+
+# Developer handoff clone (created by scripts/create-handoff.ps1)
+# Contains large model files — never commit this folder
+handoff/
+
+# Build log TXT files dumped in root during development
+/build*.txt
+/out.log
+/err.log
+/app.log
+/app.err.log
+/start_pos.log
+
+# Test result TXT files dumped in root
+/test*.txt
+/test-*.txt
+
+# Stale PDF files accidentally dropped in root
+*.pdf
+
+# Benchmark JSON reports (generated output)
+/reports/*.json
+
+# Archived course data (deleted; ignore if recreated)
+/archived-courses/
+
+# Python venvs
+admin-venv/
+
+# llamacpp zip (already extracted)
+llamacpp.zip
+
+# llama-cpp-rs-local is a nested git repo (custom fork) — not tracked by outer repo
+# It's built from source as part of the Rust workspace, not committed
+llama-cpp-rs-local/
+
+# Vite timestamp files (generated during dev)
+frontend/vite.config.ts.timestamp-*.mjs
+
+# Course quality reports (generated output)
+reports/course-quality-*.txt

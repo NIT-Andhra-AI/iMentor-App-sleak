@@ -1,0 +1,113 @@
+{
+  "course": "quantum-computing",
+  "title": "Quantum Computing: An Applied Approach",
+  "textbook_refs": [
+    "Nielsen & Chuang: Quantum Computation and Quantum Information",
+    "Hidary: Quantum Computing: An Applied Approach 2nd Ed",
+    "Mermin: Quantum Computer Science"
+  ],
+  "topics": [
+    {
+      "slug": "bernstein-vazirani-algorithm",
+      "title": "Bernstein–Vazirani Algorithm: Hidden String with One Query",
+      "section": "Quantum Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "quantum-amplitude-amplification",
+      "title": "Quantum Amplitude Amplification: Generalizing Grover's Search",
+      "section": "Quantum Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "hhl-algorithm",
+      "title": "HHL Algorithm: Quantum Linear Systems and Speedup Conditions",
+      "section": "Quantum Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "quantum-counting",
+      "title": "Quantum Counting Algorithm: Combining QPE and Grover's Search",
+      "section": "Quantum Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "adiabatic-quantum-computation",
+      "title": "Adiabatic Quantum Computation: Adiabatic Theorem and Optimization Problems",
+      "section": "Quantum Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "quantum-annealing",
+      "title": "Quantum Annealing: D-Wave Architecture and Ising Model Formulation",
+      "section": "Quantum Hardware",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "stabilizer-formalism",
+      "title": "Stabilizer Formalism: Pauli Group, Clifford Circuits, and Gottesman–Knill Theorem",
+      "section": "Quantum Error Correction",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "surface-codes",
+      "title": "Surface Codes: Toric Code, Logical Qubits, and Threshold Theorem",
+      "section": "Quantum Error Correction",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "quantum-key-distribution",
+      "title": "Quantum Key Distribution: BB84 Protocol, E91, and Quantum Cryptography",
+      "section": "Quantum Cryptography",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "quantum-random-number-generation",
+      "title": "Quantum Random Number Generation: True Randomness and Certification",
+      "section": "Quantum Applications",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "nisq-algorithms",
+      "title": "NISQ Algorithms: Noise-Adapted Quantum Computing and Error Mitigation",
+      "section": "Near-Term Quantum",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "quantum-chemistry-algorithms",
+      "title": "Quantum Chemistry Algorithms: VQE for Molecular Energies",
+      "section": "Quantum Applications",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "quantum-advantage-supremacy",
+      "title": "Quantum Advantage and Supremacy: Boson Sampling and Random Circuit Sampling",
+      "section": "Quantum Theory",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "photonic-quantum-computing",
+      "title": "Photonic Quantum Computing: Linear Optical Circuits and Measurement-Based QC",
+      "section": "Quantum Hardware",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "quantum-network-protocols",
+      "title": "Quantum Networks: Quantum Repeaters, Entanglement Swapping, and Quantum Internet",
+      "section": "Quantum Networking",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "cirq-pennylane-programming",
+      "title": "Quantum Programming with Cirq and PennyLane: Gates, Circuits, and Gradients",
+      "section": "Quantum Programming",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Quantum Computing Career Paths and Research Directions",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

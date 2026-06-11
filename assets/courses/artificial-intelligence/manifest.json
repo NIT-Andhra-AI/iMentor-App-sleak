@@ -1,0 +1,665 @@
+{
+  "id": "artificial-intelligence",
+  "title": "Artificial Intelligence",
+  "version": "2.0.0",
+  "description": "A comprehensive, university-grade course on the foundations of Artificial Intelligence, from search algorithms and knowledge representation to modern NLP and large language models. This course is placement-focused, with extensive interview preparation materials for roles like AI Engineer, ML Engineer, and Research Scientist.",
+  "placement_domains": [
+    "AI Engineer",
+    "ML Engineer",
+    "Research Scientist",
+    "NLP Engineer"
+  ],
+  "wiki_page_count": 56,
+  "module_count": 5,
+  "built_with": "gemini-2.5-pro / gemini-2.5-flash (agentic, syllabus-driven)",
+  "built_at": "2026-04-22",
+  "tags": [
+    "ai",
+    "machine-learning",
+    "deep-learning",
+    "search",
+    "nlp",
+    "reinforcement-learning",
+    "interview-prep"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Artificial Intelligence",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Introduction to Artificial Intelligence",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Artificial Intelligence — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "heuristic-design",
+          "title": "Heuristic Function Design: Admissibility, Consistency, and Dominance",
+          "type": "concept"
+        },
+        {
+          "slug": "bidirectional-search",
+          "title": "Bidirectional Search and Meet-in-the-Middle Strategies",
+          "type": "concept"
+        },
+        {
+          "slug": "local-search-optimization",
+          "title": "Local Search: Hill Climbing, Simulated Annealing, and Tabu Search",
+          "type": "concept"
+        },
+        {
+          "slug": "monte-carlo-tree-search",
+          "title": "Monte Carlo Tree Search: UCT and Game Tree Exploration",
+          "type": "concept"
+        },
+        {
+          "slug": "alpha-beta-enhancements",
+          "title": "Alpha-Beta Pruning Enhancements: MTD(f) and Iterative Deepening",
+          "type": "concept"
+        },
+        {
+          "slug": "arc-consistency",
+          "title": "Arc Consistency (AC-3) and Constraint Propagation Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "temporal-logic",
+          "title": "Temporal Logic: LTL and CTL for Reasoning About Time",
+          "type": "concept"
+        },
+        {
+          "slug": "forward-backward-chaining",
+          "title": "Forward and Backward Chaining: Rule-Based Inference",
+          "type": "concept"
+        },
+        {
+          "slug": "description-logics",
+          "title": "Description Logics and OWL Ontologies",
+          "type": "concept"
+        },
+        {
+          "slug": "knowledge-graphs",
+          "title": "Knowledge Graphs: Construction, Embedding, and Querying (SPARQL)",
+          "type": "concept"
+        },
+        {
+          "slug": "markov-chains",
+          "title": "Markov Chains and Stationary Distributions",
+          "type": "concept"
+        },
+        {
+          "slug": "hidden-markov-models",
+          "title": "Hidden Markov Models: Forward-Backward and Viterbi Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "kalman-filters",
+          "title": "Kalman Filters and Extended Kalman Filters for State Estimation",
+          "type": "concept"
+        },
+        {
+          "slug": "particle-filters",
+          "title": "Particle Filters: Sequential Monte Carlo Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "conditional-independence",
+          "title": "Conditional Independence and d-Separation in Bayesian Networks",
+          "type": "concept"
+        },
+        {
+          "slug": "causal-reasoning",
+          "title": "Causal Reasoning: Interventions and Counterfactuals (do-calculus)",
+          "type": "concept"
+        },
+        {
+          "slug": "q-learning-deep-rl",
+          "title": "Q-Learning to Deep Q-Networks: Value-Based Reinforcement Learning",
+          "type": "concept"
+        },
+        {
+          "slug": "policy-gradient-methods",
+          "title": "Policy Gradient Methods: REINFORCE and Actor-Critic Architectures",
+          "type": "concept"
+        },
+        {
+          "slug": "speech-understanding",
+          "title": "Speech Understanding: ASR Pipelines and Acoustic Modeling",
+          "type": "concept"
+        },
+        {
+          "slug": "semantic-parsing",
+          "title": "Semantic Parsing: Mapping Language to Logical Forms",
+          "type": "concept"
+        },
+        {
+          "slug": "image-recognition-ai",
+          "title": "Image Recognition and Scene Understanding Pipelines",
+          "type": "concept"
+        },
+        {
+          "slug": "classical-planning-pddl",
+          "title": "Classical Planning: PDDL, STRIPS, and GraphPlan",
+          "type": "concept"
+        },
+        {
+          "slug": "hierarchical-task-networks",
+          "title": "Hierarchical Task Networks (HTN) and Partial-Order Planning",
+          "type": "concept"
+        },
+        {
+          "slug": "swarm-intelligence",
+          "title": "Swarm Intelligence: Ant Colony Optimization and Particle Swarms",
+          "type": "concept"
+        },
+        {
+          "slug": "evolutionary-strategies",
+          "title": "Evolutionary Strategies and CMA-ES for Black-Box Optimization",
+          "type": "concept"
+        },
+        {
+          "slug": "neural-symbolic-integration",
+          "title": "Neural-Symbolic Integration: Combining Learning and Reasoning",
+          "type": "concept"
+        },
+        {
+          "slug": "federated-learning-ai",
+          "title": "Federated Learning: Privacy-Preserving Distributed AI",
+          "type": "concept"
+        },
+        {
+          "slug": "explainable-ai",
+          "title": "Explainable AI (XAI): LIME, SHAP, and Interpretability Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "ai-safety",
+          "title": "AI Safety: Alignment, Robustness, and Adversarial Attacks",
+          "type": "concept"
+        },
+        {
+          "slug": "ai-hardware-accelerators",
+          "title": "AI Hardware: GPUs, TPUs, and Neuromorphic Computing",
+          "type": "concept"
+        },
+        {
+          "slug": "adversarial-search",
+          "title": "Adversarial Search",
+          "type": "concept"
+        },
+        {
+          "slug": "ai-ethics",
+          "title": "AI Ethics, Safety, Fairness, and Explainability",
+          "type": "concept"
+        },
+        {
+          "slug": "ai-robotics",
+          "title": "AI in Robotics: SLAM, Motion Planning, Perception",
+          "type": "concept"
+        },
+        {
+          "slug": "bayesian-networks",
+          "title": "Bayesian Networks",
+          "type": "concept"
+        },
+        {
+          "slug": "computer-vision-ai",
+          "title": "Computer Vision in AI: Object Detection, Segmentation, YOLO",
+          "type": "concept"
+        },
+        {
+          "slug": "constraint-satisfaction",
+          "title": "Constraint Satisfaction Problems",
+          "type": "concept"
+        },
+        {
+          "slug": "expert-systems",
+          "title": "Expert Systems and Rule-Based Reasoning",
+          "type": "concept"
+        },
+        {
+          "slug": "first-order-logic",
+          "title": "First-Order Logic",
+          "type": "concept"
+        },
+        {
+          "slug": "genetic-algorithms",
+          "title": "Evolutionary Computing: Genetic Algorithms and Swarm Intelligence",
+          "type": "concept"
+        },
+        {
+          "slug": "informed-search",
+          "title": "Informed Search",
+          "type": "concept"
+        },
+        {
+          "slug": "intelligent-agents",
+          "title": "Intelligent Agents",
+          "type": "concept"
+        },
+        {
+          "slug": "knowledge-representation",
+          "title": "Knowledge Representation",
+          "type": "concept"
+        },
+        {
+          "slug": "llm-agents",
+          "title": "LLM-Based Agents: Tool Use, ReAct, Chain-of-Thought Prompting",
+          "type": "concept"
+        },
+        {
+          "slug": "markov-decision-processes",
+          "title": "Markov Decision Processes",
+          "type": "concept"
+        },
+        {
+          "slug": "multi-agent-systems",
+          "title": "Multi-Agent Systems: Game Theory, Mechanism Design",
+          "type": "concept"
+        },
+        {
+          "slug": "natural-language-processing",
+          "title": "Natural Language Processing",
+          "type": "concept"
+        },
+        {
+          "slug": "planning-ai",
+          "title": "Automated Planning: STRIPS, PDDL, Hierarchical Task Networks",
+          "type": "concept"
+        },
+        {
+          "slug": "propositional-logic",
+          "title": "Propositional Logic",
+          "type": "concept"
+        },
+        {
+          "slug": "reinforcement-learning",
+          "title": "Reinforcement Learning: Q-Learning, SARSA, Deep RL",
+          "type": "concept"
+        },
+        {
+          "slug": "search-algorithms",
+          "title": "Uninformed Search",
+          "type": "concept"
+        },
+        {
+          "slug": "transformer-architecture",
+          "title": "Transformer Architecture",
+          "type": "concept"
+        },
+        {
+          "slug": "uncertainty-ai",
+          "title": "Reasoning Under Uncertainty: HMMs, Particle Filters, Kalman",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": []
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "interview-prep",
+          "title": "AI Interview Preparation",
+          "type": "interview"
+        },
+        {
+          "slug": "placement-guide",
+          "title": "AI/ML Placement and Career Path Guide",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Artificial Intelligence",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Introduction to Artificial Intelligence",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Artificial Intelligence — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "heuristic-design",
+          "title": "Heuristic Function Design: Admissibility, Consistency, and Dominance",
+          "type": "concept"
+        },
+        {
+          "slug": "bidirectional-search",
+          "title": "Bidirectional Search and Meet-in-the-Middle Strategies",
+          "type": "concept"
+        },
+        {
+          "slug": "local-search-optimization",
+          "title": "Local Search: Hill Climbing, Simulated Annealing, and Tabu Search",
+          "type": "concept"
+        },
+        {
+          "slug": "monte-carlo-tree-search",
+          "title": "Monte Carlo Tree Search: UCT and Game Tree Exploration",
+          "type": "concept"
+        },
+        {
+          "slug": "alpha-beta-enhancements",
+          "title": "Alpha-Beta Pruning Enhancements: MTD(f) and Iterative Deepening",
+          "type": "concept"
+        },
+        {
+          "slug": "arc-consistency",
+          "title": "Arc Consistency (AC-3) and Constraint Propagation Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "temporal-logic",
+          "title": "Temporal Logic: LTL and CTL for Reasoning About Time",
+          "type": "concept"
+        },
+        {
+          "slug": "forward-backward-chaining",
+          "title": "Forward and Backward Chaining: Rule-Based Inference",
+          "type": "concept"
+        },
+        {
+          "slug": "description-logics",
+          "title": "Description Logics and OWL Ontologies",
+          "type": "concept"
+        },
+        {
+          "slug": "knowledge-graphs",
+          "title": "Knowledge Graphs: Construction, Embedding, and Querying (SPARQL)",
+          "type": "concept"
+        },
+        {
+          "slug": "markov-chains",
+          "title": "Markov Chains and Stationary Distributions",
+          "type": "concept"
+        },
+        {
+          "slug": "hidden-markov-models",
+          "title": "Hidden Markov Models: Forward-Backward and Viterbi Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "kalman-filters",
+          "title": "Kalman Filters and Extended Kalman Filters for State Estimation",
+          "type": "concept"
+        },
+        {
+          "slug": "particle-filters",
+          "title": "Particle Filters: Sequential Monte Carlo Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "conditional-independence",
+          "title": "Conditional Independence and d-Separation in Bayesian Networks",
+          "type": "concept"
+        },
+        {
+          "slug": "causal-reasoning",
+          "title": "Causal Reasoning: Interventions and Counterfactuals (do-calculus)",
+          "type": "concept"
+        },
+        {
+          "slug": "q-learning-deep-rl",
+          "title": "Q-Learning to Deep Q-Networks: Value-Based Reinforcement Learning",
+          "type": "concept"
+        },
+        {
+          "slug": "policy-gradient-methods",
+          "title": "Policy Gradient Methods: REINFORCE and Actor-Critic Architectures",
+          "type": "concept"
+        },
+        {
+          "slug": "speech-understanding",
+          "title": "Speech Understanding: ASR Pipelines and Acoustic Modeling",
+          "type": "concept"
+        },
+        {
+          "slug": "semantic-parsing",
+          "title": "Semantic Parsing: Mapping Language to Logical Forms",
+          "type": "concept"
+        },
+        {
+          "slug": "image-recognition-ai",
+          "title": "Image Recognition and Scene Understanding Pipelines",
+          "type": "concept"
+        },
+        {
+          "slug": "classical-planning-pddl",
+          "title": "Classical Planning: PDDL, STRIPS, and GraphPlan",
+          "type": "concept"
+        },
+        {
+          "slug": "hierarchical-task-networks",
+          "title": "Hierarchical Task Networks (HTN) and Partial-Order Planning",
+          "type": "concept"
+        },
+        {
+          "slug": "swarm-intelligence",
+          "title": "Swarm Intelligence: Ant Colony Optimization and Particle Swarms",
+          "type": "concept"
+        },
+        {
+          "slug": "evolutionary-strategies",
+          "title": "Evolutionary Strategies and CMA-ES for Black-Box Optimization",
+          "type": "concept"
+        },
+        {
+          "slug": "neural-symbolic-integration",
+          "title": "Neural-Symbolic Integration: Combining Learning and Reasoning",
+          "type": "concept"
+        },
+        {
+          "slug": "federated-learning-ai",
+          "title": "Federated Learning: Privacy-Preserving Distributed AI",
+          "type": "concept"
+        },
+        {
+          "slug": "explainable-ai",
+          "title": "Explainable AI (XAI): LIME, SHAP, and Interpretability Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "ai-safety",
+          "title": "AI Safety: Alignment, Robustness, and Adversarial Attacks",
+          "type": "concept"
+        },
+        {
+          "slug": "ai-hardware-accelerators",
+          "title": "AI Hardware: GPUs, TPUs, and Neuromorphic Computing",
+          "type": "concept"
+        },
+        {
+          "slug": "adversarial-search",
+          "title": "Adversarial Search",
+          "type": "concept"
+        },
+        {
+          "slug": "ai-ethics",
+          "title": "AI Ethics, Safety, Fairness, and Explainability",
+          "type": "concept"
+        },
+        {
+          "slug": "ai-robotics",
+          "title": "AI in Robotics: SLAM, Motion Planning, Perception",
+          "type": "concept"
+        },
+        {
+          "slug": "bayesian-networks",
+          "title": "Bayesian Networks",
+          "type": "concept"
+        },
+        {
+          "slug": "computer-vision-ai",
+          "title": "Computer Vision in AI: Object Detection, Segmentation, YOLO",
+          "type": "concept"
+        },
+        {
+          "slug": "constraint-satisfaction",
+          "title": "Constraint Satisfaction Problems",
+          "type": "concept"
+        },
+        {
+          "slug": "expert-systems",
+          "title": "Expert Systems and Rule-Based Reasoning",
+          "type": "concept"
+        },
+        {
+          "slug": "first-order-logic",
+          "title": "First-Order Logic",
+          "type": "concept"
+        },
+        {
+          "slug": "genetic-algorithms",
+          "title": "Evolutionary Computing: Genetic Algorithms and Swarm Intelligence",
+          "type": "concept"
+        },
+        {
+          "slug": "informed-search",
+          "title": "Informed Search",
+          "type": "concept"
+        },
+        {
+          "slug": "intelligent-agents",
+          "title": "Intelligent Agents",
+          "type": "concept"
+        },
+        {
+          "slug": "knowledge-representation",
+          "title": "Knowledge Representation",
+          "type": "concept"
+        },
+        {
+          "slug": "llm-agents",
+          "title": "LLM-Based Agents: Tool Use, ReAct, Chain-of-Thought Prompting",
+          "type": "concept"
+        },
+        {
+          "slug": "markov-decision-processes",
+          "title": "Markov Decision Processes",
+          "type": "concept"
+        },
+        {
+          "slug": "multi-agent-systems",
+          "title": "Multi-Agent Systems: Game Theory, Mechanism Design",
+          "type": "concept"
+        },
+        {
+          "slug": "natural-language-processing",
+          "title": "Natural Language Processing",
+          "type": "concept"
+        },
+        {
+          "slug": "planning-ai",
+          "title": "Automated Planning: STRIPS, PDDL, Hierarchical Task Networks",
+          "type": "concept"
+        },
+        {
+          "slug": "propositional-logic",
+          "title": "Propositional Logic",
+          "type": "concept"
+        },
+        {
+          "slug": "reinforcement-learning",
+          "title": "Reinforcement Learning: Q-Learning, SARSA, Deep RL",
+          "type": "concept"
+        },
+        {
+          "slug": "search-algorithms",
+          "title": "Uninformed Search",
+          "type": "concept"
+        },
+        {
+          "slug": "transformer-architecture",
+          "title": "Transformer Architecture",
+          "type": "concept"
+        },
+        {
+          "slug": "uncertainty-ai",
+          "title": "Reasoning Under Uncertainty: HMMs, Particle Filters, Kalman",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": []
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "interview-prep",
+          "title": "AI Interview Preparation",
+          "type": "interview"
+        },
+        {
+          "slug": "placement-guide",
+          "title": "AI/ML Placement and Career Path Guide",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

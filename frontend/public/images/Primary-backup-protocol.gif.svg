@@ -1,0 +1,71 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+  <title>Primary-Backup Replication Protocol</title>
+  <style>
+    .bg{fill:#f8fafc}
+    text{font-family:system-ui,sans-serif;fill:#1e293b;text-anchor:middle;dominant-baseline:middle}
+    .title{font-size:18px;font-weight:bold;fill:#0369a1}
+    .primary{fill:#dbeafe;stroke:#2563eb;stroke-width:2;rx:8}
+    .backup{fill:#dcfce7;stroke:#16a34a;stroke-width:2;rx:8}
+    .client{fill:#ede9fe;stroke:#7c3aed;stroke-width:2;rx:6}
+    .arr{stroke-width:2;fill:none}
+    .small{font-size:11px;fill:#475569}
+    .step{font-size:12px;font-weight:bold}
+    @keyframes pulse{0%,100%{opacity:0.3}50%{opacity:1}}
+    .p1{animation:pulse 3s 0s infinite}
+    .p2{animation:pulse 3s 1s infinite}
+    .p3{animation:pulse 3s 2s infinite}
+  </style>
+  <defs>
+    <marker id="ab" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2563eb"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#16a34a"/></marker>
+    <marker id="ap" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker>
+  </defs>
+  <rect class="bg" width="640" height="360"/>
+  <text class="title" x="320" y="26">Primary-Backup Replication</text>
+
+  <!-- Client -->
+  <rect class="client" x="30" y="145" width="100" height="54" rx="6"/>
+  <text x="80" y="168" font-size="13" font-weight="bold">CLIENT</text>
+  <text x="80" y="184" class="small">sends write</text>
+
+  <!-- Primary -->
+  <rect class="primary" x="230" y="100" width="140" height="140" rx="8"/>
+  <text x="300" y="125" font-size="14" font-weight="bold" fill="#1d4ed8">PRIMARY</text>
+  <line x1="230" y1="138" x2="370" y2="138" stroke="#2563eb" stroke-width="1"/>
+  <text x="300" y="153" class="small">1. Write to local log</text>
+  <text x="300" y="170" class="small">2. Apply to state</text>
+  <text x="300" y="187" class="small">3. Forward to backup</text>
+  <text x="300" y="207" class="small" fill="#16a34a">4. ACK to client ✓</text>
+
+  <!-- Backup 1 -->
+  <rect class="backup" x="460" y="70" width="130" height="80" rx="8"/>
+  <text x="525" y="95" font-size="13" font-weight="bold" fill="#15803d">BACKUP 1</text>
+  <line x1="460" y1="107" x2="590" y2="107" stroke="#16a34a" stroke-width="1"/>
+  <text x="525" y="122" class="small">Apply log entry</text>
+  <text x="525" y="138" class="small">ACK primary ✓</text>
+
+  <!-- Backup 2 -->
+  <rect class="backup" x="460" y="200" width="130" height="80" rx="8"/>
+  <text x="525" y="225" font-size="13" font-weight="bold" fill="#15803d">BACKUP 2</text>
+  <line x1="460" y1="237" x2="590" y2="237" stroke="#16a34a" stroke-width="1"/>
+  <text x="525" y="252" class="small">Apply log entry</text>
+  <text x="525" y="268" class="small">ACK primary ✓</text>
+
+  <!-- Arrows: Client → Primary -->
+  <line class="arr p1" x1="130" y1="170" x2="228" y2="165" stroke="#7c3aed" marker-end="url(#ap)"/>
+  <text class="small p1" x="180" y="157" fill="#7c3aed">① Write req</text>
+
+  <!-- Primary → Backup 1 -->
+  <line class="arr p2" x1="370" y1="145" x2="458" y2="115" stroke="#16a34a" marker-end="url(#ag)"/>
+  <text class="small p2" x="420" y="122" fill="#16a34a">② Replicate</text>
+
+  <!-- Primary → Backup 2 -->
+  <line class="arr p2" x1="370" y1="185" x2="458" y2="228" stroke="#16a34a" marker-end="url(#ag)"/>
+  <text class="small p2" x="420" y="220" fill="#16a34a">② Replicate</text>
+
+  <!-- Primary → Client ACK -->
+  <line class="arr p3" x1="230" y1="200" x2="130" y2="196" stroke="#2563eb" marker-end="url(#ab)" stroke-dasharray="5,3"/>
+  <text class="small p3" x="180" y="212" fill="#2563eb">③ ACK</text>
+
+  <text font-size="11" fill="#64748b" x="320" y="348">On primary failure, a backup is promoted — data already consistent</text>
+</svg>

@@ -1,0 +1,30 @@
+[package]
+name = "model-bench"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "model-bench"
+path = "src/main.rs"
+
+[[bin]]
+name = "rag-bench"
+path = "src/rag_bench.rs"
+
+[[bin]]
+name = "tfft_test"
+path = "src/tfft_test.rs"
+
+
+[dependencies]
+inference = { path = "../inference" }
+rag = { path = "../rag" }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "5"
+sysinfo = "0.30"

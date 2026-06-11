@@ -1,0 +1,85 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+    <title>OOP: Class and Objects</title>
+    <desc>An animation illustrating the relationship between a class (blueprint) and objects (instances created from the blueprint).</desc>
+    <style>
+        .bg { fill: #f8fafc; }
+        .title { font-family: system-ui, sans-serif; font-size: 24px; text-anchor: middle; fill: #334155; }
+        .desc-text { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #475569; }
+
+        .class-box { fill: #f0e6ff; stroke: #8b5cf6; stroke-width: 2; stroke-dasharray: 8 4; }
+        .object-box { fill: #e0f2fe; stroke: #0ea5e9; stroke-width: 2; opacity: 0; }
+        .box-title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+        .box-text { font-family: system-ui, sans-serif; font-size: 14px; }
+
+        .obj1 { animation: create-obj 1s forwards 2s; }
+        .obj2 { animation: create-obj 1s forwards 3s; }
+        .obj3 { animation: create-obj 1s forwards 4s; }
+        
+        .line1 { stroke: #0ea5e9; stroke-width: 2; opacity: 0; animation: draw-line 1s forwards 2.5s; }
+        .line2 { stroke: #0ea5e9; stroke-width: 2; opacity: 0; animation: draw-line 1s forwards 3.5s; }
+        .line3 { stroke: #0ea5e9; stroke-width: 2; opacity: 0; animation: draw-line 1s forwards 4.5s; }
+
+        @keyframes create-obj {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes draw-line {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <rect width="640" height="360" class="bg" />
+    <text x="320" y="30" class="title">OOP: Class &amp; Objects</text>
+    <text x="320" y="55" class="desc-text">A class is a blueprint; objects are instances created from it.</text>
+
+    <!-- Class Blueprint -->
+    <g transform="translate(50, 100)">
+        <rect class="class-box" width="180" height="160" rx="10" />
+        <text class="box-title" x="90" y="25">class Car</text>
+        <line x1="10" y1="40" x2="170" y2="40" stroke="#c4b5fd" />
+        <g class="box-text" transform="translate(20, 60)">
+            <text class="props" fill="#6d28d9">Properties:</text>
+            <text x="10" y="20">- color</text>
+            <text x="10" y="40">- brand</text>
+            <text class="methods" y="70" fill="#6d28d9">Methods:</text>
+            <text x="10" y="90">- start()</text>
+        </g>
+    </g>
+
+    <!-- Creation Lines -->
+    <path class="line1" d="M 230 180 C 280 140, 300 140, 350 100" fill="none" />
+    <path class="line2" d="M 230 180 C 280 180, 280 180, 350 180" fill="none" />
+    <path class="line3" d="M 230 180 C 280 220, 300 220, 350 260" fill="none" />
+    
+    <!-- Object Instances -->
+    <g class="object-box obj1" transform="translate(360, 60)">
+        <rect width="220" height="80" rx="10" />
+        <text class="box-title" x="110" y="20">car1: Car</text>
+        <line x1="10" y1="30" x2="210" y2="30" stroke="#93c5fd" />
+        <g class="box-text" transform="translate(20, 45)">
+            <text>color: "blue"</text>
+            <text x="100" y="0">brand: "Tesla"</text>
+            <text y="25">start()</text>
+        </g>
+    </g>
+    <g class="object-box obj2" transform="translate(360, 140)">
+        <rect width="220" height="80" rx="10" />
+        <text class="box-title" x="110" y="20">car2: Car</text>
+        <line x1="10" y1="30" x2="210" y2="30" stroke="#93c5fd" />
+        <g class="box-text" transform="translate(20, 45)">
+            <text>color: "red"</text>
+            <text x="100" y="0">brand: "Ford"</text>
+            <text y="25">start()</text>
+        </g>
+    </g>
+    <g class="object-box obj3" transform="translate(360, 220)">
+        <rect width="220" height="80" rx="10" />
+        <text class="box-title" x="110" y="20">car3: Car</text>
+        <line x1="10" y1="30" x2="210" y2="30" stroke="#93c5fd" />
+        <g class="box-text" transform="translate(20, 45)">
+            <text>color: "green"</text>
+            <text x="100" y="0">brand: "Fiat"</text>
+            <text y="25">start()</text>
+        </g>
+    </g>
+</svg>

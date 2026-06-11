@@ -1,0 +1,111 @@
+Student AI -- End-User License Agreement and Data Disclosure
+Version 1.0
+
+IMPORTANT: PLEASE READ THIS AGREEMENT CAREFULLY BEFORE INSTALLING OR USING STUDENT AI.
+
+By clicking "I Agree" and installing Student AI you confirm that you are 18 years of age
+or have the consent of a parent/guardian, and you agree to be bound by this Agreement.
+If you do not agree, click "Cancel" and do not install the software.
+
+-----------------------------------------------------------------------------
+1. GRANT OF LICENCE
+-----------------------------------------------------------------------------
+Subject to the terms below, the publisher grants you a non-exclusive,
+non-transferable licence to install and use Student AI solely for your own
+educational, non-commercial purposes.
+
+-----------------------------------------------------------------------------
+2. PRIVACY & DE-IDENTIFIED TELEMETRY
+-----------------------------------------------------------------------------
+We collect ONLY de-identified, aggregated usage data to improve the product.
+
+WHAT IS COLLECTED
+  * A one-way cryptographic hash of your session identifier (the original UUID
+    is never transmitted -- only its SHA-256 digest).
+  * The mode you used: "general chat", "course mode", or "my documents".
+  * Number of messages in a session and the time-to-first-token (milliseconds).
+  * De-identified text of USER messages after the following PII is REMOVED before
+    the data ever leaves your device:
+        - Email addresses         ? replaced with [EMAIL]
+        - Phone numbers           ? replaced with [PHONE]
+        - Social security numbers ? replaced with [SSN]
+        - URLs / web addresses    ? replaced with [URL]
+        - Student / employee IDs  ? replaced with [ID]
+        - Names with titles       ? replaced with [PERSON]
+  * CPU core count and operating system name (e.g. "windows").
+
+WHAT IS NEVER COLLECTED
+  * The actual text of AI (assistant) responses -- only a SHA-256 fingerprint is
+    stored so we can detect duplicate queries; the text itself is never sent.
+  * Your name, username, email address, or any account credentials.
+  * The name or hostname of your computer.
+  * Your IP address (the server stores only a one-way hash, discarded after 24 h).
+  * Any files you upload to the "My Documents" feature.
+  * Passwords, tokens, or any authentication material.
+
+WHEN DATA IS SENT
+  Telemetry is transmitted ONLY when ALL of the following conditions are true:
+    1. You have accepted this Agreement (your explicit consent is required).
+    2. An active internet connection is detected.
+    3. The app is in an IDLE state (no AI generation in progress).
+  Sessions are queued locally and sent quietly in the background; they are
+  never sent while you are actively using the AI.
+
+HOW TO OPT OUT
+  You may withdraw consent at any time:
+    Settings ? Privacy ? "Send de-identified usage data" ? OFF
+  Disabling this setting permanently prevents all future transmissions.
+  Previously queued sessions that have not yet been sent are deleted from
+  your device immediately.
+
+DATA RETENTION
+  De-identified session records are retained on the server for a maximum of
+  12 months, after which they are permanently deleted.
+
+-----------------------------------------------------------------------------
+3. AI-GENERATED CONTENT DISCLAIMER
+-----------------------------------------------------------------------------
+Student AI uses a large-language model running entirely on your local device.
+Responses may be inaccurate, incomplete, or outdated. They do NOT constitute
+academic advice, professional guidance, or verified factual information.
+Always verify important information with your course instructor or official
+study materials.
+
+-----------------------------------------------------------------------------
+4. RESTRICTIONS
+-----------------------------------------------------------------------------
+You may NOT:
+  (a) redistribute, sell, or sublicense Student AI;
+  (b) use Student AI to generate content that violates any law or third-party
+      rights;
+  (c) reverse-engineer the application beyond what applicable law permits;
+  (d) attempt to re-identify any anonymised data transmitted by the app.
+
+-----------------------------------------------------------------------------
+5. DISCLAIMER OF WARRANTIES
+-----------------------------------------------------------------------------
+STUDENT AI IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EITHER
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO FITNESS FOR A PARTICULAR
+PURPOSE OR NON-INFRINGEMENT.
+
+-----------------------------------------------------------------------------
+6. LIMITATION OF LIABILITY
+-----------------------------------------------------------------------------
+IN NO EVENT SHALL THE PUBLISHER BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
+SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM YOUR USE OF STUDENT AI.
+
+-----------------------------------------------------------------------------
+7. GOVERNING LAW
+-----------------------------------------------------------------------------
+This Agreement is governed by applicable law. Any disputes shall be resolved
+in the courts of competent jurisdiction.
+
+-----------------------------------------------------------------------------
+8. CONTACT
+-----------------------------------------------------------------------------
+For privacy enquiries or to request deletion of your data, contact:
+  privacy@studentai.example.com
+
+By clicking "I Agree" you acknowledge that you have read, understood, and
+agreed to all terms above, including the de-identified telemetry collection
+described in Section 2.

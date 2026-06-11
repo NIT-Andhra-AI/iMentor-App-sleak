@@ -1,0 +1,109 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+    <title>QuickSort Partitioning</title>
+    <desc>Animation of the partitioning step in the QuickSort algorithm, with the last element as the pivot.</desc>
+    <style>
+        .bg { fill: #f8fafc; }
+        .box { stroke: #94a3b8; stroke-width: 1; fill: #e2e8f0; }
+        .pivot-box { fill: #c4b5fd; stroke: #8b5cf6; }
+        .i-pointer, .j-pointer { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #5b21b6; opacity: 0; }
+        .text { font-family: system-ui, sans-serif; font-size: 20px; text-anchor: middle; dominant-baseline: middle; fill: #1e293b; }
+        .title { font-family: system-ui, sans-serif; font-size: 24px; text-anchor: middle; fill: #334155; }
+        .desc-text { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #475569; }
+
+        .element { transition: transform 0.5s; }
+
+        /* Animation Setup */
+        .elem-5 { animation: elem-5-anim 12s infinite; }
+        .elem-2 { animation: elem-2-anim 12s infinite; }
+        .elem-6 { animation: elem-6-anim 12s infinite; }
+        .elem-1 { animation: elem-1-anim 12s infinite; }
+        .elem-4 { animation: elem-4-anim 12s infinite; } /* Pivot */
+        .elem-3 { animation: elem-3-anim 12s infinite; }
+
+        /* Pointers */
+        #i-ptr { animation: i-ptr-anim 12s infinite; }
+        #j-ptr { animation: j-ptr-anim 12s infinite; }
+
+        @keyframes i-ptr-anim {
+            0%, 5% { opacity: 1; transform: translateX(0px); } /* at start */
+            15% { opacity: 1; transform: translateX(50px); } /* i finds 5 > 4, waits */
+            25% { opacity: 1; transform: translateX(100px); } /* swap with 2, i moves */
+            35%, 45% { opacity: 1; transform: translateX(150px); } /* i finds 6 > 4, waits */
+            55% { opacity: 1; transform: translateX(200px); } /* swap with 1, i moves */
+            65%, 75% { opacity: 1; transform: translateX(200px); } /* i points at 6 (now at pos 4), waits */
+            85% { opacity: 1; transform: translateX(250px); } /* final swap with pivot, i moves */
+            90%, 100% { opacity: 0; }
+        }
+
+        @keyframes j-ptr-anim {
+            5% { opacity: 1; transform: translateX(50px); } /* j starts at 5 */
+            15% { opacity: 1; transform: translateX(100px); } /* j at 2, swap happens */
+            25% { opacity: 1; transform: translateX(150px); } /* j at 6 */
+            35% { opacity: 1; transform: translateX(200px); } /* j at 1, swap happens */
+            45%, 55% { opacity: 1; transform: translateX(250px); } /* j at pivot, loop ends */
+            60%, 100% { opacity: 0; }
+        }
+        
+        /* Element movements based on swaps */
+        /* Initial: [5, 2, 6, 1, 3] | Pivot: 4 */
+        /* After j=2 (swap 5,2): [2, 5, 6, 1, 3] */
+        /* After j=1 (swap 5,1): [2, 1, 6, 5, 3] */
+        /* After j=3 (swap 6,3): [2, 1, 3, 5, 6] */
+        /* Final (swap 6,4):   [2, 1, 3, 4, 5, 6] -> conceptually */
+        
+        @keyframes elem-5-anim {
+            0%, 20% { transform: translateX(0px); }
+            30%, 40% { transform: translateX(50px); } /* swapped with 2 */
+            50%, 100% { transform: translateX(200px); } /* swapped with 1, then stays */
+        }
+        @keyframes elem-2-anim {
+            0%, 20% { transform: translateX(50px); }
+            30%, 100% { transform: translateX(0px); } /* swapped with 5 */
+        }
+        @keyframes elem-6-anim {
+            0%, 40% { transform: translateX(100px); }
+            50%, 80% { transform: translateX(100px); } /* stays after first swap round */
+            90%, 100% { transform: translateX(250px); } /* swapped with 3, then pivot */
+        }
+        @keyframes elem-1-anim {
+            0%, 40% { transform: translateX(150px); }
+            50%, 100% { transform: translateX(50px); } /* swapped with 5 */
+        }
+        @keyframes elem-3-anim {
+            0%, 60% { transform: translateX(200px); }
+            70%, 80% { transform: translateX(100px); }
+            90%, 100% { transform: translateX(100px); }
+        }
+        @keyframes elem-4-anim { /* Pivot */
+            0%, 80% { transform: translateX(250px); }
+            90%, 100% { transform: translateX(150px); } /* final swap */
+        }
+
+    </style>
+    <rect width="640" height="360" class="bg" />
+    <text x="320" y="30" class="title">QuickSort Partitioning</text>
+    <text x="320" y="55" class="desc-text">Elements smaller than pivot move to the left.</text>
+
+    <g transform="translate(120, 150)">
+        <!-- Array Elements -->
+        <g class="element elem-5"><rect x="0" y="-25" width="50" height="50" class="box" /><text x="25" y="0" class="text">5</text></g>
+        <g class="element elem-2"><rect x="50" y="-25" width="50" height="50" class="box" /><text x="75" y="0" class="text">2</text></g>
+        <g class="element elem-6"><rect x="100" y="-25" width="50" height="50" class="box" /><text x="125" y="0" class="text">6</text></g>
+        <g class="element elem-1"><rect x="150" y="-25" width="50" height="50" class="box" /><text x="175" y="0" class="text">1</text></g>
+        <g class="element elem-3"><rect x="200" y="-25" width="50" height="50" class="box" /><text x="225" y="0" class="text">3</text></g>
+        
+        <!-- Pivot -->
+        <g class="element elem-4"><rect x="250" y="-25" width="50" height="50" class="pivot-box" /><text x="275" y="0" class="text">4</text></g>
+
+        <!-- Pointers -->
+        <g id="i-ptr" transform="translate(25, -50)">
+            <text class="i-pointer">i</text>
+            <path d="M 0 0 L 0 15" stroke="#5b21b6" stroke-width="2"/>
+        </g>
+        <g id="j-ptr" transform="translate(25, 60)">
+            <path d="M 0 0 L 0 -15" stroke="#a855f7" stroke-width="2"/>
+            <text class="j-pointer" y="15" style="fill: #a855f7;">j</text>
+        </g>
+        <text x="335" y="0" class="desc-text">Pivot</text>
+    </g>
+</svg>

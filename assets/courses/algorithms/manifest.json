@@ -1,0 +1,379 @@
+{
+  "id": "algorithms",
+  "title": "Algorithms",
+  "version": "1.0.0",
+  "description": "Algorithm design paradigms including divide-and-conquer, dynamic programming, greedy methods, and complexity analysis.",
+  "placement_domains": [
+    "SDE",
+    "Competitive Programmer"
+  ],
+  "wiki_page_count": 28,
+  "module_count": 5,
+  "built_with": "claude-sonnet-4.6",
+  "built_at": "2026-04-13",
+  "tags": [
+    "algorithms",
+    "complexity",
+    "cs-core"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Algorithms",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Design and Analysis of Algorithms — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Design and Analysis of Algorithms — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "amortized-analysis",
+          "title": "Amortized Analysis: Aggregate, Accounting, Potential Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "approximation-algorithms",
+          "title": "Approximation Algorithms for NP-Hard Problems",
+          "type": "concept"
+        },
+        {
+          "slug": "asymptotic-analysis",
+          "title": "Asymptotic Analysis and Big-O Notation",
+          "type": "concept"
+        },
+        {
+          "slug": "backtracking",
+          "title": "Backtracking: Algorithmic Search and Pruning",
+          "type": "concept"
+        },
+        {
+          "slug": "competitive-programming",
+          "title": "Competitive Programming Patterns and Templates",
+          "type": "concept"
+        },
+        {
+          "slug": "complexity-theory",
+          "title": "Computational Complexity Theory: The Architecture of Limits",
+          "type": "concept"
+        },
+        {
+          "slug": "computational-geometry",
+          "title": "Computational Geometry: Convex Hull, Line Sweep",
+          "type": "concept"
+        },
+        {
+          "slug": "divide-conquer",
+          "title": "Divide and Conquer",
+          "type": "concept"
+        },
+        {
+          "slug": "dp-advanced",
+          "title": "Advanced Dynamic Programming: Bitmask, Tree DP, Digit DP",
+          "type": "concept"
+        },
+        {
+          "slug": "dynamic-programming",
+          "title": "Dynamic Programming: Principles and Practice",
+          "type": "concept"
+        },
+        {
+          "slug": "graph-algorithms",
+          "title": "Graph Algorithms: Foundations, Traversal, and Optimization",
+          "type": "concept"
+        },
+        {
+          "slug": "greedy",
+          "title": "Greedy Algorithms: Theory, Design, and Engineering",
+          "type": "concept"
+        },
+        {
+          "slug": "linear-sorting",
+          "title": "Linear-Time Sorting: Radix, Counting, and Bucket Sort",
+          "type": "concept"
+        },
+        {
+          "slug": "minimum-spanning-tree",
+          "title": "Minimum Spanning Trees: Prim and Kruskal",
+          "type": "concept"
+        },
+        {
+          "slug": "network-flow",
+          "title": "Network Flow: Max-Flow Min-Cut, Ford-Fulkerson",
+          "type": "concept"
+        },
+        {
+          "slug": "number-theory-algorithms",
+          "title": "Number Theory and Cryptographic Algorithms: GCD, Modular Exponentiation",
+          "type": "concept"
+        },
+        {
+          "slug": "online-algorithms",
+          "title": "Online Algorithms and Competitive Analysis",
+          "type": "concept"
+        },
+        {
+          "slug": "parallel-algorithms",
+          "title": "Parallel Algorithms: PRAM, Work-Span, MapReduce",
+          "type": "concept"
+        },
+        {
+          "slug": "randomized-algorithms",
+          "title": "Randomized Algorithms: Quickselect, Hashing, Monte Carlo",
+          "type": "concept"
+        },
+        {
+          "slug": "recurrence-relations",
+          "title": "Recurrence Relations and Master Theorem",
+          "type": "concept"
+        },
+        {
+          "slug": "shortest-path",
+          "title": "Shortest Path Algorithms: Dijkstra, Bellman-Ford, Floyd-Warshall",
+          "type": "concept"
+        },
+        {
+          "slug": "sorting-algorithms",
+          "title": "Sorting Algorithms Analysis",
+          "type": "concept"
+        },
+        {
+          "slug": "string-algorithms",
+          "title": "Advanced String Algorithms: From Pattern Matching to Suffix Structures",
+          "type": "concept"
+        },
+        {
+          "slug": "suffix-arrays",
+          "title": "Suffix Arrays, Suffix Trees, and Aho-Corasick",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": []
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "interview-prep",
+          "title": "Interview Preparation for Algorithm Problems",
+          "type": "interview"
+        },
+        {
+          "slug": "placement-guide",
+          "title": "Placement Guide: Algorithm Interviews at Top Companies",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Algorithms",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Design and Analysis of Algorithms — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Design and Analysis of Algorithms — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "amortized-analysis",
+          "title": "Amortized Analysis: Aggregate, Accounting, Potential Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "approximation-algorithms",
+          "title": "Approximation Algorithms for NP-Hard Problems",
+          "type": "concept"
+        },
+        {
+          "slug": "asymptotic-analysis",
+          "title": "Asymptotic Analysis and Big-O Notation",
+          "type": "concept"
+        },
+        {
+          "slug": "backtracking",
+          "title": "Backtracking: Algorithmic Search and Pruning",
+          "type": "concept"
+        },
+        {
+          "slug": "competitive-programming",
+          "title": "Competitive Programming Patterns and Templates",
+          "type": "concept"
+        },
+        {
+          "slug": "complexity-theory",
+          "title": "Computational Complexity Theory: The Architecture of Limits",
+          "type": "concept"
+        },
+        {
+          "slug": "computational-geometry",
+          "title": "Computational Geometry: Convex Hull, Line Sweep",
+          "type": "concept"
+        },
+        {
+          "slug": "divide-conquer",
+          "title": "Divide and Conquer",
+          "type": "concept"
+        },
+        {
+          "slug": "dp-advanced",
+          "title": "Advanced Dynamic Programming: Bitmask, Tree DP, Digit DP",
+          "type": "concept"
+        },
+        {
+          "slug": "dynamic-programming",
+          "title": "Dynamic Programming: Principles and Practice",
+          "type": "concept"
+        },
+        {
+          "slug": "graph-algorithms",
+          "title": "Graph Algorithms: Foundations, Traversal, and Optimization",
+          "type": "concept"
+        },
+        {
+          "slug": "greedy",
+          "title": "Greedy Algorithms: Theory, Design, and Engineering",
+          "type": "concept"
+        },
+        {
+          "slug": "linear-sorting",
+          "title": "Linear-Time Sorting: Radix, Counting, and Bucket Sort",
+          "type": "concept"
+        },
+        {
+          "slug": "minimum-spanning-tree",
+          "title": "Minimum Spanning Trees: Prim and Kruskal",
+          "type": "concept"
+        },
+        {
+          "slug": "network-flow",
+          "title": "Network Flow: Max-Flow Min-Cut, Ford-Fulkerson",
+          "type": "concept"
+        },
+        {
+          "slug": "number-theory-algorithms",
+          "title": "Number Theory and Cryptographic Algorithms: GCD, Modular Exponentiation",
+          "type": "concept"
+        },
+        {
+          "slug": "online-algorithms",
+          "title": "Online Algorithms and Competitive Analysis",
+          "type": "concept"
+        },
+        {
+          "slug": "parallel-algorithms",
+          "title": "Parallel Algorithms: PRAM, Work-Span, MapReduce",
+          "type": "concept"
+        },
+        {
+          "slug": "randomized-algorithms",
+          "title": "Randomized Algorithms: Quickselect, Hashing, Monte Carlo",
+          "type": "concept"
+        },
+        {
+          "slug": "recurrence-relations",
+          "title": "Recurrence Relations and Master Theorem",
+          "type": "concept"
+        },
+        {
+          "slug": "shortest-path",
+          "title": "Shortest Path Algorithms: Dijkstra, Bellman-Ford, Floyd-Warshall",
+          "type": "concept"
+        },
+        {
+          "slug": "sorting-algorithms",
+          "title": "Sorting Algorithms Analysis",
+          "type": "concept"
+        },
+        {
+          "slug": "string-algorithms",
+          "title": "Advanced String Algorithms: From Pattern Matching to Suffix Structures",
+          "type": "concept"
+        },
+        {
+          "slug": "suffix-arrays",
+          "title": "Suffix Arrays, Suffix Trees, and Aho-Corasick",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": []
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "interview-prep",
+          "title": "Interview Preparation for Algorithm Problems",
+          "type": "interview"
+        },
+        {
+          "slug": "placement-guide",
+          "title": "Placement Guide: Algorithm Interviews at Top Companies",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

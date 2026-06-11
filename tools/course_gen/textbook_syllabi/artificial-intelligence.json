@@ -1,0 +1,191 @@
+{
+  "course": "artificial-intelligence",
+  "title": "Artificial Intelligence: A Modern Approach",
+  "textbook_refs": [
+    "Russell & Norvig: AIMA 4th Ed",
+    "Poole & Mackworth: Artificial Intelligence 2nd Ed",
+    "Mitchell: Machine Learning"
+  ],
+  "topics": [
+    {
+      "slug": "heuristic-design",
+      "title": "Heuristic Function Design: Admissibility, Consistency, and Dominance",
+      "section": "Search",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bidirectional-search",
+      "title": "Bidirectional Search and Meet-in-the-Middle Strategies",
+      "section": "Search",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "local-search-optimization",
+      "title": "Local Search: Hill Climbing, Simulated Annealing, and Tabu Search",
+      "section": "Search",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "monte-carlo-tree-search",
+      "title": "Monte Carlo Tree Search: UCT and Game Tree Exploration",
+      "section": "Adversarial Search",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "alpha-beta-enhancements",
+      "title": "Alpha-Beta Pruning Enhancements: MTD(f) and Iterative Deepening",
+      "section": "Adversarial Search",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "arc-consistency",
+      "title": "Arc Consistency (AC-3) and Constraint Propagation Algorithms",
+      "section": "CSP",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "temporal-logic",
+      "title": "Temporal Logic: LTL and CTL for Reasoning About Time",
+      "section": "Logic and Knowledge",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "description-logics",
+      "title": "Description Logics and OWL Ontologies",
+      "section": "Knowledge Representation",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "forward-backward-chaining",
+      "title": "Forward and Backward Chaining: Rule-Based Inference",
+      "section": "Logic and Knowledge",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "markov-chains",
+      "title": "Markov Chains and Stationary Distributions",
+      "section": "Probabilistic Models",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "hidden-markov-models",
+      "title": "Hidden Markov Models: Forward-Backward and Viterbi Algorithms",
+      "section": "Probabilistic Models",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "kalman-filters",
+      "title": "Kalman Filters and Extended Kalman Filters for State Estimation",
+      "section": "Probabilistic Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "particle-filters",
+      "title": "Particle Filters: Sequential Monte Carlo Methods",
+      "section": "Probabilistic Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "conditional-independence",
+      "title": "Conditional Independence and d-Separation in Bayesian Networks",
+      "section": "Probabilistic Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "causal-reasoning",
+      "title": "Causal Reasoning: Interventions and Counterfactuals (do-calculus)",
+      "section": "Probabilistic Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "q-learning-deep-rl",
+      "title": "Q-Learning to Deep Q-Networks: Value-Based Reinforcement Learning",
+      "section": "Reinforcement Learning",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "policy-gradient-methods",
+      "title": "Policy Gradient Methods: REINFORCE and Actor-Critic Architectures",
+      "section": "Reinforcement Learning",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "speech-understanding",
+      "title": "Speech Understanding: ASR Pipelines and Acoustic Modeling",
+      "section": "NLP",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "semantic-parsing",
+      "title": "Semantic Parsing: Mapping Language to Logical Forms",
+      "section": "NLP",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "image-recognition-ai",
+      "title": "Image Recognition and Scene Understanding Pipelines",
+      "section": "Computer Vision AI",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "classical-planning-pddl",
+      "title": "Classical Planning: PDDL, STRIPS, and GraphPlan",
+      "section": "Planning",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "hierarchical-task-networks",
+      "title": "Hierarchical Task Networks (HTN) and Partial-Order Planning",
+      "section": "Planning",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "swarm-intelligence",
+      "title": "Swarm Intelligence: Ant Colony Optimization and Particle Swarms",
+      "section": "Evolutionary AI",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "evolutionary-strategies",
+      "title": "Evolutionary Strategies and CMA-ES for Black-Box Optimization",
+      "section": "Evolutionary AI",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "neural-symbolic-integration",
+      "title": "Neural-Symbolic Integration: Combining Learning and Reasoning",
+      "section": "Advanced AI",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "explainable-ai",
+      "title": "Explainable AI (XAI): LIME, SHAP, and Interpretability Methods",
+      "section": "AI Ethics and Safety",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "ai-safety",
+      "title": "AI Safety: Alignment, Robustness, and Adversarial Attacks",
+      "section": "AI Ethics and Safety",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "federated-learning-ai",
+      "title": "Federated Learning: Privacy-Preserving Distributed AI",
+      "section": "Advanced AI",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "knowledge-graphs",
+      "title": "Knowledge Graphs: Construction, Embedding, and Querying (SPARQL)",
+      "section": "Knowledge Representation",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "ai-hardware-accelerators",
+      "title": "AI Hardware: GPUs, TPUs, and Neuromorphic Computing",
+      "section": "AI Systems",
+      "difficulty": "intermediate"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+    <title>Database Normalization</title>
+    <desc>An animation showing a denormalized table being split into normalized 2NF and 3NF tables to reduce data redundancy.</desc>
+    <style>
+        .bg { fill: #f8fafc; }
+        .title { font-family: system-ui, sans-serif; font-size: 24px; text-anchor: middle; fill: #334155; }
+        .desc-text { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #475569; }
+        .table-title { font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+        
+        .table {
+            font-family: system-ui, sans-serif;
+            font-size: 12px;
+        }
+        .table .header { font-weight: bold; fill: #334155; }
+        .table .pk { fill: #8b5cf6; font-weight: bold; } /* Primary Key */
+        .table .fk { fill: #2563eb; } /* Foreign Key */
+        .table .redundant { fill: #be185d; }
+        .table rect {
+            stroke: #cbd5e1;
+            stroke-width: 1;
+            fill: #fff;
+        }
+        .table g {
+            transition: opacity 1s, transform 1s;
+        }
+
+        /* Animation Control */
+        .initial-table { animation: hide-initial 10s infinite; }
+        .split-tables { opacity: 0; animation: show-split 10s infinite; }
+
+        @keyframes hide-initial {
+            0%, 40% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        @keyframes show-split {
+            0%, 50% { opacity: 0; transform: translateY(20px); }
+            60%, 100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <rect width="640" height="360" class="bg" />
+    <text x="320" y="30" class="title">Database Normalization (1NF → 3NF)</text>
+    <text x="320" y="55" class="desc-text">Splitting a table to reduce redundancy and improve data integrity.</text>
+
+    <!-- Initial Denormalized Table -->
+    <g class="initial-table">
+        <text x="320" y="90" class="table-title">Order_Details (1NF - Unnormalized)</text>
+        <g class="table" transform="translate(100, 100)">
+            <rect x="0" y="0" width="440" height="120" />
+            <!-- Headers -->
+            <text x="45" y="20" class="header pk">OrderID</text>
+            <text x="110" y="20" class="header">CustID</text>
+            <text x="170" y="20" class="header redundant">CustName</text>
+            <text x="240" y="20" class="header">ProdID</text>
+            <text x="310" y="20" class="header redundant">ProdName</text>
+            <text x="380" y="20" class="header">Quantity</text>
+            <!-- Row 1 -->
+            <text x="45" y="50">101</text>
+            <text x="110" y="50">C1</text>
+            <text x="170" y="50" class="redundant">Alice</text>
+            <text x="240" y="50">P01</text>
+            <text x="310" y="50" class="redundant">Laptop</text>
+            <text x="380" y="50">1</text>
+            <!-- Row 2 -->
+            <text x="45" y="80">102</text>
+            <text x="110" y="80">C2</text>
+            <text x="170" y="80" class="redundant">Bob</text>
+            <text x="240" y="80">P02</text>
+            <text x="310" y="80" class="redundant">Mouse</text>
+            <text x="380" y="80">2</text>
+             <!-- Row 3 -->
+            <text x="45" y="110">103</text>
+            <text x="110" y="110">C1</text>
+            <text x="170" y="110" class="redundant">Alice</text>
+            <text x="240" y="110">P02</text>
+            <text x="310" y="110" class="redundant">Mouse</text>
+            <text x="380" y="110">1</text>
+        </g>
+    </g>
+
+    <!-- Normalized Tables -->
+    <g class="split-tables">
+        <!-- Customers Table -->
+        <text x="170" y="90" class="table-title">Customers (2NF)</text>
+        <g class="table" transform="translate(80, 100)">
+            <rect x="0" y="0" width="180" height="90" />
+            <text x="45" y="20" class="header pk">CustID</text>
+            <text x="125" y="20" class="header">CustName</text>
+            <text x="45" y="50">C1</text><text x="125" y="50">Alice</text>
+            <text x="45" y="80">C2</text><text x="125" y="80">Bob</text>
+        </g>
+
+        <!-- Products Table -->
+        <text x="470" y="90" class="table-title">Products (2NF)</text>
+        <g class="table" transform="translate(380, 100)">
+            <rect x="0" y="0" width="180" height="90" />
+            <text x="45" y="20" class="header pk">ProdID</text>
+            <text x="125" y="20" class="header">ProdName</text>
+            <text x="45" y="50">P01</text><text x="125" y="50">Laptop</text>
+            <text x="45" y="80">P02</text><text x="125" y="80">Mouse</text>
+        </g>
+
+        <!-- Orders Table -->
+        <text x="320" y="220" class="table-title">Orders (3NF)</text>
+        <g class="table" transform="translate(160, 230)">
+            <rect x="0" y="0" width="300" height="120" />
+            <text x="50" y="20" class="header pk">OrderID</text>
+            <text x="125" y="20" class="header fk">CustID</text>
+            <text x="200" y="20" class="header fk">ProdID</text>
+            <text x="275" y="20" class="header">Quantity</text>
+            
+            <text x="50" y="50">101</text><text x="125" y="50" class="fk">C1</text><text x="200" y="50" class="fk">P01</text><text x="275" y="50">1</text>
+            <text x="50" y="80">102</text><text x="125" y="80" class="fk">C2</text><text x="200" y="80" class="fk">P02</text><text x="275" y="80">2</text>
+            <text x="50" y="110">103</text><text x="125" y="110" class="fk">C1</text><text x="200" y="110" class="fk">P02</text><text x="275" y="110">1</text>
+        </g>
+    </g>
+</svg>

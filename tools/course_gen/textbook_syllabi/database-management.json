@@ -1,0 +1,191 @@
+{
+  "course": "database-management",
+  "title": "Database Management Systems",
+  "textbook_refs": [
+    "Ramakrishnan & Gehrke: Database Management Systems 3rd Ed",
+    "Silberschatz, Korth, Sudarshan: Database System Concepts 7th Ed",
+    "Date: An Introduction to Database Systems 8th Ed"
+  ],
+  "topics": [
+    {
+      "slug": "db-architecture",
+      "title": "DBMS Architecture: Three-Schema, Client-Server, and Storage Engines",
+      "section": "Introduction",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "er-modeling",
+      "title": "Entity-Relationship Modeling: Entities, Attributes, Relationships, and ERD to Schema",
+      "section": "Data Modeling",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "enhanced-er",
+      "title": "Enhanced ER Model: Specialization, Generalization, and Aggregation",
+      "section": "Data Modeling",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "relational-algebra",
+      "title": "Relational Algebra: Selection, Projection, Join, and Set Operations",
+      "section": "Relational Model",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "relational-calculus",
+      "title": "Relational Calculus: Tuple and Domain Relational Calculus",
+      "section": "Relational Model",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "sql-advanced-queries",
+      "title": "Advanced SQL: Window Functions, CTEs, Recursive Queries, and PIVOT",
+      "section": "SQL",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "sql-joins-deep-dive",
+      "title": "SQL Joins Deep Dive: INNER, OUTER, CROSS, SELF, and NATURAL Joins",
+      "section": "SQL",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "sql-aggregate-groupby",
+      "title": "SQL Aggregation: GROUP BY, HAVING, ROLLUP, CUBE, and GROUPING SETS",
+      "section": "SQL",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "sql-subqueries",
+      "title": "Subqueries and Correlated Subqueries: EXISTS, NOT EXISTS, and ANY/ALL",
+      "section": "SQL",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "stored-procedures-triggers",
+      "title": "Stored Procedures, Functions, Triggers, and Cursor Programming",
+      "section": "SQL",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "functional-dependencies",
+      "title": "Functional Dependencies: Armstrong's Axioms and Closure Computation",
+      "section": "Normalization",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "1nf-2nf-3nf",
+      "title": "1NF, 2NF, and 3NF: Stepwise Normalization with Examples",
+      "section": "Normalization",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bcnf-4nf-5nf",
+      "title": "BCNF, 4NF, and 5NF: Higher Normal Forms and Lossless Decomposition",
+      "section": "Normalization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "concurrency-control",
+      "title": "Concurrency Control: Locking Protocols, Two-Phase Locking, and MVCC",
+      "section": "Transaction Management",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "serializability",
+      "title": "Serializability: Conflict Serializability, View Serializability, and Schedules",
+      "section": "Transaction Management",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "recovery-logging",
+      "title": "Recovery and Logging: ARIES Protocol, Undo/Redo Logs, and Checkpointing",
+      "section": "Transaction Management",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "isolation-levels",
+      "title": "Isolation Levels: Read Uncommitted to Serializable and Phantom Reads",
+      "section": "Transaction Management",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "btree-index",
+      "title": "B+ Tree Index: Clustered vs Unclustered, Insertion, and Range Queries",
+      "section": "Indexing and Storage",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "hash-index",
+      "title": "Hash-Based Indexing: Static and Dynamic (Extendible) Hashing",
+      "section": "Indexing and Storage",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bitmap-index",
+      "title": "Bitmap Indexes and Column-Oriented Storage for OLAP",
+      "section": "Indexing and Storage",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "storage-manager",
+      "title": "Storage Manager: Buffer Pool, Page Replacement, and Disk Layout",
+      "section": "Indexing and Storage",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "query-processing",
+      "title": "Query Processing: Iterator Model, Operator Algorithms, and Cost Models",
+      "section": "Query Optimization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "join-algorithms",
+      "title": "Join Algorithms: Nested Loop, Sort-Merge, and Hash Join with Cost Analysis",
+      "section": "Query Optimization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "query-plan-execution",
+      "title": "Query Plan Enumeration: System R Dynamic Programming and Heuristics",
+      "section": "Query Optimization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "nosql-databases",
+      "title": "NoSQL Databases: Document, Key-Value, Column-Family, and Graph DBs",
+      "section": "Modern Databases",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "distributed-databases",
+      "title": "Distributed Databases: Fragmentation, Replication, and CAP Theorem",
+      "section": "Modern Databases",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "data-warehousing-olap",
+      "title": "Data Warehousing and OLAP: Star Schema, Cube Operations, and ETL",
+      "section": "Modern Databases",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "newSQL-htap",
+      "title": "NewSQL and HTAP Systems: Spanner, CockroachDB, and TiDB",
+      "section": "Modern Databases",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "graph-databases",
+      "title": "Graph Databases: Property Graph Model, Cypher Queries, and Neo4j",
+      "section": "Modern Databases",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Database Interview Questions and System Design",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

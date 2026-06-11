@@ -1,0 +1,149 @@
+{
+  "course": "digital-logic",
+  "title": "Digital Logic Design: Principles and Applications",
+  "textbook_refs": [
+    "Morris Mano: Digital Design 5th Ed",
+    "Floyd: Digital Fundamentals 11th Ed",
+    "Wakerly: Digital Design Principles and Practices 5th Ed"
+  ],
+  "topics": [
+    {
+      "slug": "number-systems",
+      "title": "Number Systems: Binary, Octal, Hexadecimal Conversions and BCD",
+      "section": "Foundations",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "boolean-algebra-theorems",
+      "title": "Boolean Algebra Theorems: Duality, De Morgan's Laws, and Consensus Theorem",
+      "section": "Boolean Algebra",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "canonical-forms",
+      "title": "Canonical Forms: SOP, POS, Minterms, Maxterms, and Conversion",
+      "section": "Boolean Algebra",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "karnaugh-maps",
+      "title": "Karnaugh Maps: 2, 3, 4 Variable Simplification and Don't-Care Conditions",
+      "section": "Boolean Algebra",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "quine-mccluskey",
+      "title": "Quine–McCluskey Method: Tabular Minimization for Many Variables",
+      "section": "Boolean Algebra",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "logic-gate-families",
+      "title": "Logic Gate Families: TTL, CMOS, ECL, and Electrical Characteristics",
+      "section": "Logic Gates",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "cmos-logic-gates",
+      "title": "CMOS Logic Gate Implementation: Pull-Up/Pull-Down Networks",
+      "section": "Logic Gates",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "half-full-adder",
+      "title": "Half and Full Adders: Ripple Carry, Carry Lookahead, and Carry Select",
+      "section": "Combinational Circuits",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "decoders-encoders",
+      "title": "Decoders, Encoders, and Priority Encoders: Design and Applications",
+      "section": "Combinational Circuits",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "multiplexers-demultiplexers",
+      "title": "Multiplexers and Demultiplexers: Design, Universal Logic, and Applications",
+      "section": "Combinational Circuits",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "comparators-shifters",
+      "title": "Comparators and Barrel Shifters: Design and VLSI Implementations",
+      "section": "Combinational Circuits",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "sr-d-jk-t-flipflops",
+      "title": "SR, D, JK, and T Flip-Flops: Characteristic Tables and Excitation Tables",
+      "section": "Sequential Circuits",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "registers-shift-registers",
+      "title": "Registers and Shift Registers: SIPO, PISO, PIPO, and Ring Counters",
+      "section": "Sequential Circuits",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "synchronous-counters",
+      "title": "Synchronous and Asynchronous Counters: Modulo-N and Up/Down Counters",
+      "section": "Sequential Circuits",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "mealy-moore-machines",
+      "title": "Mealy and Moore Machines: State Minimization and State Assignment",
+      "section": "Finite State Machines",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "state-diagram-table",
+      "title": "State Diagram to State Table to Logic Circuit: Complete Design Process",
+      "section": "Finite State Machines",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "hazards-timing",
+      "title": "Hazards and Timing: Static, Dynamic Hazards, Glitches, and Elimination",
+      "section": "Timing Analysis",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "synchronization-metastability",
+      "title": "Synchronization, Metastability, and Clock Domain Crossing",
+      "section": "Timing Analysis",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "rom-ram-pla",
+      "title": "ROM, RAM, PLA, and PAL: Programmable Logic and Memory Devices",
+      "section": "Memory Devices",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "fpga-basics",
+      "title": "FPGAs and CPLDs: LUT-Based Architecture and HDL Programming Introduction",
+      "section": "Programmable Logic",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "verilog-hdl-intro",
+      "title": "Verilog HDL Introduction: Behavioral, Dataflow, and Structural Modeling",
+      "section": "Hardware Description",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "testbench-simulation",
+      "title": "Testbench Design and Simulation: ModelSim and Waveform Analysis",
+      "section": "Hardware Description",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Digital Logic Interview Questions and GATE Preparation",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

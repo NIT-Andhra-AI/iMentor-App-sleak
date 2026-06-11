@@ -1,0 +1,161 @@
+name: Build Windows (NSIS, bundled models)
+
+on:
+  push:
+    branches: [main, master]
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: Windows ${{ matrix.arch_tag }} / ${{ matrix.model_tag }}
+    runs-on: windows-2022
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-pc-windows-msvc
+            arch_tag: x64
+            models_file: models.toml
+            model_tag: phi4
+          - target: x86_64-pc-windows-msvc
+            arch_tag: x64
+            models_file: models-gemma-e2b.toml
+            model_tag: gemma-e2b
+          - target: x86_64-pc-windows-msvc
+            arch_tag: x64
+            models_file: models-qwen25.toml
+            model_tag: qwen25
+          - target: x86_64-pc-windows-msvc
+            arch_tag: x64
+            models_file: models-gemma-e4b.toml
+            model_tag: gemma-e4b
+          - target: aarch64-pc-windows-msvc
+            arch_tag: arm64
+            models_file: models.toml
+            model_tag: phi4
+          - target: aarch64-pc-windows-msvc
+            arch_tag: arm64
+            models_file: models-gemma-e2b.toml
+            model_tag: gemma-e2b
+          - target: aarch64-pc-windows-msvc
+            arch_tag: arm64
+            models_file: models-qwen25.toml
+            model_tag: qwen25
+          - target: aarch64-pc-windows-msvc
+            arch_tag: arm64
+            models_file: models-gemma-e4b.toml
+            model_tag: gemma-e4b
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: oven-sh/setup-bun@v2
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: windows-withmodel-${{ matrix.target }}
+
+      - name: Install cargo-tauri
+        run: cargo install tauri-cli --version "^2" --locked
+
+      - name: Add Rust target
+        run: rustup target add ${{ matrix.target }}
+
+      - name: Generate configs (--prod, model variant)
+        run: python3 scripts/gen-config.py --prod --models src-tauri/${{ matrix.models_file }}
+
+      - name: Build frontend
+        working-directory: frontend
+        run: |
+          bun install
+          bun run build
+
+      - name: Cache bundled model assets
+        uses: actions/cache@v4
+        with:
+          path: bundled_model/
+          key: windows-models-${{ matrix.model_tag }}-${{ hashFiles(format('src-tauri/{0}', matrix.models_file)) }}
+
+      - name: Download active LLM + embedding model files for bundling
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          import tomllib
+          import urllib.request
+
+          cfg_path = pathlib.Path('src-tauri') / '${{ matrix.models_file }}'
+          cfg = tomllib.load(open(cfg_path, 'rb'))
+          out = pathlib.Path('bundled_model')
+          out.mkdir(parents=True, exist_ok=True)
+
+          for section in ('llm', 'embedding'):
+              url = cfg[section]['url']
+              name = cfg[section]['source_file']
+              dest = out / name
+              if dest.exists() and dest.stat().st_size > 0:
+                  print(f"Using cached {section}: {dest}")
+                  continue
+              print(f"Downloading {section}: {name}")
+              urllib.request.urlretrieve(url, dest)
+          PY
+
+      - name: Verify bundled model files exist
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          import tomllib
+
+          cfg_path = pathlib.Path('src-tauri') / '${{ matrix.models_file }}'
+          cfg = tomllib.load(open(cfg_path, 'rb'))
+          out = pathlib.Path('bundled_model')
+          missing = []
+          for section in ('llm', 'embedding'):
+              p = out / cfg[section]['source_file']
+              if not p.exists() or p.stat().st_size == 0:
+                  missing.append(str(p))
+          if missing:
+              raise SystemExit('Missing bundled model files: ' + ', '.join(missing))
+          print('All bundled model files present.')
+          PY
+
+      - name: Build NSIS installer with bundled model
+        env:
+          STUDENT_AI_MODELS: ${{ matrix.models_file }}
+        run: cargo tauri build --target ${{ matrix.target }} --config src-tauri/tauri-withmodel.conf.json
+
+      - name: Collect artifact
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist\windows | Out-Null
+           $installer = Get-ChildItem -Path target -Filter "*.exe" -Recurse |
+             Where-Object { $_.FullName -like "*\\bundle\\nsis\\*" } |
+                 Sort-Object LastWriteTime -Descending |
+                 Select-Object -First 1
+           if (-not $installer) { throw "No NSIS artifact found" }
+           Copy-Item $installer.FullName "dist\windows\StudentAI-windows-${{ matrix.arch_tag }}-${{ matrix.model_tag }}-withmodel.exe"
+          Get-ChildItem dist\windows
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: StudentAI-windows-${{ matrix.arch_tag }}-${{ matrix.model_tag }}-withmodel
+          path: dist/windows/*.exe
+          retention-days: 30
+
+      - name: Upload to GitHub Release (on tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/windows/*.exe
+          draft: false
+          prerelease: ${{ contains(github.ref, '-rc') || contains(github.ref, '-beta') || contains(github.ref, '-alpha') }}

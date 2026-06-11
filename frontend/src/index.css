@@ -1,0 +1,59 @@
+/* ── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg:           #09090b;
+  --bg-panel:     #111214;
+  --bg-elevated:  #161820;
+  --bg-hover:     #1c1e26;
+  --bg-active:    #222535;
+  --bg-input:     #141618;
+
+  /* Borders */
+  --border:       #1e2029;
+  --border-soft:  #181a22;
+
+  /* Text */
+  --text:         #e4e6f0;
+  --text-muted:   #7b7f96;
+  --text-faint:   #3a3d4e;
+
+  /* Accent — indigo */
+  --accent:       #6366f1;
+  --accent-h:     #7c7ff5;
+  --accent-soft:  rgba(99,102,241,.12);
+  --accent-glow:  rgba(99,102,241,.22);
+  --accent-dim:   rgba(99,102,241,.06);
+
+  /* Semantic */
+  --success:      #34d399;
+  --warn:         #f59e0b;
+  --warning:      #f59e0b;
+  --danger:       #f87171;
+  --bg-code:      #0c0e14;
+
+  /* Elevation shadows */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,.5);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.5);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.6);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.7);
+
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-feature-settings: "cv02","cv03","cv04","cv11";
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { height: 100dvh; overflow: hidden; background: var(--bg); }
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg-active); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #2d3040; }
+
+/* Focus ring */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }

@@ -1,0 +1,197 @@
+{
+  "course": "deep-learning",
+  "title": "Deep Learning: From Foundations to Frontiers",
+  "textbook_refs": [
+    "Goodfellow, Bengio, Courville: Deep Learning (MIT Press)",
+    "Bishop: Deep Learning (Cambridge)",
+    "Howard & Gugger: Deep Learning for Coders"
+  ],
+  "topics": [
+    {
+      "slug": "linear-algebra-dl",
+      "title": "Linear Algebra for Deep Learning: Tensors, Eigenvalues, and SVD",
+      "section": "Mathematical Foundations",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "calculus-dl",
+      "title": "Calculus for Deep Learning: Gradients, Jacobians, and Hessians",
+      "section": "Mathematical Foundations",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "probability-statistics-dl",
+      "title": "Probability and Statistics for Deep Learning: MLE, MAP, and Information Theory",
+      "section": "Mathematical Foundations",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "perceptron-mlp",
+      "title": "Perceptron to Multi-Layer Perceptron: Universal Approximation Theorem",
+      "section": "Neural Network Basics",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "activation-functions",
+      "title": "Activation Functions: Sigmoid, Tanh, ReLU, GELU, Swish, and Mish",
+      "section": "Neural Network Basics",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "loss-functions-dl",
+      "title": "Loss Functions: MSE, Cross-Entropy, Hinge, Focal Loss, and Contrastive Loss",
+      "section": "Neural Network Basics",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "weight-initialization",
+      "title": "Weight Initialization: Xavier, He, and Orthogonal Initialization Strategies",
+      "section": "Training Deep Networks",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "batch-normalization",
+      "title": "Batch Normalization: Algorithm, Internal Covariate Shift, and Variants (LN, GN, IN)",
+      "section": "Training Deep Networks",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dropout-regularization",
+      "title": "Dropout and Regularization: L1/L2, Dropout, DropBlock, and Data Augmentation",
+      "section": "Training Deep Networks",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "optimizers-sgd-adam",
+      "title": "Optimizers Deep Dive: SGD, Momentum, RMSProp, Adam, AdamW, and LAMB",
+      "section": "Training Deep Networks",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "learning-rate-scheduling",
+      "title": "Learning Rate Scheduling: Warmup, Cosine Annealing, and Cyclical LR",
+      "section": "Training Deep Networks",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "convolutional-operations",
+      "title": "Convolutional Operations: Stride, Padding, Dilation, Depthwise, and Transposed Convolutions",
+      "section": "CNNs",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "pooling-feature-maps",
+      "title": "Pooling and Feature Maps: Max Pooling, Global Average Pooling, and Spatial Pyramid",
+      "section": "CNNs",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "resnet-densenet",
+      "title": "ResNet and DenseNet: Skip Connections, Identity Shortcuts, and Feature Reuse",
+      "section": "CNN Architectures",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "efficientnet-mobilenet",
+      "title": "EfficientNet and MobileNet: Compound Scaling and Lightweight CNNs",
+      "section": "CNN Architectures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "attention-mechanisms",
+      "title": "Attention Mechanisms: Soft Attention, Hard Attention, and Self-Attention",
+      "section": "Transformers",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "positional-encoding",
+      "title": "Positional Encoding: Sinusoidal, Learned, and Rotary Position Embeddings",
+      "section": "Transformers",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bert-gpt-architectures",
+      "title": "BERT and GPT Architectures: Encoder-Only, Decoder-Only, and Encoder-Decoder",
+      "section": "Transformers",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "variational-autoencoders",
+      "title": "Variational Autoencoders: ELBO Objective, Reparameterization Trick, and β-VAE",
+      "section": "Generative Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "gans-architecture",
+      "title": "GANs In-Depth: DCGAN, Wasserstein GAN, StyleGAN, and Training Stability",
+      "section": "Generative Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "semantic-segmentation",
+      "title": "Semantic Segmentation: FCN, U-Net, DeepLab, and Panoptic Segmentation",
+      "section": "Computer Vision DL",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "pose-estimation",
+      "title": "Pose Estimation: OpenPose, HRNet, and 3D Human Pose Prediction",
+      "section": "Computer Vision DL",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "speech-recognition-dl",
+      "title": "Speech Recognition: CTC, RNN-T, Conformer, and Wav2Vec 2.0",
+      "section": "Audio and Speech",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "sequence-to-sequence",
+      "title": "Sequence-to-Sequence Models: Encoder-Decoder, Attention, and Beam Search",
+      "section": "NLP Deep Learning",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "text-classification-dl",
+      "title": "Text Classification: BERT Fine-Tuning, Prompt Engineering, and Few-Shot",
+      "section": "NLP Deep Learning",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "multi-modal-learning",
+      "title": "Multi-Modal Learning: CLIP, DALL-E, Flamingo, and Cross-Modal Alignment",
+      "section": "Advanced Topics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "knowledge-distillation",
+      "title": "Knowledge Distillation: Teacher-Student Training and Born-Again Networks",
+      "section": "Model Compression",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "quantization-pruning",
+      "title": "Quantization and Pruning: INT8, Mixed Precision, Magnitude Pruning, and Lottery Ticket",
+      "section": "Model Compression",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "neural-architecture-search",
+      "title": "Neural Architecture Search: DARTS, One-Shot NAS, and Evolutionary Methods",
+      "section": "AutoML",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "federated-learning-dl",
+      "title": "Federated Learning: FedAvg, Differential Privacy, and Communication Efficiency",
+      "section": "Advanced Topics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Deep Learning Interview Questions and Research Directions",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

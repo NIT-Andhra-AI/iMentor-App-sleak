@@ -1,0 +1,268 @@
+{
+  "id": "jntuk-placement-prep",
+  "title": "JNTUK CSE Complete Placement Preparation",
+  "version": "1.0.0",
+  "description": "Comprehensive placement preparation guide for JNTUK B.Tech CSE students covering aptitude, coding, technical MCQs, HR interviews, and company-specific strategies for TCS, Infosys, Wipro, Cognizant, Accenture, and product-based companies.",
+  "placement_domains": [
+    "SDE",
+    "Software Engineer",
+    "Associate Engineer",
+    "Graduate Engineer Trainee"
+  ],
+  "wiki_page_count": 16,
+  "module_count": 5,
+  "built_with": "jntuk-r20-manual",
+  "built_at": "2026-06-11",
+  "tags": [
+    "placement",
+    "aptitude",
+    "interview",
+    "jntuk",
+    "cse",
+    "tcs",
+    "infosys",
+    "wipro"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of JNTUK CSE Complete Placement Preparation",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "JNTUK Placement Prep — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "JNTUK Placement Prep — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "aptitude-quantitative",
+          "title": "Quantitative Aptitude: Numbers, Percentages, Ratios, Time-Work, Profit-Loss",
+          "type": "concept"
+        },
+        {
+          "slug": "aptitude-logical",
+          "title": "Logical Reasoning: Syllogisms, Blood Relations, Directions, Coding-Decoding",
+          "type": "concept"
+        },
+        {
+          "slug": "aptitude-verbal",
+          "title": "Verbal Ability: Reading Comprehension, Vocabulary, Grammar, Fill in the Blanks",
+          "type": "concept"
+        },
+        {
+          "slug": "coding-patterns",
+          "title": "Top 50 Coding Patterns: Arrays, Strings, Sliding Window, Two Pointers, BFS/DFS",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": []
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "placement-roadmap",
+          "title": "JNTUK Placement Roadmap: Timeline, Companies, Skills, and Strategy",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-interview-jntuk",
+          "title": "Data Structures Interview Q&A: 100 Questions for JNTUK Campus Placements",
+          "type": "interview"
+        },
+        {
+          "slug": "oops-interview-jntuk",
+          "title": "OOP Interview Q&A: Java and C++ Questions for Service and Product Companies",
+          "type": "interview"
+        },
+        {
+          "slug": "os-dbms-interview",
+          "title": "OS and DBMS Interview Q&A: Top Questions from TCS, Infosys, Wipro Drives",
+          "type": "interview"
+        },
+        {
+          "slug": "cn-interview-jntuk",
+          "title": "Computer Networks Interview Q&A: TCP/IP, Protocols, Subnetting Questions",
+          "type": "interview"
+        },
+        {
+          "slug": "tcs-nqt-guide",
+          "title": "TCS NQT Preparation Guide: Pattern, Sections, Strategy, Previous Questions",
+          "type": "interview"
+        },
+        {
+          "slug": "infosys-guide",
+          "title": "Infosys InfyTQ & Placement Guide: Technical and HR Interview Strategy",
+          "type": "interview"
+        },
+        {
+          "slug": "wipro-guide",
+          "title": "Wipro NLTH Placement Guide: AMCAT-Style Test, Technical Rounds, HR Prep",
+          "type": "interview"
+        },
+        {
+          "slug": "product-company-guide",
+          "title": "Product Company Preparation: DSA + System Design for TCS Digital, Amazon, Flipkart",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": [
+        {
+          "slug": "resume-hr-guide",
+          "title": "Resume Building & HR Interview: ATS-Friendly Resume, Common HR Questions, Negotiation",
+          "type": "reference"
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of JNTUK CSE Complete Placement Preparation",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "JNTUK Placement Prep — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "JNTUK Placement Prep — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "aptitude-quantitative",
+          "title": "Quantitative Aptitude: Numbers, Percentages, Ratios, Time-Work, Profit-Loss",
+          "type": "concept"
+        },
+        {
+          "slug": "aptitude-logical",
+          "title": "Logical Reasoning: Syllogisms, Blood Relations, Directions, Coding-Decoding",
+          "type": "concept"
+        },
+        {
+          "slug": "aptitude-verbal",
+          "title": "Verbal Ability: Reading Comprehension, Vocabulary, Grammar, Fill in the Blanks",
+          "type": "concept"
+        },
+        {
+          "slug": "coding-patterns",
+          "title": "Top 50 Coding Patterns: Arrays, Strings, Sliding Window, Two Pointers, BFS/DFS",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": []
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "placement-roadmap",
+          "title": "JNTUK Placement Roadmap: Timeline, Companies, Skills, and Strategy",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-interview-jntuk",
+          "title": "Data Structures Interview Q&A: 100 Questions for JNTUK Campus Placements",
+          "type": "interview"
+        },
+        {
+          "slug": "oops-interview-jntuk",
+          "title": "OOP Interview Q&A: Java and C++ Questions for Service and Product Companies",
+          "type": "interview"
+        },
+        {
+          "slug": "os-dbms-interview",
+          "title": "OS and DBMS Interview Q&A: Top Questions from TCS, Infosys, Wipro Drives",
+          "type": "interview"
+        },
+        {
+          "slug": "cn-interview-jntuk",
+          "title": "Computer Networks Interview Q&A: TCP/IP, Protocols, Subnetting Questions",
+          "type": "interview"
+        },
+        {
+          "slug": "tcs-nqt-guide",
+          "title": "TCS NQT Preparation Guide: Pattern, Sections, Strategy, Previous Questions",
+          "type": "interview"
+        },
+        {
+          "slug": "infosys-guide",
+          "title": "Infosys InfyTQ & Placement Guide: Technical and HR Interview Strategy",
+          "type": "interview"
+        },
+        {
+          "slug": "wipro-guide",
+          "title": "Wipro NLTH Placement Guide: AMCAT-Style Test, Technical Rounds, HR Prep",
+          "type": "interview"
+        },
+        {
+          "slug": "product-company-guide",
+          "title": "Product Company Preparation: DSA + System Design for TCS Digital, Amazon, Flipkart",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": [
+        {
+          "slug": "resume-hr-guide",
+          "title": "Resume Building & HR Interview: ATS-Friendly Resume, Common HR Questions, Negotiation",
+          "type": "reference"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# tools/course_gen/requirements.txt
+# Python dependencies for Student AI course generation tools.
+#
+# Install (from project root):
+#   pip install -r tools/course_gen/requirements.txt
+#
+# Or use the dev setup scripts:
+#   Ubuntu:   ./scripts/dev-setup.sh
+#   Windows:  .\scripts\dev-setup.ps1
+
+# LLM inference server (CPU build — no GPU)
+# GPU users: see https://llama-cpp-python.readthedocs.io/en/latest/#installation
+llama-cpp-python[server]>=0.3.0
+
+# OpenAI client (used to talk to llama-cpp-python's OpenAI-compatible endpoint)
+openai>=1.30.0
+
+# PDF extraction — pdfplumber is primary, pypdf as fallback
+pdfplumber>=0.11.0
+pypdf>=4.0.0
+
+# Data validation / structured LLM output schemas
+pydantic>=2.0.0
+
+# HTTP server dependencies (pulled in by fastapi used by admin dashboard)
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+
+# Admin dashboard extras
+aiofiles>=23.0.0
+httpx>=0.27.0
+
+# Gemini API — for cloud-powered course generation
+google-generativeai>=0.8.0

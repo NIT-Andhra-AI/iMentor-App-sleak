@@ -1,0 +1,293 @@
+{
+  "id": "jntuk-data-structures-python",
+  "title": "Data Structures & Python Programming (JNTUK R20)",
+  "version": "1.0.0",
+  "description": "JNTUK R20 Year 1 Sem 2 — Python programming fundamentals combined with core data structures (arrays, linked lists, stacks, queues, trees). Fully aligned to JNTUK B.Tech CSE R20 syllabus.",
+  "placement_domains": [
+    "Software Engineer",
+    "Data Analyst"
+  ],
+  "wiki_page_count": 19,
+  "module_count": 5,
+  "built_with": "jntuk-r20-manual",
+  "built_at": "2026-06-11",
+  "tags": [
+    "data-structures",
+    "python",
+    "jntuk",
+    "r20",
+    "year1"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Data Structures & Python Programming (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Data Structures & Python — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Data Structures & Python — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "python-basics",
+          "title": "Python Basics: Data Types, Variables, Operators, and Input/Output",
+          "type": "concept"
+        },
+        {
+          "slug": "python-control-flow",
+          "title": "Python Control Flow: if-elif-else, for, while, break, continue",
+          "type": "concept"
+        },
+        {
+          "slug": "python-functions",
+          "title": "Python Functions: def, Arguments, *args, **kwargs, Lambda, Recursion",
+          "type": "concept"
+        },
+        {
+          "slug": "python-lists-tuples",
+          "title": "Python Lists and Tuples: Indexing, Slicing, Comprehensions, Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "python-dicts-sets",
+          "title": "Python Dictionaries and Sets: CRUD Operations, Comprehensions, Counter",
+          "type": "concept"
+        },
+        {
+          "slug": "python-oop",
+          "title": "Python OOP: Classes, Objects, Inheritance, Polymorphism, Dunder Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "python-modules",
+          "title": "Python Modules and File Handling: import, os, csv, json",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-arrays-intro",
+          "title": "Arrays in Python: NumPy Arrays, 2D Arrays, Operations, and Complexity",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-linked-lists",
+          "title": "Linked Lists: Singly, Doubly, Circular — Python Implementation",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-stacks",
+          "title": "Stacks: LIFO Principle, Array and Linked List Implementation, Applications",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-queues",
+          "title": "Queues: FIFO, Circular Queue, Deque, Priority Queue in Python",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-trees",
+          "title": "Trees: Binary Trees, BST, Traversals — Python Implementation",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-sorting-searching",
+          "title": "Sorting and Searching: Bubble, Insertion, Selection, Binary Search",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "python-lab-basics",
+          "title": "Python Lab: Problem Solving with Basic Python",
+          "type": "lab"
+        },
+        {
+          "slug": "ds-lab-implementation",
+          "title": "Data Structures Lab: Stack, Queue, Linked List Implementation in Python",
+          "type": "lab"
+        },
+        {
+          "slug": "python-quiz",
+          "title": "Python and DS MCQ Quiz: JNTUK Pattern Questions",
+          "type": "quiz"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "ds-python-placement",
+          "title": "Placement Guide: Python and DS Interview Questions for JNTUK Students",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Data Structures & Python Programming (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Data Structures & Python — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Data Structures & Python — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "python-basics",
+          "title": "Python Basics: Data Types, Variables, Operators, and Input/Output",
+          "type": "concept"
+        },
+        {
+          "slug": "python-control-flow",
+          "title": "Python Control Flow: if-elif-else, for, while, break, continue",
+          "type": "concept"
+        },
+        {
+          "slug": "python-functions",
+          "title": "Python Functions: def, Arguments, *args, **kwargs, Lambda, Recursion",
+          "type": "concept"
+        },
+        {
+          "slug": "python-lists-tuples",
+          "title": "Python Lists and Tuples: Indexing, Slicing, Comprehensions, Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "python-dicts-sets",
+          "title": "Python Dictionaries and Sets: CRUD Operations, Comprehensions, Counter",
+          "type": "concept"
+        },
+        {
+          "slug": "python-oop",
+          "title": "Python OOP: Classes, Objects, Inheritance, Polymorphism, Dunder Methods",
+          "type": "concept"
+        },
+        {
+          "slug": "python-modules",
+          "title": "Python Modules and File Handling: import, os, csv, json",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-arrays-intro",
+          "title": "Arrays in Python: NumPy Arrays, 2D Arrays, Operations, and Complexity",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-linked-lists",
+          "title": "Linked Lists: Singly, Doubly, Circular — Python Implementation",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-stacks",
+          "title": "Stacks: LIFO Principle, Array and Linked List Implementation, Applications",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-queues",
+          "title": "Queues: FIFO, Circular Queue, Deque, Priority Queue in Python",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-trees",
+          "title": "Trees: Binary Trees, BST, Traversals — Python Implementation",
+          "type": "concept"
+        },
+        {
+          "slug": "ds-sorting-searching",
+          "title": "Sorting and Searching: Bubble, Insertion, Selection, Binary Search",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "python-lab-basics",
+          "title": "Python Lab: Problem Solving with Basic Python",
+          "type": "lab"
+        },
+        {
+          "slug": "ds-lab-implementation",
+          "title": "Data Structures Lab: Stack, Queue, Linked List Implementation in Python",
+          "type": "lab"
+        },
+        {
+          "slug": "python-quiz",
+          "title": "Python and DS MCQ Quiz: JNTUK Pattern Questions",
+          "type": "quiz"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "ds-python-placement",
+          "title": "Placement Guide: Python and DS Interview Questions for JNTUK Students",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

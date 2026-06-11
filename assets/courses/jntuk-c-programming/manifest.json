@@ -1,0 +1,272 @@
+{
+  "id": "jntuk-c-programming",
+  "title": "C Programming & Problem Solving (JNTUK R20)",
+  "version": "1.0.0",
+  "description": "JNTUK R20 Year 1 Sem 1 — C programming fundamentals, problem-solving techniques, algorithms, and lab exercises aligned to the JNTUK B.Tech CSE curriculum.",
+  "placement_domains": [
+    "Software Engineer",
+    "SDE"
+  ],
+  "wiki_page_count": 17,
+  "module_count": 5,
+  "built_with": "jntuk-r20-manual",
+  "built_at": "2026-06-11",
+  "tags": [
+    "c-programming",
+    "jntuk",
+    "r20",
+    "year1"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of C Programming & Problem Solving (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "C Programming — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "C Programming — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "intro-to-c",
+          "title": "Introduction to C: History, Structure, and First Program",
+          "type": "concept"
+        },
+        {
+          "slug": "data-types-variables",
+          "title": "Data Types, Variables, Constants, and Type Conversion in C",
+          "type": "concept"
+        },
+        {
+          "slug": "operators-expressions",
+          "title": "Operators and Expressions: Arithmetic, Relational, Logical, Bitwise",
+          "type": "concept"
+        },
+        {
+          "slug": "control-flow-c",
+          "title": "Control Flow: if-else, switch, for, while, do-while, break, continue",
+          "type": "concept"
+        },
+        {
+          "slug": "functions-c",
+          "title": "Functions: Declaration, Definition, Call, Recursion, and Scope",
+          "type": "concept"
+        },
+        {
+          "slug": "arrays-strings-c",
+          "title": "Arrays and Strings: 1D, 2D Arrays, String Functions, and Character Arrays",
+          "type": "concept"
+        },
+        {
+          "slug": "pointers-c",
+          "title": "Pointers: Pointer Arithmetic, Arrays and Pointers, Pointer to Pointer",
+          "type": "concept"
+        },
+        {
+          "slug": "structures-unions",
+          "title": "Structures and Unions: Nested Structures, Pointers to Structures, typedef",
+          "type": "concept"
+        },
+        {
+          "slug": "file-io-c",
+          "title": "File I/O in C: fopen, fclose, fread, fwrite, fprintf, fscanf",
+          "type": "concept"
+        },
+        {
+          "slug": "dynamic-memory",
+          "title": "Dynamic Memory Allocation: malloc, calloc, realloc, free",
+          "type": "concept"
+        },
+        {
+          "slug": "preprocessor-macros",
+          "title": "Preprocessor Directives: #define, #include, Macros, Conditional Compilation",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "c-lab-basic",
+          "title": "C Programming Lab: Basic Patterns and Control Flow Programs",
+          "type": "lab"
+        },
+        {
+          "slug": "c-lab-functions",
+          "title": "C Programming Lab: Functions and Recursion Exercises",
+          "type": "lab"
+        },
+        {
+          "slug": "c-lab-arrays-strings",
+          "title": "C Programming Lab: Array and String Manipulation Programs",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "c-placement-interview",
+          "title": "C Programming Placement Guide: JNTUK-Style Questions and Answers",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of C Programming & Problem Solving (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "C Programming — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "C Programming — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "intro-to-c",
+          "title": "Introduction to C: History, Structure, and First Program",
+          "type": "concept"
+        },
+        {
+          "slug": "data-types-variables",
+          "title": "Data Types, Variables, Constants, and Type Conversion in C",
+          "type": "concept"
+        },
+        {
+          "slug": "operators-expressions",
+          "title": "Operators and Expressions: Arithmetic, Relational, Logical, Bitwise",
+          "type": "concept"
+        },
+        {
+          "slug": "control-flow-c",
+          "title": "Control Flow: if-else, switch, for, while, do-while, break, continue",
+          "type": "concept"
+        },
+        {
+          "slug": "functions-c",
+          "title": "Functions: Declaration, Definition, Call, Recursion, and Scope",
+          "type": "concept"
+        },
+        {
+          "slug": "arrays-strings-c",
+          "title": "Arrays and Strings: 1D, 2D Arrays, String Functions, and Character Arrays",
+          "type": "concept"
+        },
+        {
+          "slug": "pointers-c",
+          "title": "Pointers: Pointer Arithmetic, Arrays and Pointers, Pointer to Pointer",
+          "type": "concept"
+        },
+        {
+          "slug": "structures-unions",
+          "title": "Structures and Unions: Nested Structures, Pointers to Structures, typedef",
+          "type": "concept"
+        },
+        {
+          "slug": "file-io-c",
+          "title": "File I/O in C: fopen, fclose, fread, fwrite, fprintf, fscanf",
+          "type": "concept"
+        },
+        {
+          "slug": "dynamic-memory",
+          "title": "Dynamic Memory Allocation: malloc, calloc, realloc, free",
+          "type": "concept"
+        },
+        {
+          "slug": "preprocessor-macros",
+          "title": "Preprocessor Directives: #define, #include, Macros, Conditional Compilation",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "c-lab-basic",
+          "title": "C Programming Lab: Basic Patterns and Control Flow Programs",
+          "type": "lab"
+        },
+        {
+          "slug": "c-lab-functions",
+          "title": "C Programming Lab: Functions and Recursion Exercises",
+          "type": "lab"
+        },
+        {
+          "slug": "c-lab-arrays-strings",
+          "title": "C Programming Lab: Array and String Manipulation Programs",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "c-placement-interview",
+          "title": "C Programming Placement Guide: JNTUK-Style Questions and Answers",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

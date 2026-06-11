@@ -1,0 +1,265 @@
+{
+  "id": "jntuk-software-engineering",
+  "title": "Software Engineering & Web Technologies (JNTUK R20)",
+  "version": "1.0.0",
+  "description": "JNTUK R20 Year 2-3 — Software Engineering covering SDLC, requirements, design, testing, and project management; Web Technologies covering HTML, CSS, JavaScript, React, and Node.js — aligned to JNTUK B.Tech CSE R20 syllabus.",
+  "placement_domains": [
+    "Software Engineer",
+    "Full Stack Developer",
+    "QA Engineer"
+  ],
+  "wiki_page_count": 16,
+  "module_count": 5,
+  "built_with": "jntuk-r20-manual",
+  "built_at": "2026-06-11",
+  "tags": [
+    "software-engineering",
+    "web-technologies",
+    "jntuk",
+    "r20",
+    "year2",
+    "year3"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Software Engineering & Web Technologies (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Software Engineering & Web Tech — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Software Engineering & Web Tech — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "sdlc-models",
+          "title": "SDLC Models: Waterfall, Agile, Scrum, Spiral, RAD — Comparison and Use Cases",
+          "type": "concept"
+        },
+        {
+          "slug": "requirements-engineering",
+          "title": "Requirements Engineering: Functional vs Non-Functional, Use Cases, SRS Document",
+          "type": "concept"
+        },
+        {
+          "slug": "software-design",
+          "title": "Software Design: Architectural Patterns, UML Diagrams, SOLID Principles",
+          "type": "concept"
+        },
+        {
+          "slug": "design-patterns-se",
+          "title": "Design Patterns: Creational, Structural, Behavioral — GoF Patterns with Examples",
+          "type": "concept"
+        },
+        {
+          "slug": "software-testing",
+          "title": "Software Testing: Unit, Integration, System, UAT, Black-box, White-box, TDD",
+          "type": "concept"
+        },
+        {
+          "slug": "software-metrics",
+          "title": "Software Metrics: LOC, Function Points, Cyclomatic Complexity, COCOMO Model",
+          "type": "concept"
+        },
+        {
+          "slug": "agile-scrum",
+          "title": "Agile and Scrum: Sprints, User Stories, Backlog, Velocity, CI/CD Pipelines",
+          "type": "concept"
+        },
+        {
+          "slug": "html-css-basics",
+          "title": "HTML5 and CSS3: Semantic Tags, Flexbox, Grid, Responsive Design, Media Queries",
+          "type": "concept"
+        },
+        {
+          "slug": "javascript-fundamentals",
+          "title": "JavaScript Fundamentals: DOM, Events, ES6+ Features, Async/Await, Fetch API",
+          "type": "concept"
+        },
+        {
+          "slug": "react-intro",
+          "title": "React.js Introduction: Components, Props, State, Hooks, Virtual DOM",
+          "type": "concept"
+        },
+        {
+          "slug": "nodejs-express",
+          "title": "Node.js and Express.js: REST APIs, Middleware, Authentication, MongoDB CRUD",
+          "type": "concept"
+        },
+        {
+          "slug": "web-security",
+          "title": "Web Security: XSS, CSRF, SQL Injection, HTTPS, JWT, OAuth2",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "web-lab",
+          "title": "Web Technologies Lab: Build a Full Stack Student Portal using React + Node.js",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "se-web-placement",
+          "title": "Placement Guide: Software Engineering & Web Tech Interview for JNTUK Students",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Software Engineering & Web Technologies (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Software Engineering & Web Tech — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Software Engineering & Web Tech — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "sdlc-models",
+          "title": "SDLC Models: Waterfall, Agile, Scrum, Spiral, RAD — Comparison and Use Cases",
+          "type": "concept"
+        },
+        {
+          "slug": "requirements-engineering",
+          "title": "Requirements Engineering: Functional vs Non-Functional, Use Cases, SRS Document",
+          "type": "concept"
+        },
+        {
+          "slug": "software-design",
+          "title": "Software Design: Architectural Patterns, UML Diagrams, SOLID Principles",
+          "type": "concept"
+        },
+        {
+          "slug": "design-patterns-se",
+          "title": "Design Patterns: Creational, Structural, Behavioral — GoF Patterns with Examples",
+          "type": "concept"
+        },
+        {
+          "slug": "software-testing",
+          "title": "Software Testing: Unit, Integration, System, UAT, Black-box, White-box, TDD",
+          "type": "concept"
+        },
+        {
+          "slug": "software-metrics",
+          "title": "Software Metrics: LOC, Function Points, Cyclomatic Complexity, COCOMO Model",
+          "type": "concept"
+        },
+        {
+          "slug": "agile-scrum",
+          "title": "Agile and Scrum: Sprints, User Stories, Backlog, Velocity, CI/CD Pipelines",
+          "type": "concept"
+        },
+        {
+          "slug": "html-css-basics",
+          "title": "HTML5 and CSS3: Semantic Tags, Flexbox, Grid, Responsive Design, Media Queries",
+          "type": "concept"
+        },
+        {
+          "slug": "javascript-fundamentals",
+          "title": "JavaScript Fundamentals: DOM, Events, ES6+ Features, Async/Await, Fetch API",
+          "type": "concept"
+        },
+        {
+          "slug": "react-intro",
+          "title": "React.js Introduction: Components, Props, State, Hooks, Virtual DOM",
+          "type": "concept"
+        },
+        {
+          "slug": "nodejs-express",
+          "title": "Node.js and Express.js: REST APIs, Middleware, Authentication, MongoDB CRUD",
+          "type": "concept"
+        },
+        {
+          "slug": "web-security",
+          "title": "Web Security: XSS, CSRF, SQL Injection, HTTPS, JWT, OAuth2",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "web-lab",
+          "title": "Web Technologies Lab: Build a Full Stack Student Portal using React + Node.js",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "se-web-placement",
+          "title": "Placement Guide: Software Engineering & Web Tech Interview for JNTUK Students",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

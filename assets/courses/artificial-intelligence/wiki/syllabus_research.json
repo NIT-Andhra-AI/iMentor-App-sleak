@@ -1,0 +1,27 @@
+{
+  "course": "artificial-intelligence",
+  "sources_found": [
+    "MIT 6.034: https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/",
+    "Stanford CS221: https://stanford-cs221.github.io/",
+    "UC Berkeley CS188: https://inst.eecs.berkeley.edu/~cs188/sp24/",
+    "CMU 15-381: https://www.cs.cmu.edu/~./15381/",
+    "IIT Bombay CS747: https://www.cse.iitb.ac.in/~shivaram/teaching/cs747-a2022-23/index.html",
+    "Caltech CS156: http://work.caltech.edu/telecourse.html"
+  ],
+  "master_topics": [
+    {"slug": "overview", "title": "Introduction to Artificial Intelligence", "source_universities": ["MIT", "Stanford", "Berkeley", "CMU"], "week": 1},
+    {"slug": "intelligent-agents", "title": "Intelligent Agents", "source_universities": ["Berkeley", "CMU", "IIT Bombay"], "week": 1},
+    {"slug": "search-algorithms", "title": "Uninformed Search", "source_universities": ["MIT", "Stanford", "Berkeley", "CMU"], "week": 2},
+    {"slug": "informed-search", "title": "Informed Search", "source_universities": ["MIT", "Stanford", "Berkeley", "CMU"], "week": 3},
+    {"slug": "adversarial-search", "title": "Adversarial Search", "source_universities": ["MIT", "Stanford", "Berkeley", "CMU"], "week": 4},
+    {"slug": "constraint-satisfaction", "title": "Constraint Satisfaction Problems", "source_universities": ["MIT", "Stanford", "Berkeley", "CMU"], "week": 5},
+    {"slug": "knowledge-representation", "title": "Knowledge Representation", "source_universities": ["MIT", "CMU"], "week": 6},
+    {"slug": "propositional-logic", "title": "Propositional Logic", "source_universities": ["Stanford", "CMU"], "week": 6},
+    {"slug": "first-order-logic", "title": "First-Order Logic", "source_universities": ["Stanford", "CMU"], "week": 7},
+    {"slug": "bayesian-networks", "title": "Bayesian Networks", "source_universities": ["Stanford", "Berkeley", "CMU"], "week": 8},
+    {"slug": "markov-decision-processes", "title": "Markov Decision Processes", "source_universities": ["Stanford", "Berkeley", "CMU", "IIT Bombay"], "week": 9},
+    {"slug": "natural-language-processing", "title": "Natural Language Processing", "source_universities": ["MIT", "CMU"], "week": 10},
+    {"slug": "transformer-architecture", "title": "Transformer Architecture", "source_universities": [], "week": 11},
+    {"slug": "interview-prep", "title": "Interview Preparation", "source_universities": [], "week": 12}
+  ]
+}

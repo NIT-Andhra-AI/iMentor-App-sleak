@@ -1,0 +1,18 @@
+[package]
+name = "rag"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+instant-distance = "0.6"
+lopdf = "0.32"
+docx-rs = "0.4"
+bincode = "1"
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+unicode-segmentation = "1"
+uuid = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"

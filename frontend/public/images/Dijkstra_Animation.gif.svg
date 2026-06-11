@@ -1,0 +1,95 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+    <title>Dijkstra's Shortest Path Algorithm</title>
+    <desc>An animation of Dijkstra's algorithm finding the shortest path from node A to all other nodes in a weighted graph.</desc>
+    <style>
+        .bg { fill: #f8fafc; }
+        .title { font-family: system-ui, sans-serif; font-size: 24px; text-anchor: middle; fill: #334155; }
+        .desc-text { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #475569; }
+        
+        .node circle { stroke-width: 2; stroke: #64748b; fill: #f1f5f9; }
+        .node text { font-family: system-ui, sans-serif; font-size: 18px; text-anchor: middle; dominant-baseline: central; fill: #1e293b; }
+        .dist-text { font-family: system-ui, sans-serif; font-size: 14px; text-anchor: middle; fill: #4c1d95; animation: fade-in 1s forwards; }
+        
+        .edge { stroke: #cbd5e1; stroke-width: 2; }
+        .edge-label { font-family: system-ui, sans-serif; font-size: 14px; fill: #475569; text-anchor: middle; }
+
+        .visited circle { fill: #a7f3d0; stroke: #10b981; }
+        .path { stroke: #2563eb; stroke-width: 4; animation: draw-path 2s forwards; }
+
+        .node-a, .node-b, .node-c, .node-d, .node-e, .node-f,
+        .edge-ab, .edge-ac, .edge-bd, .edge-be, .edge-cd, .edge-ce, .edge-df, .edge-ef {
+            opacity: 0;
+            animation: fade-in 1s forwards;
+        }
+
+        .dist-b, .dist-c, .dist-d, .dist-e, .dist-f { opacity: 0; }
+        
+        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+        .node-a { animation-delay: 0s; }
+        .node-b { animation-delay: 0.5s; }
+        .node-c { animation-delay: 0.5s; }
+        .node-d { animation-delay: 1s; }
+        .node-e { animation-delay: 1s; }
+        .node-f { animation-delay: 1.5s; }
+
+        .edge-ab, .edge-ac, .edge-bd, .edge-be, .edge-cd, .edge-ce, .edge-df, .edge-ef { animation-delay: 2s; }
+
+        #dist-a { animation: fade-in 1s 3s forwards; }
+        #node-a-g.visited { animation: visit 1s 3s forwards; }
+        
+        #dist-c { animation: fade-in 1s 4s forwards; }
+        #node-c-g.visited { animation: visit 1s 4s forwards; }
+        .edge-ac.path { animation: draw-path 1s 4.5s forwards; }
+        
+        #dist-b { animation: fade-in 1s 5s forwards; }
+        #node-b-g.visited { animation: visit 1s 5s forwards; }
+        .edge-ab.path { animation: draw-path 1s 5.5s forwards; }
+        
+        #dist-d { animation: fade-in 1s 6s forwards; }
+        #node-d-g.visited { animation: visit 1s 6s forwards; }
+        .edge-cd.path { animation: draw-path 1s 6.5s forwards; }
+        
+        #dist-e { animation: fade-in 1s 7s forwards; }
+        #node-e-g.visited { animation: visit 1s 7s forwards; }
+        .edge-be.path { animation: draw-path 1s 7.5s forwards; }
+        
+        #dist-f { animation: fade-in 1s 8s forwards; }
+        #node-f-g.visited { animation: visit 1s 8s forwards; }
+        .edge-df.path { animation: draw-path 1s 8.5s forwards; }
+        
+        @keyframes visit { from { fill: #f1f5f9; stroke: #64748b; } to { fill: #a7f3d0; stroke: #10b981; } }
+        @keyframes draw-path { from { stroke-dasharray: 200; stroke-dashoffset: 200; } to { stroke-dasharray: 200; stroke-dashoffset: 0; } }
+    </style>
+    
+    <rect width="640" height="360" class="bg" />
+    <text x="320" y="30" class="title">Dijkstra's Algorithm</text>
+    <text x="320" y="55" class="desc-text">Finding the shortest paths from a source node (A) to all others.</text>
+
+    <g id="graph">
+        <!-- Edges -->
+        <line class="edge edge-ac" x1="100" y1="180" x2="250" y2="120" /> <text class="edge-label" x="175" y="140">2</text>
+        <line class="edge edge-ab" x1="100" y1="180" x2="250" y2="240" /> <text class="edge-label" x="175" y="220">4</text>
+        <line class="edge edge-cd" x1="250" y1="120" x2="400" y2="120" /> <text class="edge-label" x="325" y="110">3</text>
+        <line class="edge edge-ce" x1="250" y1="120" x2="400" y2="240" /> <text class="edge-label" x="325" y="170">7</text>
+        <line class="edge edge-bd" x1="250" y1="240" x2="400" y2="120" /> <text class="edge-label" x="325" y="190">1</text>
+        <line class="edge edge-be" x1="250" y1="240" x2="400" y2="240" /> <text class="edge-label" x="325" y="255">5</text>
+        <line class="edge edge-df" x1="400" y1="120" x2="550" y2="180" /> <text class="edge-label" x="475" y="140">1</text>
+        <line class="edge edge-ef" x1="400" y1="240" x2="550" y2="180" /> <text class="edge-label" x="475" y="220">6</text>
+        
+        <!-- Shortest Path Highlight -->
+        <line class="edge edge-ac path" x1="100" y1="180" x2="250" y2="120" />
+        <line class="edge edge-cd path" x1="250" y1="120" x2="400" y2="120" />
+        <line class="edge edge-bd path" x1="250" y1="240" x2="400" y2="120" />
+        <line class="edge edge-be path" x1="250" y1="240" x2="400" y2="240" />
+        <line class="edge edge-df path" x1="400" y1="120" x2="550" y2="180" />
+        
+        <!-- Nodes -->
+        <g id="node-a-g" class="node node-a visited"><circle cx="100" cy="180" r="20" /><text x="100" y="180">A</text><text id="dist-a" class="dist-text" x="100" y="215">d=0</text></g>
+        <g id="node-b-g" class="node node-b visited"><circle cx="250" cy="240" r="20" /><text x="250" y="240">B</text><text id="dist-b" class="dist-text" x="250" y="275">d=4</text></g>
+        <g id="node-c-g" class="node node-c visited"><circle cx="250" cy="120" r="20" /><text x="250" y="120">C</text><text id="dist-c" class="dist-text" x="250" y="85">d=2</text></g>
+        <g id="node-d-g" class="node node-d visited"><circle cx="400" cy="120" r="20" /><text x="400" y="120">D</text><text id="dist-d" class="dist-text" x="400" y="85">d=5</text></g>
+        <g id="node-e-g" class="node node-e visited"><circle cx="400" cy="240" r="20" /><text x="400" y="240">E</text><text id="dist-e" class="dist-text" x="400" y="275">d=9</text></g>
+        <g id="node-f-g" class="node node-f visited"><circle cx="550" cy="180" r="20" /><text x="550" y="180">F</text><text id="dist-f" class="dist-text" x="550" y="215">d=6</text></g>
+    </g>
+</svg>

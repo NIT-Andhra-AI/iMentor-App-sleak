@@ -1,0 +1,101 @@
+{
+  "course": "robotics",
+  "title": "Robotics: Modelling, Planning, and Control",
+  "textbook_refs": [
+    "Siciliano et al.: Robotics: Modelling, Planning and Control",
+    "Thrun, Burgard, Fox: Probabilistic Robotics",
+    "LaValle: Planning Algorithms"
+  ],
+  "topics": [
+    {
+      "slug": "euler-angles-quaternions",
+      "title": "Euler Angles and Quaternions: Rotation Representations and Gimbal Lock",
+      "section": "Math for Robotics",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "homogeneous-transforms",
+      "title": "Homogeneous Transformation Matrices: Composition of Rotations and Translations",
+      "section": "Math for Robotics",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "workspace-analysis",
+      "title": "Workspace Analysis: Reachable and Dexterous Workspace of Robot Arms",
+      "section": "Kinematics",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "force-torque-control",
+      "title": "Force and Torque Control: Impedance Control and Force-Position Hybrid Control",
+      "section": "Control",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "mobile-robot-kinematics",
+      "title": "Mobile Robot Kinematics: Differential Drive, Ackermann Steering, and Holonomic Robots",
+      "section": "Mobile Robotics",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "occupancy-grid-mapping",
+      "title": "Occupancy Grid Mapping: Bayesian Updates and Log-Odds Representation",
+      "section": "Mapping",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "graph-slam",
+      "title": "Graph-Based SLAM: Pose Graphs, g2o, and Factor Graph Optimization",
+      "section": "SLAM",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "deep-learning-robotics",
+      "title": "Deep Learning for Robotics: Object Grasping, Visual Servoing, and Scene Understanding",
+      "section": "Learning-Based Robotics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "motion-primitives",
+      "title": "Motion Primitives and Trajectory Libraries: Dynamic Movement Primitives (DMP)",
+      "section": "Motion Planning",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "soft-robotics",
+      "title": "Soft Robotics: Continuum Mechanics, Actuation Mechanisms, and Control Challenges",
+      "section": "Robot Design",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "human-robot-interaction",
+      "title": "Human-Robot Interaction: Safety Standards, Cobots, and Intent Prediction",
+      "section": "HRI",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "multi-robot-systems",
+      "title": "Multi-Robot Systems: Task Allocation, Formation Control, and Swarm Robotics",
+      "section": "Multi-Robot",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "drone-uav-systems",
+      "title": "Drone and UAV Systems: Quadrotor Dynamics, PX4, and Autonomous Navigation",
+      "section": "Aerial Robotics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "robotic-manipulation-advanced",
+      "title": "Advanced Manipulation: Grasp Planning, Regrasping, and In-Hand Manipulation",
+      "section": "Manipulation",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Robotics Industry Overview, Interview Topics, and Research Areas",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

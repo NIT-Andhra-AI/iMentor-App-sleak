@@ -1,0 +1,191 @@
+{
+  "course": "machine-learning",
+  "title": "Machine Learning: Theory and Practice",
+  "textbook_refs": [
+    "Bishop: Pattern Recognition and Machine Learning",
+    "Murphy: Probabilistic Machine Learning: An Introduction",
+    "Hastie, Tibshirani, Friedman: Elements of Statistical Learning 2nd Ed"
+  ],
+  "topics": [
+    {
+      "slug": "ml-foundations",
+      "title": "ML Foundations: Statistical Learning Theory, PAC Learning, and VC Dimension",
+      "section": "Theory",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bias-variance-tradeoff",
+      "title": "Bias-Variance Trade-off: Decomposition, Model Complexity, and Regularization",
+      "section": "Theory",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "gradient-descent-variants",
+      "title": "Gradient Descent Variants: Batch, Mini-Batch, SGD, Momentum, and AdaGrad",
+      "section": "Optimization",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "regularization-techniques",
+      "title": "Regularization Techniques: L1 (Lasso), L2 (Ridge), Elastic Net, and Early Stopping",
+      "section": "Optimization",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "cross-validation-techniques",
+      "title": "Cross-Validation: K-Fold, Stratified, Leave-One-Out, and Nested CV",
+      "section": "Model Evaluation",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "hyperparameter-tuning",
+      "title": "Hyperparameter Tuning: Grid Search, Random Search, and Bayesian Optimization",
+      "section": "Model Evaluation",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bayesian-linear-regression",
+      "title": "Bayesian Linear Regression: Prior/Posterior Updates and Predictive Distribution",
+      "section": "Probabilistic Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "gaussian-processes",
+      "title": "Gaussian Processes: Kernel Functions, Posterior Inference, and GPR/GPC",
+      "section": "Probabilistic Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "probabilistic-graphical-models",
+      "title": "Probabilistic Graphical Models: Bayesian Networks, MRFs, and Inference Algorithms",
+      "section": "Probabilistic Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "expectation-maximization",
+      "title": "Expectation-Maximization Algorithm: GMMs, Missing Data, and K-Means as EM",
+      "section": "Unsupervised Learning",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "clustering-algorithms",
+      "title": "Clustering Algorithms: K-Means, DBSCAN, Hierarchical, Spectral, and Mean Shift",
+      "section": "Unsupervised Learning",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "anomaly-detection",
+      "title": "Anomaly Detection: Isolation Forest, One-Class SVM, and Autoencoders",
+      "section": "Unsupervised Learning",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "kernel-methods",
+      "title": "Kernel Methods: Kernel Trick, Mercer's Theorem, and Kernel PCA",
+      "section": "Advanced Supervised",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "gradient-boosting-xgboost",
+      "title": "Gradient Boosting: XGBoost, LightGBM, CatBoost — Algorithms and Tuning",
+      "section": "Ensemble Methods",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "random-forests-deep-dive",
+      "title": "Random Forests In-Depth: Feature Importance, OOB Error, and Extremely Randomized Trees",
+      "section": "Ensemble Methods",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "multi-label-classification",
+      "title": "Multi-Label Classification: Label Powerset, Classifier Chains, and Evaluation Metrics",
+      "section": "Classification",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "imbalanced-learning",
+      "title": "Imbalanced Data Handling: SMOTE, Oversampling, Undersampling, and Cost-Sensitive Learning",
+      "section": "Classification",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "survival-analysis",
+      "title": "Survival Analysis: Kaplan-Meier Estimator, Cox Regression, and Hazard Functions",
+      "section": "Specialized Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "causal-inference-ml",
+      "title": "Causal Inference in ML: Do-Calculus, Propensity Scores, and Double ML",
+      "section": "Specialized Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "ranking-learning-to-rank",
+      "title": "Learning-to-Rank: Pointwise, Pairwise, Listwise, and LambdaRank",
+      "section": "Specialized Models",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "active-learning",
+      "title": "Active Learning: Query Strategies, Uncertainty Sampling, and Pool-Based Selection",
+      "section": "Learning Paradigms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "semi-supervised-learning",
+      "title": "Semi-Supervised Learning: Label Propagation, Self-Training, and Co-Training",
+      "section": "Learning Paradigms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "multi-task-learning",
+      "title": "Multi-Task Learning: Hard Parameter Sharing, Soft Sharing, and Task Weighting",
+      "section": "Learning Paradigms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "meta-learning",
+      "title": "Meta-Learning: MAML, Prototypical Networks, and Few-Shot Classification",
+      "section": "Learning Paradigms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "data-preprocessing-pipeline",
+      "title": "Data Preprocessing Pipelines: Imputation, Scaling, Encoding, and Pipelines",
+      "section": "Feature Engineering",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "feature-selection-methods",
+      "title": "Feature Selection: Filter, Wrapper, Embedded Methods, and Mutual Information",
+      "section": "Feature Engineering",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "class-imbalance-metrics",
+      "title": "ML Metrics for Imbalanced Classes: AUC-ROC, Precision-Recall Curve, and F1",
+      "section": "Model Evaluation",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "explainability-shap",
+      "title": "ML Explainability: LIME, SHAP Values, Partial Dependence Plots, and Anchors",
+      "section": "Responsible ML",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "ml-privacy",
+      "title": "Privacy in ML: Differential Privacy, Federated Learning, and Membership Inference",
+      "section": "Responsible ML",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "tabular-deep-learning",
+      "title": "Deep Learning for Tabular Data: TabNet, Entity Embeddings, and NODE",
+      "section": "Advanced Topics",
+      "difficulty": "advanced"
+    }
+  ]
+}

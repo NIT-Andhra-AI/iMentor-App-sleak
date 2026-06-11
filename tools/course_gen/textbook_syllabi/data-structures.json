@@ -1,0 +1,179 @@
+{
+  "course": "data-structures",
+  "title": "Data Structures and Algorithms: Foundations",
+  "textbook_refs": [
+    "CLRS 4th Ed",
+    "Goodrich & Tamassia: Data Structures and Algorithms in Python",
+    "Sedgewick & Wayne: Algorithms 4th Ed"
+  ],
+  "topics": [
+    {
+      "slug": "complexity-analysis",
+      "title": "Complexity Analysis: Big-O, Theta, Omega, and Space Complexity",
+      "section": "Foundations",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "recursion-basics",
+      "title": "Recursion: Base Cases, Call Stack, and Tail Recursion Optimization",
+      "section": "Foundations",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "dynamic-arrays",
+      "title": "Dynamic Arrays: Amortized Analysis and ArrayList Internals",
+      "section": "Arrays and Strings",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "string-operations",
+      "title": "String Operations: Manipulation, Pattern Matching, and StringBuilder",
+      "section": "Arrays and Strings",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "matrix-operations",
+      "title": "Matrix Operations: 2D Arrays, Rotation, Transposition, and Spiral Traversal",
+      "section": "Arrays and Strings",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "singly-linked-list",
+      "title": "Singly Linked List: Insertion, Deletion, Reversal, and Floyd's Cycle Detection",
+      "section": "Linked Lists",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "doubly-circular-linked",
+      "title": "Doubly and Circular Linked Lists: Operations and LRU Cache Implementation",
+      "section": "Linked Lists",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "stack-implementation",
+      "title": "Stack Implementation: Array and Linked List Backed, Monotonic Stack Uses",
+      "section": "Stacks and Queues",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "queue-deque",
+      "title": "Queue and Deque: Circular Buffer, Priority Queue, and Sliding Window Maximum",
+      "section": "Stacks and Queues",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "binary-tree-fundamentals",
+      "title": "Binary Tree Fundamentals: Properties, Traversals, and Reconstruction",
+      "section": "Trees",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "bst-operations",
+      "title": "Binary Search Tree Operations: Search, Insert, Delete, and Successor",
+      "section": "Trees",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "avl-trees",
+      "title": "AVL Trees: Rotation Operations, Balance Factor, and Height Analysis",
+      "section": "Trees",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "red-black-trees",
+      "title": "Red-Black Trees: Color Properties, Insertions, and Deletions",
+      "section": "Trees",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "b-trees-and-variants",
+      "title": "B-Trees and B+ Trees: Disk-Based Storage and Database Indexing",
+      "section": "Trees",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "trie-data-structure",
+      "title": "Trie (Prefix Tree): Insert, Search, Autocomplete, and Compressed Trie",
+      "section": "Trees",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "segment-tree-ds",
+      "title": "Segment Trees: Range Sum, Range Minimum, and Lazy Propagation",
+      "section": "Advanced Trees",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "fenwick-tree-ds",
+      "title": "Fenwick Tree (BIT): Point Updates and Prefix Queries",
+      "section": "Advanced Trees",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "heap-operations",
+      "title": "Heap Operations: Heapify, Extract-Min/Max, Heap Sort, and k-th Largest",
+      "section": "Heaps",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "hash-table-internals",
+      "title": "Hash Table Internals: Hash Functions, Chaining, and Open Addressing",
+      "section": "Hashing",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bloom-filters",
+      "title": "Bloom Filters and Probabilistic Data Structures: Count-Min Sketch",
+      "section": "Hashing",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "graph-representation",
+      "title": "Graph Representation: Adjacency Matrix, List, and Edge List Comparison",
+      "section": "Graphs",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "bfs-dfs-algorithms",
+      "title": "BFS and DFS: Traversal, Connected Components, and Cycle Detection",
+      "section": "Graphs",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "union-find-ds",
+      "title": "Union-Find (Disjoint Sets): Union by Rank and Path Compression",
+      "section": "Graphs",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "skip-list-ds",
+      "title": "Skip List: Probabilistic Layered Structure and O(log n) Operations",
+      "section": "Advanced Structures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "van-emde-boas",
+      "title": "Van Emde Boas Trees and Integer Data Structure Optimizations",
+      "section": "Advanced Structures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "persistent-data-structures",
+      "title": "Persistent Data Structures: Immutable Updates and Functional Trees",
+      "section": "Advanced Structures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "external-data-structures",
+      "title": "External Memory Data Structures: Buffer Trees and Cache-Oblivious Layouts",
+      "section": "Advanced Structures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Data Structures Interview Tips and Common Patterns",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "course": "vlsi-design",
+  "title": "VLSI Design: Circuits, Systems, and Applications",
+  "textbook_refs": [
+    "Weste & Harris: CMOS VLSI Design 4th Ed",
+    "Rabaey, Chandrakasan, Nikolic: Digital Integrated Circuits 2nd Ed",
+    "Uyemura: Introduction to VLSI Circuits and Systems"
+  ],
+  "topics": [
+    {
+      "slug": "mos-transistor-theory",
+      "title": "MOS Transistor Theory: Threshold Voltage, I-V Characteristics, and Short-Channel Effects",
+      "section": "Device Physics",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "transmission-gates-pass-transistors",
+      "title": "Transmission Gates and Pass Transistor Logic: Design and Analysis",
+      "section": "CMOS Circuits",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dynamic-cmos-circuits",
+      "title": "Dynamic CMOS Circuits: Domino Logic, NORA, and Charge Sharing",
+      "section": "CMOS Circuits",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "standard-cell-design",
+      "title": "Standard Cell Library Design: Cell Layout, Characterization, and LEF/DEF",
+      "section": "Physical Design",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "power-grid-design",
+      "title": "Power Grid Design and IR Drop Analysis: Decoupling Capacitors and EM Rules",
+      "section": "Physical Design",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "eda-tools-flow",
+      "title": "EDA Tools and Design Flow: Synopsys, Cadence, and Mentor Toolchains",
+      "section": "Design Flow",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "functional-verification",
+      "title": "Functional Verification: UVM Methodology, Assertions (SVA), and Coverage-Driven Verification",
+      "section": "Verification",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "formal-verification-vlsi",
+      "title": "Formal Verification: Equivalence Checking, Model Checking with CBMC and Cadence JasperGold",
+      "section": "Verification",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "analog-mixed-signal",
+      "title": "Analog and Mixed-Signal Design: ADC, DAC, PLLs, and Op-Amp Basics",
+      "section": "Mixed-Signal",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "rf-vlsi",
+      "title": "RF VLSI Design: LNA, Mixer, and PA Design for Wireless Chips",
+      "section": "RF Design",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "advanced-packaging",
+      "title": "Advanced Packaging: 2.5D/3D ICs, Chiplets, and HBM Memory Integration",
+      "section": "Packaging",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "tcl-scripting-eda",
+      "title": "TCL Scripting for EDA Automation: Synopsys DC, Innovus, and Calibre Scripts",
+      "section": "Design Automation",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "emulation-fpga-prototype",
+      "title": "FPGA-Based Prototyping and Emulation: Veloce, Palladium, and Design Partitioning",
+      "section": "Prototyping",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: VLSI Industry Overview, Interview Topics, and Job Roles (DFT, PD, DV)",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

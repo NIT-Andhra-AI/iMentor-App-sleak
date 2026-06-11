@@ -1,0 +1,24 @@
+# Student AI — Model Configuration: Qwen2.5-4B-Instruct Q4_K_M
+#
+# RAM tier: 10 GB+  (2.7 GB model + ~512 MB KV cache + ~1 GB app overhead)
+# Architecture: Dense 4B parameters, strong instruction following
+# Context: 32k tokens
+#
+# Note: Qwen2.5 does not support /no_think (that is a Qwen3 feature).
+# This model provides high-quality chat on mid-range laptops.
+#
+# To activate: set STUDENT_AI_MODELS=models-qwen25.toml before build
+
+[llm]
+display_name = "AI Language Model"
+source_file  = "Qwen2.5-4B-Instruct-Q4_K_M.gguf"
+file_name    = "chat-model-3.gguf"
+url          = "https://huggingface.co/bartowski/Qwen2.5-4B-Instruct-GGUF/resolve/main/Qwen2.5-4B-Instruct-Q4_K_M.gguf?download=true"
+size_mb      = 2694
+
+[embedding]
+display_name = "Document Search Model"
+source_file  = "bge-small-en-v1.5-q8_0.gguf"
+file_name    = "rag-model-1.gguf"
+url          = "https://huggingface.co/CompendiumLabs/bge-small-en-v1.5-gguf/resolve/main/bge-small-en-v1.5-q8_0.gguf"
+size_mb      = 35

@@ -1,0 +1,25 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.env": true,
+    "**/.env.*": true,
+    "**/target": true,
+    "**/Cargo.lock": true,
+    "**/Cargo.toml": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.env": true,
+    "**/.env.*": true,
+    "**/target": true,
+    "**/Cargo.lock": true,
+    "**/Cargo.toml": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.env": true,
+    "**/.env.*": true,
+    "**/target/**": true,
+    "**/Cargo.toml": true
+  }
+}

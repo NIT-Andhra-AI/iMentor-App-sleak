@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student AI — Admin Dashboard</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.3/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:      #0d0e10;
+      --surface: #16181c;
+      --border:  #2a2d35;
+      --text:    #e9ecef;
+      --muted:   #8b949e;
+      --blue:    #58a6ff;
+      --green:   #3fb950;
+      --yellow:  #d29922;
+      --red:     #f85149;
+    }
+    body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; font-size: 14px; }
+    a { color: var(--blue); text-decoration: none; }
+
+    /* ── Layout ── */
+    header { background: var(--surface); border-bottom: 1px solid var(--border);
+             padding: 0 24px; height: 56px; display: flex; align-items: center; gap: 16px; }
+    header h1 { font-size: 16px; font-weight: 600; }
+    header .badge { font-size: 11px; background: var(--border); padding: 2px 8px; border-radius: 9999px; color: var(--muted); }
+    .key-row { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+    .key-row input { background: var(--bg); border: 1px solid var(--border); color: var(--text);
+                     padding: 5px 10px; border-radius: 6px; font-size: 12px; width: 240px; }
+    .key-row button { background: var(--blue); color: #000; border: none; padding: 5px 14px;
+                      border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600; }
+
+    main { padding: 24px; max-width: 1200px; margin: 0 auto; }
+
+    /* ── Stat cards ── */
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+    .card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .card .value { font-size: 28px; font-weight: 700; margin-top: 6px; }
+    .card .sub   { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+    /* ── Charts row ── */
+    .charts { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .chart-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; }
+    .chart-box h2 { font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 14px; }
+
+    /* ── Sections ── */
+    .section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+               padding: 20px; margin-bottom: 20px; }
+    .section h2 { font-size: 14px; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+
+    /* ── Tables ── */
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px;
+         border-bottom: 1px solid var(--border); font-size: 11px; text-transform: uppercase; }
+    td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,.03); }
+    .mode-pill { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; }
+    .mode-general  { background: #1f6feb22; color: #58a6ff; }
+    .mode-course   { background: #3fb95022; color: #3fb950; }
+    .mode-user_docs{ background: #d2992222; color: #d29922; }
+
+    /* ── Course upload form ── */
+    .upload-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .upload-form label { font-size: 11px; color: var(--muted); display: block; margin-bottom: 4px; }
+    .upload-form input, .upload-form textarea {
+      width: 100%; background: var(--bg); border: 1px solid var(--border);
+      color: var(--text); padding: 7px 10px; border-radius: 6px; font-size: 12px;
+    }
+    .upload-form .full { grid-column: 1/-1; }
+    .btn { padding: 7px 16px; border-radius: 6px; border: none; cursor: pointer;
+           font-size: 12px; font-weight: 600; }
+    .btn-primary { background: var(--blue); color: #000; }
+    .btn-danger  { background: #f8514922; color: var(--red); border: 1px solid #f8514944; }
+    .toast { position: fixed; bottom: 24px; right: 24px; background: var(--surface);
+             border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px;
+             font-size: 12px; display: none; z-index: 999; }
+    .toast.show { display: block; }
+    .pagination { display: flex; gap: 8px; align-items: center; margin-top: 12px; font-size: 12px; color: var(--muted); }
+    .pagination button { background: var(--border); border: none; color: var(--text);
+                         padding: 4px 10px; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎓 Student AI</h1>
+  <span class="badge">Admin Dashboard</span>
+  <div class="key-row">
+    <input type="password" id="apiKey" placeholder="Admin API key" />
+    <button onclick="loadAll()">Load</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- Stat cards -->
+  <div class="cards">
+    <div class="card">
+      <div class="label">Total Sessions</div>
+      <div class="value" id="statTotal">—</div>
+      <div class="sub">all time</div>
+    </div>
+    <div class="card">
+      <div class="label">Sessions Today</div>
+      <div class="value" id="statToday">—</div>
+      <div class="sub" id="statTodayDate">—</div>
+    </div>
+    <div class="card">
+      <div class="label">Avg TTFT</div>
+      <div class="value" id="statTtft">—</div>
+      <div class="sub">time-to-first-token</div>
+    </div>
+    <div class="card">
+      <div class="label">Active Courses</div>
+      <div class="value" id="statCourses">—</div>
+      <div class="sub">in catalog</div>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <div class="charts">
+    <div class="chart-box">
+      <h2>Sessions / Day (last 7 days)</h2>
+      <canvas id="chartDaily" height="120"></canvas>
+    </div>
+    <div class="chart-box">
+      <h2>Mode Distribution</h2>
+      <canvas id="chartMode" height="120"></canvas>
+    </div>
+  </div>
+
+  <!-- Sessions table -->
+  <div class="section">
+    <h2>
+      Recent Sessions
+      <select id="modeFilter" onchange="loadSessions(1)"
+        style="margin-left:auto;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:4px 8px;border-radius:6px;font-size:11px;">
+        <option value="">All modes</option>
+        <option value="general">General</option>
+        <option value="course">Course</option>
+        <option value="user_docs">User Docs</option>
+      </select>
+    </h2>
+    <table id="sessionTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Session ID (hashed)</th>
+          <th>App Ver</th>
+          <th>Mode</th>
+          <th>Messages</th>
+          <th>Received (UTC)</th>
+        </tr>
+      </thead>
+      <tbody id="sessionBody"><tr><td colspan="6" style="color:var(--muted);text-align:center;padding:20px">Enter API key and click Load</td></tr></tbody>
+    </table>
+    <div class="pagination">
+      <button onclick="loadSessions(currentPage-1)" id="prevBtn" disabled>← Prev</button>
+      <span id="pageInfo">—</span>
+      <button onclick="loadSessions(currentPage+1)" id="nextBtn" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- Course management -->
+  <div class="section">
+    <h2>Course Catalog</h2>
+    <table id="courseTable">
+      <thead>
+        <tr><th>ID</th><th>Title</th><th>Version</th><th>Wiki Pages</th><th>Size</th><th></th></tr>
+      </thead>
+      <tbody id="courseBody"><tr><td colspan="6" style="color:var(--muted);text-align:center;padding:20px">—</td></tr></tbody>
+    </table>
+  </div>
+
+  <!-- Upload new course -->
+  <div class="section">
+    <h2>Upload New / Updated Course</h2>
+    <form class="upload-form" onsubmit="uploadCourse(event)">
+      <div>
+        <label>Course ID (slug, e.g. "data-structures")</label>
+        <input type="text" id="upId" required pattern="[a-z0-9\-]+" placeholder="data-structures" />
+      </div>
+      <div>
+        <label>Display Title</label>
+        <input type="text" id="upTitle" required placeholder="Data Structures &amp; Algorithms" />
+      </div>
+      <div>
+        <label>Version (e.g. "1.0.2")</label>
+        <input type="text" id="upVersion" required placeholder="1.0.0" />
+      </div>
+      <div>
+        <label>Bundle ZIP (manifest.json + wiki/*.md)</label>
+        <input type="file" id="upFile" accept=".zip" required />
+      </div>
+      <div class="full">
+        <label>Description (optional)</label>
+        <input type="text" id="upDesc" placeholder="Brief description shown to students" />
+      </div>
+      <div class="full">
+        <button type="submit" class="btn btn-primary">Upload Course</button>
+      </div>
+    </form>
+  </div>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const BASE = window.location.origin;
+let dailyChart, modeChart;
+let currentPage = 1;
+
+function apiKey() { return document.getElementById('apiKey').value.trim(); }
+
+function headers() {
+  return { 'X-Admin-Key': apiKey(), 'Content-Type': 'application/json' };
+}
+
+function toast(msg, ok = true) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.style.borderColor = ok ? 'var(--green)' : 'var(--red)';
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 3500);
+}
+
+async function loadAll() {
+  await Promise.all([loadStats(), loadSessions(1), loadCourses()]);
+}
+
+// ── Stats ─────────────────────────────────────────────────────────────────────
+async function loadStats() {
+  const res = await fetch(`${BASE}/admin/api/stats`, { headers: headers() });
+  if (!res.ok) { toast('Failed to load stats: ' + res.status, false); return; }
+  const d = await res.json();
+
+  document.getElementById('statTotal').textContent   = d.total_sessions.toLocaleString();
+  document.getElementById('statToday').textContent   = d.sessions_today.toLocaleString();
+  document.getElementById('statTodayDate').textContent = new Date().toLocaleDateString();
+  document.getElementById('statTtft').textContent    = d.avg_ttft_ms ? d.avg_ttft_ms + ' ms' : '—';
+  document.getElementById('statCourses').textContent = d.active_courses.toLocaleString();
+
+  // Daily chart
+  const labels = d.sessions_per_day.map(r => r.day.slice(5));   // MM-DD
+  const counts  = d.sessions_per_day.map(r => r.count);
+  if (dailyChart) dailyChart.destroy();
+  dailyChart = new Chart(document.getElementById('chartDaily'), {
+    type: 'line',
+    data: { labels, datasets: [{ label: 'Sessions', data: counts,
+      borderColor: '#58a6ff', backgroundColor: '#58a6ff22',
+      tension: 0.3, fill: true, pointRadius: 3 }] },
+    options: { plugins: { legend: { display: false } },
+               scales: { x: { ticks: { color: '#8b949e' }, grid: { color: '#2a2d35' } },
+                         y: { ticks: { color: '#8b949e', stepSize: 1 }, grid: { color: '#2a2d35' }, beginAtZero: true } } }
+  });
+
+  // Mode pie
+  const mLabels = d.mode_distribution.map(r => r.mode || 'unknown');
+  const mCounts = d.mode_distribution.map(r => r.count);
+  const mColors = ['#58a6ff', '#3fb950', '#d29922', '#f85149'];
+  if (modeChart) modeChart.destroy();
+  modeChart = new Chart(document.getElementById('chartMode'), {
+    type: 'doughnut',
+    data: { labels: mLabels, datasets: [{ data: mCounts, backgroundColor: mColors, borderWidth: 1, borderColor: '#16181c' }] },
+    options: { plugins: { legend: { position: 'bottom', labels: { color: '#8b949e', font: { size: 11 } } } },
+               cutout: '65%' }
+  });
+}
+
+// ── Sessions ──────────────────────────────────────────────────────────────────
+async function loadSessions(page) {
+  if (page < 1) return;
+  const mode = document.getElementById('modeFilter').value;
+  const url  = `${BASE}/admin/api/sessions?page=${page}&per_page=20${mode ? '&mode='+mode : ''}`;
+  const res  = await fetch(url, { headers: headers() });
+  if (!res.ok) { toast('Failed to load sessions', false); return; }
+  const d = await res.json();
+  currentPage = page;
+
+  const tbody = document.getElementById('sessionBody');
+  if (!d.sessions.length) {
+    tbody.innerHTML = '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:20px">No sessions yet</td></tr>';
+  } else {
+    tbody.innerHTML = d.sessions.map(s => `
+      <tr>
+        <td style="color:var(--muted)">${s.id}</td>
+        <td style="font-family:monospace;font-size:11px">${s.session_id.slice(0,16)}…</td>
+        <td>${s.app_version || '—'}</td>
+        <td><span class="mode-pill mode-${s.mode}">${s.mode || '—'}</span></td>
+        <td>${s.message_count}</td>
+        <td>${s.received_at.replace('T',' ').slice(0,19)}</td>
+      </tr>`).join('');
+  }
+
+  const total = d.total;
+  const pages = Math.ceil(total / 20);
+  document.getElementById('pageInfo').textContent = `Page ${page} of ${pages} (${total} total)`;
+  document.getElementById('prevBtn').disabled = page <= 1;
+  document.getElementById('nextBtn').disabled = page >= pages;
+}
+
+// ── Courses ───────────────────────────────────────────────────────────────────
+async function loadCourses() {
+  const res = await fetch(`${BASE}/v1/courses`);
+  if (!res.ok) return;
+  const courses = await res.json();
+  const tbody = document.getElementById('courseBody');
+  if (!courses.length) {
+    tbody.innerHTML = '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:20px">No courses uploaded yet</td></tr>';
+    return;
+  }
+  tbody.innerHTML = courses.map(c => `
+    <tr>
+      <td style="font-family:monospace">${c.id}</td>
+      <td>${c.title}</td>
+      <td>${c.version}</td>
+      <td>${c.wiki_page_count}</td>
+      <td>${(c.size_bytes / 1024 / 1024).toFixed(1)} MB</td>
+      <td><button class="btn btn-danger" onclick="deleteCourse('${c.id}')">Delete</button></td>
+    </tr>`).join('');
+}
+
+async function deleteCourse(id) {
+  if (!confirm(`Delete course "${id}"? This cannot be undone.`)) return;
+  const res = await fetch(`${BASE}/v1/courses/${id}`, {
+    method: 'DELETE', headers: headers()
+  });
+  if (res.ok) { toast(`Course "${id}" deleted`); loadCourses(); }
+  else        { toast('Delete failed: ' + res.status, false); }
+}
+
+// ── Upload ────────────────────────────────────────────────────────────────────
+async function uploadCourse(e) {
+  e.preventDefault();
+  const fd = new FormData();
+  fd.append('course_id',   document.getElementById('upId').value.trim());
+  fd.append('title',       document.getElementById('upTitle').value.trim());
+  fd.append('version',     document.getElementById('upVersion').value.trim());
+  fd.append('description', document.getElementById('upDesc').value.trim());
+  fd.append('bundle',      document.getElementById('upFile').files[0]);
+
+  const res = await fetch(`${BASE}/v1/courses`, {
+    method: 'POST',
+    headers: { 'X-Admin-Key': apiKey() },   // no Content-Type — let browser set multipart boundary
+    body: fd
+  });
+  if (res.ok) {
+    const d = await res.json();
+    toast(`✓ ${d.message}`);
+    e.target.reset();
+    loadCourses();
+    loadStats();
+  } else {
+    const err = await res.json().catch(() => ({}));
+    toast(`Upload failed: ${err.detail || res.status}`, false);
+  }
+}
+</script>
+</body>
+</html>

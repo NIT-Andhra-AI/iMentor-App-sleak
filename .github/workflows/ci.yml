@@ -1,0 +1,173 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  gen-config-check:
+    name: Gen-config sanity check
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run gen-config.py
+        run: python3 scripts/gen-config.py
+      - name: Verify all expected output files exist
+        run: |
+          for f in \
+            src-tauri/build_config.toml \
+            src-tauri/models.toml \
+            src-tauri/tauri.conf.json \
+            src-tauri/tauri-withmodel.conf.json \
+            src-tauri/tauri-gpu-withmodel.conf.json; do
+            if [ ! -f "$f" ]; then
+              echo "ERROR: expected generated file missing: $f"
+              exit 1
+            fi
+            echo "  OK: $f"
+          done
+
+  rust-check:
+    name: Rust check + test
+    runs-on: ubuntu-22.04
+    needs: gen-config-check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q \
+            libssl-dev \
+            libgtk-3-dev \
+            libwebkit2gtk-4.1-dev \
+            libayatana-appindicator3-dev \
+            libclang-dev \
+            clang
+      - name: Generate configs
+        run: python3 scripts/gen-config.py
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: ci-check
+      - name: cargo check --workspace
+        run: cargo check --workspace
+      - name: cargo test --workspace
+        run: cargo test --workspace
+
+  rag-aggressive:
+    name: RAG aggressive benchmark
+    runs-on: ubuntu-22.04
+    needs: rust-check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: ci-rag-aggressive
+      - name: Generate configs
+        run: python3 scripts/gen-config.py
+      - name: Run aggressive RAG benchmark test
+        run: |
+          USERPROFILE="$HOME" cargo test -p chatbot-test --test rag_quality_bench rag_aggressive_multi_query -- --nocapture
+
+  frontend-check:
+    name: Frontend type-check
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        working-directory: frontend
+        run: bun install
+      - name: Type-check
+        working-directory: frontend
+        run: bun run check
+
+  e2e-aggressive:
+    name: E2E aggressive suites
+    runs-on: ubuntu-22.04
+    needs: frontend-check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: bun install
+      - name: Install Playwright dependencies
+        working-directory: tests/desktop-e2e
+        run: |
+          bun install
+          bunx playwright install --with-deps chromium
+      - name: Start frontend dev server
+        working-directory: frontend
+        run: bun run dev --host 127.0.0.1 --port 5173 > /tmp/student-ai-frontend.log 2>&1 &
+      - name: Wait for frontend
+        run: |
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:5173 >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Frontend failed to start"
+          cat /tmp/student-ai-frontend.log || true
+          exit 1
+      - name: Run aggressive cross-feature projects
+        working-directory: tests/desktop-e2e
+        env:
+          PLAYWRIGHT_BASE_URL: http://127.0.0.1:5173
+        run: |
+          bunx playwright test \
+            --project=general-chat \
+            --project=course-chat \
+            --project=rag-documents \
+            --project=agents \
+            --project=code-agent \
+            --project=visualizations \
+            --project=stress
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: tests/desktop-e2e/test-results
+          retention-days: 14
+
+  admin-spa-build:
+    name: Admin SPA build
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Check if dashboard source exists
+        id: spa_exists
+        run: |
+          if [ -f "server/dashboard/package.json" ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "Admin SPA not yet scaffolded — skipping build"
+          fi
+      - name: Install dependencies
+        if: steps.spa_exists.outputs.exists == 'true'
+        working-directory: server/dashboard
+        run: bun install
+      - name: Build
+        if: steps.spa_exists.outputs.exists == 'true'
+        working-directory: server/dashboard
+        run: bun run build
+      - name: Verify dist/index.html exists
+        if: steps.spa_exists.outputs.exists == 'true'
+        run: test -f server/dashboard/dist/index.html

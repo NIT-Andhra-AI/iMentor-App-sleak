@@ -1,0 +1,495 @@
+
+Running 35 tests using 1 worker
+
+[1A[2K[1/35] [smoke] ΓÇ║ smoke.spec.ts:8:1 ΓÇ║ tauri window loads app shell
+[1A[2K[2/35] [general-chat] ΓÇ║ general-chat.spec.ts:39:1 ΓÇ║ creates a new session via '+ New' and it appears in the list
+[1A[2K[3/35] [general-chat] ΓÇ║ general-chat.spec.ts:48:1 ΓÇ║ sends a simple question and receives a non-empty AI reply
+[1A[2K[4/35] [general-chat] ΓÇ║ general-chat.spec.ts:64:1 ΓÇ║ carries context across multiple turns in the same session
+[1A[2K[5/35] [general-chat] ΓÇ║ general-chat.spec.ts:77:1 ΓÇ║ session auto-titles itself after first AI reply
+[1A[2K[6/35] [general-chat] ΓÇ║ general-chat.spec.ts:88:1 ΓÇ║ deleting a session creates a new one automatically
+[1A[2K[7/35] [general-chat] ΓÇ║ general-chat.spec.ts:101:1 ΓÇ║ AI reply containing code is rendered as a chat-code-block with copy button
+[1A[2K[8/35] [general-chat] ΓÇ║ general-chat.spec.ts:111:1 ΓÇ║ AI reply containing LaTeX renders KaTeX without raw dollar signs leaking
+[1A[2K[9/35] [general-chat] ΓÇ║ general-chat.spec.ts:128:1 ΓÇ║ pressing the cancel button stops streaming mid-reply
+[1A[2K[10/35] [general-chat] ΓÇ║ general-chat.spec.ts:144:1 ΓÇ║ send button is disabled for empty input
+[1A[2K[11/35] [general-chat] ΓÇ║ general-chat.spec.ts:159:1 ΓÇ║ switching to a new session shows no prior messages
+[1A[2K[12/35] [general-chat] ΓÇ║ general-chat.spec.ts:174:1 ΓÇ║ AI reply with a markdown table renders as an HTML table, not raw pipe characters
+[1A[2K[13/35] [general-chat] ΓÇ║ general-chat.spec.ts:186:1 ΓÇ║ chat panel shows General mode pill in sessions view
+[1A[2K[14/35] [general-chat] ΓÇ║ general-chat.spec.ts:193:1 ΓÇ║ Shift+Enter inserts a newline without sending the message
+[1A[2K[15/35] [course-chat] ΓÇ║ course-chat.spec.ts:40:1 ΓÇ║ course sidebar lists at least one course
+[1A[2K[16/35] [course-chat] ΓÇ║ course-chat.spec.ts:48:1 ΓÇ║ expanding Machine Learning course reveals modules and pages
+[1A[2K[17/35] [course-chat] ΓÇ║ course-chat.spec.ts:63:1 ΓÇ║ clicking a page slug loads content in the wiki viewer
+[1A[2K[18/35] [course-chat] ΓÇ║ course-chat.spec.ts:94:1 ΓÇ║ wiki page renders proper HTML headings not raw markdown hashes
+[1A[2K[19/35] [course-chat] ΓÇ║ course-chat.spec.ts:117:1 ΓÇ║ floating chat FAB appears when a course page is open
+[1A[2K[20/35] [course-chat] ΓÇ║ course-chat.spec.ts:135:1 ΓÇ║ clicking the FAB opens the floating chat panel
+[1A[2K[21/35] [course-chat] ΓÇ║ course-chat.spec.ts:157:1 ΓÇ║ floating chat replies to a topic-relevant question
+[1A[2K[22/35] [course-chat] ΓÇ║ course-chat.spec.ts:195:1 ΓÇ║ floating chat header shows the current page title
+[1A[2K[23/35] [course-chat] ΓÇ║ course-chat.spec.ts:217:1 ΓÇ║ floating chat can be minimized and re-expanded
+[1A[2K[24/35] [course-chat] ΓÇ║ course-chat.spec.ts:244:1 ΓÇ║ typing in course filter shows only matching pages
+[1A[2K[25/35] [course-chat] ΓÇ║ course-chat.spec.ts:268:1 ΓÇ║ floating chat handles two follow-up questions correctly
+[1A[2K[26/35] [course-chat] ΓÇ║ course-chat.spec.ts:307:1 ΓÇ║ wiki page with a data table renders as HTML table, not raw pipe characters
+[1A[2K[27/35] [rag-documents] ΓÇ║ rag-documents.spec.ts:38:1 ΓÇ║ documents sidebar shows the upload area and title
+[1A[2K  1) [rag-documents] ΓÇ║ rag-documents.spec.ts:38:1 ΓÇ║ documents sidebar shows the upload area and title 
+
+    [31mTest timeout of 180000ms exceeded while running "beforeEach" hook.[39m
+
+      28 | } from "./helpers.js";
+      29 |
+    > 30 | test.beforeEach(async ({ page }) => {
+         |      ^
+      31 |   await installTauriMock(page);
+      32 |   await page.goto("/");
+      33 |   await dismissModals(page);
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:30:6
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.nav-btn[title="documents"]')[22m
+
+
+       at helpers.ts:439
+
+      437 |
+      438 | export async function clickNav(page: Page, tab: NavTab): Promise<void> {
+    > 439 |   await page.locator(`.nav-btn[title="${tab}"]`).click();
+          |                                                  ^
+      440 |   await page.waitForTimeout(250);
+      441 | }
+      442 |
+        at clickNav (D:\app2\app\tests\desktop-e2e\helpers.ts:439:50)
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-documents-si-925e1-s-the-upload-area-and-title-rag-documents\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-documents-si-925e1-s-the-upload-area-and-title-rag-documents\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\artifacts\rag-documents-documents-si-925e1-s-the-upload-area-and-title-rag-documents\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-documents-si-925e1-s-the-upload-area-and-title-rag-documents\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\artifacts\rag-documents-documents-si-925e1-s-the-upload-area-and-title-rag-documents\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K[28/35] [rag-documents] ΓÇ║ rag-documents.spec.ts:48:1 ΓÇ║ chat panel mode pill shows 'My Documents' in documents view
+[1A[2K  2) [rag-documents] ΓÇ║ rag-documents.spec.ts:48:1 ΓÇ║ chat panel mode pill shows 'My Documents' in documents view 
+
+    [31mTest timeout of 180000ms exceeded while running "beforeEach" hook.[39m
+
+      28 | } from "./helpers.js";
+      29 |
+    > 30 | test.beforeEach(async ({ page }) => {
+         |      ^
+      31 |   await installTauriMock(page);
+      32 |   await page.goto("/");
+      33 |   await dismissModals(page);
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:30:6
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.nav-btn[title="documents"]')[22m
+
+
+       at helpers.ts:439
+
+      437 |
+      438 | export async function clickNav(page: Page, tab: NavTab): Promise<void> {
+    > 439 |   await page.locator(`.nav-btn[title="${tab}"]`).click();
+          |                                                  ^
+      440 |   await page.waitForTimeout(250);
+      441 | }
+      442 |
+        at clickNav (D:\app2\app\tests\desktop-e2e\helpers.ts:439:50)
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-chat-panel-m-ece17-Documents-in-documents-view-rag-documents\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-chat-panel-m-ece17-Documents-in-documents-view-rag-documents\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\artifacts\rag-documents-chat-panel-m-ece17-Documents-in-documents-view-rag-documents\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-chat-panel-m-ece17-Documents-in-documents-view-rag-documents\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\artifacts\rag-documents-chat-panel-m-ece17-Documents-in-documents-view-rag-documents\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K[29/35] [rag-documents] ΓÇ║ rag-documents.spec.ts:55:1 ΓÇ║ uploading sample PDF shows it in the knowledge base list
+[1A[2K  3) [rag-documents] ΓÇ║ rag-documents.spec.ts:55:1 ΓÇ║ uploading sample PDF shows it in the knowledge base list 
+
+    [31mTest timeout of 180000ms exceeded while running "beforeEach" hook.[39m
+
+      28 | } from "./helpers.js";
+      29 |
+    > 30 | test.beforeEach(async ({ page }) => {
+         |      ^
+      31 |   await installTauriMock(page);
+      32 |   await page.goto("/");
+      33 |   await dismissModals(page);
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:30:6
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.nav-btn[title="documents"]')[22m
+
+
+       at helpers.ts:439
+
+      437 |
+      438 | export async function clickNav(page: Page, tab: NavTab): Promise<void> {
+    > 439 |   await page.locator(`.nav-btn[title="${tab}"]`).click();
+          |                                                  ^
+      440 |   await page.waitForTimeout(250);
+      441 | }
+      442 |
+        at clickNav (D:\app2\app\tests\desktop-e2e\helpers.ts:439:50)
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-uploading-sa-885f9--in-the-knowledge-base-list-rag-documents\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-uploading-sa-885f9--in-the-knowledge-base-list-rag-documents\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\artifacts\rag-documents-uploading-sa-885f9--in-the-knowledge-base-list-rag-documents\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-uploading-sa-885f9--in-the-knowledge-base-list-rag-documents\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\artifacts\rag-documents-uploading-sa-885f9--in-the-knowledge-base-list-rag-documents\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K[30/35] [rag-documents] ΓÇ║ rag-documents.spec.ts:74:1 ΓÇ║ chat in user_docs mode returns a reply (sample PDF uploaded)
+[1A[2K  4) [rag-documents] ΓÇ║ rag-documents.spec.ts:74:1 ΓÇ║ chat in user_docs mode returns a reply (sample PDF uploaded) 
+
+    [31mTest timeout of 180000ms exceeded while running "beforeEach" hook.[39m
+
+      28 | } from "./helpers.js";
+      29 |
+    > 30 | test.beforeEach(async ({ page }) => {
+         |      ^
+      31 |   await installTauriMock(page);
+      32 |   await page.goto("/");
+      33 |   await dismissModals(page);
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:30:6
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.nav-btn[title="documents"]')[22m
+
+
+       at helpers.ts:439
+
+      437 |
+      438 | export async function clickNav(page: Page, tab: NavTab): Promise<void> {
+    > 439 |   await page.locator(`.nav-btn[title="${tab}"]`).click();
+          |                                                  ^
+      440 |   await page.waitForTimeout(250);
+      441 | }
+      442 |
+        at clickNav (D:\app2\app\tests\desktop-e2e\helpers.ts:439:50)
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-chat-in-user-db3fa--reply-sample-PDF-uploaded--rag-documents\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-chat-in-user-db3fa--reply-sample-PDF-uploaded--rag-documents\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\artifacts\rag-documents-chat-in-user-db3fa--reply-sample-PDF-uploaded--rag-documents\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-chat-in-user-db3fa--reply-sample-PDF-uploaded--rag-documents\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\artifacts\rag-documents-chat-in-user-db3fa--reply-sample-PDF-uploaded--rag-documents\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K[31/35] [rag-documents] ΓÇ║ rag-documents.spec.ts:89:1 ΓÇ║ RAG answer references content from the uploaded document
+[1A[2K  5) [rag-documents] ΓÇ║ rag-documents.spec.ts:89:1 ΓÇ║ RAG answer references content from the uploaded document 
+
+    [31mTest timeout of 180000ms exceeded while running "beforeEach" hook.[39m
+
+      28 | } from "./helpers.js";
+      29 |
+    > 30 | test.beforeEach(async ({ page }) => {
+         |      ^
+      31 |   await installTauriMock(page);
+      32 |   await page.goto("/");
+      33 |   await dismissModals(page);
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:30:6
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.nav-btn[title="documents"]')[22m
+
+
+       at helpers.ts:439
+
+      437 |
+      438 | export async function clickNav(page: Page, tab: NavTab): Promise<void> {
+    > 439 |   await page.locator(`.nav-btn[title="${tab}"]`).click();
+          |                                                  ^
+      440 |   await page.waitForTimeout(250);
+      441 | }
+      442 |
+        at clickNav (D:\app2\app\tests\desktop-e2e\helpers.ts:439:50)
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-RAG-answer-r-2dcf8--from-the-uploaded-document-rag-documents\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-RAG-answer-r-2dcf8--from-the-uploaded-document-rag-documents\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\artifacts\rag-documents-RAG-answer-r-2dcf8--from-the-uploaded-document-rag-documents\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-RAG-answer-r-2dcf8--from-the-uploaded-document-rag-documents\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\artifacts\rag-documents-RAG-answer-r-2dcf8--from-the-uploaded-document-rag-documents\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K[32/35] [rag-documents] ΓÇ║ rag-documents.spec.ts:103:1 ΓÇ║ deleting an uploaded document removes it from the knowledge base
+[1A[2K  6) [rag-documents] ΓÇ║ rag-documents.spec.ts:103:1 ΓÇ║ deleting an uploaded document removes it from the knowledge base 
+
+    [31mTest timeout of 180000ms exceeded while running "beforeEach" hook.[39m
+
+      28 | } from "./helpers.js";
+      29 |
+    > 30 | test.beforeEach(async ({ page }) => {
+         |      ^
+      31 |   await installTauriMock(page);
+      32 |   await page.goto("/");
+      33 |   await dismissModals(page);
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:30:6
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.nav-btn[title="documents"]')[22m
+
+
+       at helpers.ts:439
+
+      437 |
+      438 | export async function clickNav(page: Page, tab: NavTab): Promise<void> {
+    > 439 |   await page.locator(`.nav-btn[title="${tab}"]`).click();
+          |                                                  ^
+      440 |   await page.waitForTimeout(250);
+      441 | }
+      442 |
+        at clickNav (D:\app2\app\tests\desktop-e2e\helpers.ts:439:50)
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-deleting-an--8bd6d--it-from-the-knowledge-base-rag-documents\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-deleting-an--8bd6d--it-from-the-knowledge-base-rag-documents\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\artifacts\rag-documents-deleting-an--8bd6d--it-from-the-knowledge-base-rag-documents\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-deleting-an--8bd6d--it-from-the-knowledge-base-rag-documents\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\artifacts\rag-documents-deleting-an--8bd6d--it-from-the-knowledge-base-rag-documents\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K[33/35] [rag-documents] ΓÇ║ rag-documents.spec.ts:120:1 ΓÇ║ asking in user_docs mode with no documents uploaded returns a graceful reply
+[1A[2K  7) [rag-documents] ΓÇ║ rag-documents.spec.ts:120:1 ΓÇ║ asking in user_docs mode with no documents uploaded returns a graceful reply 
+
+    [31mTest timeout of 180000ms exceeded while running "beforeEach" hook.[39m
+
+      28 | } from "./helpers.js";
+      29 |
+    > 30 | test.beforeEach(async ({ page }) => {
+         |      ^
+      31 |   await installTauriMock(page);
+      32 |   await page.goto("/");
+      33 |   await dismissModals(page);
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:30:6
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.nav-btn[title="documents"]')[22m
+
+
+       at helpers.ts:439
+
+      437 |
+      438 | export async function clickNav(page: Page, tab: NavTab): Promise<void> {
+    > 439 |   await page.locator(`.nav-btn[title="${tab}"]`).click();
+          |                                                  ^
+      440 |   await page.waitForTimeout(250);
+      441 | }
+      442 |
+        at clickNav (D:\app2\app\tests\desktop-e2e\helpers.ts:439:50)
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-asking-in-us-33b2d-ed-returns-a-graceful-reply-rag-documents\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-asking-in-us-33b2d-ed-returns-a-graceful-reply-rag-documents\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\artifacts\rag-documents-asking-in-us-33b2d-ed-returns-a-graceful-reply-rag-documents\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-asking-in-us-33b2d-ed-returns-a-graceful-reply-rag-documents\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\artifacts\rag-documents-asking-in-us-33b2d-ed-returns-a-graceful-reply-rag-documents\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K[34/35] [rag-documents] ΓÇ║ rag-documents.spec.ts:131:1 ΓÇ║ RAG chat reply with a markdown table renders as HTML table, not raw pipes
+[1A[2K  8) [rag-documents] ΓÇ║ rag-documents.spec.ts:131:1 ΓÇ║ RAG chat reply with a markdown table renders as HTML table, not raw pipes 
+
+    [31mTest timeout of 180000ms exceeded while running "beforeEach" hook.[39m
+
+      28 | } from "./helpers.js";
+      29 |
+    > 30 | test.beforeEach(async ({ page }) => {
+         |      ^
+      31 |   await installTauriMock(page);
+      32 |   await page.goto("/");
+      33 |   await dismissModals(page);
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:30:6
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.nav-btn[title="documents"]')[22m
+
+
+       at helpers.ts:439
+
+      437 |
+      438 | export async function clickNav(page: Page, tab: NavTab): Promise<void> {
+    > 439 |   await page.locator(`.nav-btn[title="${tab}"]`).click();
+          |                                                  ^
+      440 |   await page.waitForTimeout(250);
+      441 | }
+      442 |
+        at clickNav (D:\app2\app\tests\desktop-e2e\helpers.ts:439:50)
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-RAG-chat-rep-4c23e-as-HTML-table-not-raw-pipes-rag-documents\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-RAG-chat-rep-4c23e-as-HTML-table-not-raw-pipes-rag-documents\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\artifacts\rag-documents-RAG-chat-rep-4c23e-as-HTML-table-not-raw-pipes-rag-documents\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-RAG-chat-rep-4c23e-as-HTML-table-not-raw-pipes-rag-documents\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\artifacts\rag-documents-RAG-chat-rep-4c23e-as-HTML-table-not-raw-pipes-rag-documents\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K[35/35] [rag-documents] ΓÇ║ rag-documents.spec.ts:147:1 ΓÇ║ RAG chat reply with LaTeX formula renders KaTeX element
+[1A[2K  9) [rag-documents] ΓÇ║ rag-documents.spec.ts:147:1 ΓÇ║ RAG chat reply with LaTeX formula renders KaTeX element 
+
+    [31mTest timeout of 180000ms exceeded while running "beforeEach" hook.[39m
+
+      28 | } from "./helpers.js";
+      29 |
+    > 30 | test.beforeEach(async ({ page }) => {
+         |      ^
+      31 |   await installTauriMock(page);
+      32 |   await page.goto("/");
+      33 |   await dismissModals(page);
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:30:6
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.nav-btn[title="documents"]')[22m
+
+
+       at helpers.ts:439
+
+      437 |
+      438 | export async function clickNav(page: Page, tab: NavTab): Promise<void> {
+    > 439 |   await page.locator(`.nav-btn[title="${tab}"]`).click();
+          |                                                  ^
+      440 |   await page.waitForTimeout(250);
+      441 | }
+      442 |
+        at clickNav (D:\app2\app\tests\desktop-e2e\helpers.ts:439:50)
+        at D:\app2\app\tests\desktop-e2e\rag-documents.spec.ts:34:9
+
+    attachment #1: screenshot (image/png) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-RAG-chat-rep-7882a-rmula-renders-KaTeX-element-rag-documents\test-failed-1.png
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    attachment #2: video (video/webm) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-RAG-chat-rep-7882a-rmula-renders-KaTeX-element-rag-documents\video.webm
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error Context: test-results\artifacts\rag-documents-RAG-chat-rep-7882a-rmula-renders-KaTeX-element-rag-documents\error-context.md
+
+    attachment #4: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\artifacts\rag-documents-RAG-chat-rep-7882a-rmula-renders-KaTeX-element-rag-documents\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\artifacts\rag-documents-RAG-chat-rep-7882a-rmula-renders-KaTeX-element-rag-documents\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+[1A[2K  9 failed
+    [rag-documents] ΓÇ║ rag-documents.spec.ts:38:1 ΓÇ║ documents sidebar shows the upload area and title 
+    [rag-documents] ΓÇ║ rag-documents.spec.ts:48:1 ΓÇ║ chat panel mode pill shows 'My Documents' in documents view 
+    [rag-documents] ΓÇ║ rag-documents.spec.ts:55:1 ΓÇ║ uploading sample PDF shows it in the knowledge base list 
+    [rag-documents] ΓÇ║ rag-documents.spec.ts:74:1 ΓÇ║ chat in user_docs mode returns a reply (sample PDF uploaded) 
+    [rag-documents] ΓÇ║ rag-documents.spec.ts:89:1 ΓÇ║ RAG answer references content from the uploaded document 
+    [rag-documents] ΓÇ║ rag-documents.spec.ts:103:1 ΓÇ║ deleting an uploaded document removes it from the knowledge base 
+    [rag-documents] ΓÇ║ rag-documents.spec.ts:120:1 ΓÇ║ asking in user_docs mode with no documents uploaded returns a graceful reply 
+    [rag-documents] ΓÇ║ rag-documents.spec.ts:131:1 ΓÇ║ RAG chat reply with a markdown table renders as HTML table, not raw pipes 
+    [rag-documents] ΓÇ║ rag-documents.spec.ts:147:1 ΓÇ║ RAG chat reply with LaTeX formula renders KaTeX element 
+  26 passed (32.0m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report test-results\html[39m
+[36m[39m

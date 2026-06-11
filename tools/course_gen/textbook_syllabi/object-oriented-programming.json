@@ -1,0 +1,156 @@
+{
+  "course": "object-oriented-programming",
+  "title": "Object-Oriented Programming: Principles, Patterns, and Practices",
+  "textbook_refs": [
+    "Gamma et al.: Design Patterns (GoF)",
+    "Martin: Clean Code",
+    "Bloch: Effective Java 3rd Ed",
+    "Horstmann: Core Java Vol 1 & 2"
+  ],
+  "topics": [
+    {
+      "slug": "oop-history-paradigms",
+      "title": "History of OOP Paradigms: Procedural vs Object-Oriented vs Functional",
+      "section": "Introduction",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "object-class-fundamentals",
+      "title": "Objects and Classes: Constructors, Instance Variables, and Class Variables",
+      "section": "Core OOP",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "access-modifiers",
+      "title": "Access Modifiers and Visibility: Public, Private, Protected, and Package",
+      "section": "Encapsulation",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "interfaces-abstract-classes",
+      "title": "Interfaces and Abstract Classes: Contracts, Default Methods, and When to Use Each",
+      "section": "Abstraction",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "single-inheritance",
+      "title": "Single Inheritance: Method Overriding, super Keyword, and Method Resolution",
+      "section": "Inheritance",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "multiple-inheritance-mixins",
+      "title": "Multiple Inheritance, Interfaces, and Mixins: Diamond Problem and Solutions",
+      "section": "Inheritance",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "polymorphism-types",
+      "title": "Polymorphism: Compile-Time (Overloading) and Runtime (Overriding) Dispatch",
+      "section": "Polymorphism",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "composition-over-inheritance",
+      "title": "Composition Over Inheritance: Has-A vs Is-A and Delegation Pattern",
+      "section": "OOP Principles",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "design-patterns-behavioral",
+      "title": "Behavioral Design Patterns: Observer, Strategy, Command, State, and Iterator",
+      "section": "Design Patterns",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "design-patterns-structural-advanced",
+      "title": "Structural Patterns Deep Dive: Decorator, Bridge, Composite, Proxy, and Flyweight",
+      "section": "Design Patterns",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dependency-injection",
+      "title": "Dependency Injection: IoC Container, Constructor/Setter/Field Injection",
+      "section": "OOP Principles",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dry-kiss-yagni",
+      "title": "DRY, KISS, YAGNI Principles: Code Quality and Design Heuristics",
+      "section": "OOP Principles",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "dip-lsp-isp",
+      "title": "DIP, LSP, and ISP: Dependency Inversion, Liskov Substitution, Interface Segregation",
+      "section": "SOLID Principles",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "exception-handling-oop",
+      "title": "Exception Handling: Checked/Unchecked Exceptions, Custom Exceptions, and Best Practices",
+      "section": "OOP in Practice",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "generics-templates",
+      "title": "Generics and Templates: Type Bounds, Wildcards, and Type Erasure",
+      "section": "OOP in Practice",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "collections-framework",
+      "title": "Collections Framework: List, Set, Map, Queue Implementations and Big-O Analysis",
+      "section": "OOP in Practice",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "concurrency-oop",
+      "title": "Concurrency in OOP: Threads, Synchronization, Locks, and Thread-Safe Patterns",
+      "section": "OOP in Practice",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "functional-oop",
+      "title": "Functional Programming in OOP: Lambdas, Streams, and Function Objects",
+      "section": "Modern OOP",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "uml-class-diagrams",
+      "title": "UML Class Diagrams: Notation, Relationships, and Design Documentation",
+      "section": "Design Documentation",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "tdd-oop",
+      "title": "Test-Driven Development: Unit Testing, Mocking, and Test Doubles in OOP",
+      "section": "Testing OOP",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "refactoring-code-smells",
+      "title": "Refactoring: Code Smells, Extract Method, Replace Conditional with Polymorphism",
+      "section": "OOP in Practice",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "domain-driven-design",
+      "title": "Domain-Driven Design: Aggregates, Value Objects, Repositories, and Bounded Contexts",
+      "section": "Advanced OOP",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "oop-in-python-cpp",
+      "title": "OOP in Python and C++: Language-Specific Features, Operator Overloading",
+      "section": "Language-Specific OOP",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: OOP Interview Questions, LLD Rounds, and Design Practice",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

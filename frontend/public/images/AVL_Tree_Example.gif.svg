@@ -1,0 +1,75 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+    <title>AVL Tree Rotation</title>
+    <desc>An animation showing a left rotation in an AVL tree to rebalance after an insertion causes an imbalance.</desc>
+    <style>
+        .bg { fill: #f8fafc; }
+        .title { font-family: system-ui, sans-serif; font-size: 24px; text-anchor: middle; fill: #334155; }
+        .desc-text { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #475569; }
+
+        .node circle { stroke-width: 2; stroke: #64748b; fill: #f1f5f9; }
+        .node text { font-family: system-ui, sans-serif; font-size: 18px; text-anchor: middle; dominant-baseline: central; fill: #1e293b; }
+        .edge { stroke: #94a3b8; stroke-width: 2; }
+        
+        .node, .edge { transition: transform 1s ease-in-out; }
+
+        .unbalanced-text { opacity: 0; animation: fade-in-out 8s infinite; }
+        .balanced-text { opacity: 0; animation: fade-in-out-delay 8s infinite; }
+
+        @keyframes fade-in-out {
+            0% { opacity: 0; } 30% { opacity: 1; } 60% { opacity: 0; } 100% { opacity: 0; }
+        }
+        @keyframes fade-in-out-delay {
+            0% { opacity: 0; } 60% { opacity: 0; } 90% { opacity: 1; } 100% { opacity: 0; }
+        }
+
+        #node-30 { animation: n30-move 8s infinite; }
+        #node-20 { animation: n20-move 8s infinite; }
+        #node-10 { animation: n10-move 8s infinite; }
+        #edge-20-30 { animation: e2030-move 8s infinite; }
+        #edge-10-20 { animation: e1020-move 8s infinite; }
+        #new-node-text { animation: fade-in-out 8s infinite; }
+        
+        @keyframes n30-move {
+            0%, 50% { transform: translate(320px, 120px); }
+            70%, 100% { transform: translate(420px, 200px); }
+        }
+        @keyframes n20-move {
+            0%, 50% { transform: translate(220px, 200px); }
+            70%, 100% { transform: translate(320px, 120px); }
+        }
+        @keyframes n10-move {
+            0%, 50% { transform: translate(120px, 280px); }
+            70%, 100% { transform: translate(220px, 200px); }
+        }
+
+        @keyframes e2030-move {
+            0%, 50% { transform: translate(270px, 160px) rotate(37deg); }
+            70%, 100% { transform: translate(370px, 160px) rotate(-37deg); }
+        }
+        @keyframes e1020-move {
+            0%, 50% { transform: translate(170px, 240px) rotate(37deg); }
+            70%, 100% { transform: translate(270px, 160px) rotate(37deg); }
+        }
+
+    </style>
+    <rect width="640" height="360" class="bg" />
+    <text x="320" y="30" class="title">AVL Tree Left Rotation</text>
+    <text x="320" y="55" class="desc-text">After insertion, the tree becomes unbalanced and performs a rotation to fix it.</text>
+    
+    <text x="320" y="340" class="unbalanced-text" style="fill: #be185d;">Tree is Right-Heavy (Unbalanced)</text>
+    <text x="320" y="340" class="balanced-text" style="fill: #16a34a;">Tree is Balanced</text>
+
+    <g>
+        <!-- Edges -->
+        <line id="edge-20-30" class="edge" x1="-40" y1="0" x2="40" y2="0" />
+        <line id="edge-10-20" class="edge" x1="-40" y1="0" x2="40" y2="0" />
+        
+        <!-- Nodes -->
+        <g id="node-30" class="node">
+            <circle cx="0" cy="0" r="20" /><text x="0" y="0">30</text>
+            <text id="new-node-text" x="15" y="-15" font-size="14px" fill="#2563eb" style="opacity: 0;">(New)</text>
+        </g>
+        <g id="node-20" class="node"><circle cx="0" cy="0" r="20" /><text x="0" y="0">20</text></g>
+        <g id="node-10" class="node"><circle cx="0" cy="0" r="20" /><text x="0" y="0">10</text></g>
+    </g>
+</svg>

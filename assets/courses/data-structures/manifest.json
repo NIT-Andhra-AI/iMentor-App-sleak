@@ -1,0 +1,479 @@
+{
+  "id": "data-structures",
+  "title": "Data Structures",
+  "version": "1.0.0",
+  "description": "Fundamental data structures including arrays, linked lists, trees, graphs, and hash tables with complexity analysis.",
+  "placement_domains": [
+    "SDE",
+    "Software Engineer"
+  ],
+  "wiki_page_count": 38,
+  "module_count": 5,
+  "built_with": "claude-sonnet-4.6",
+  "built_at": "2026-04-22",
+  "tags": [
+    "data-structures",
+    "algorithms",
+    "cs-core"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Data Structures",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Data Structures — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Data Structures — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "complexity-analysis",
+          "title": "Complexity Analysis: Big-O, Theta, Omega, and Space Complexity",
+          "type": "concept"
+        },
+        {
+          "slug": "recursion-basics",
+          "title": "Recursion: Base Cases, Call Stack, and Tail Recursion Optimization",
+          "type": "concept"
+        },
+        {
+          "slug": "dynamic-arrays",
+          "title": "Dynamic Arrays: Amortized Analysis and ArrayList Internals",
+          "type": "concept"
+        },
+        {
+          "slug": "string-operations",
+          "title": "String Operations: Manipulation, Pattern Matching, and StringBuilder",
+          "type": "concept"
+        },
+        {
+          "slug": "matrix-operations",
+          "title": "Matrix Operations: 2D Arrays, Rotation, Transposition, and Spiral Traversal",
+          "type": "concept"
+        },
+        {
+          "slug": "singly-linked-list",
+          "title": "Singly Linked List: Insertion, Deletion, Reversal, and Floyd’s Cycle Detection",
+          "type": "concept"
+        },
+        {
+          "slug": "doubly-circular-linked",
+          "title": "Doubly and Circular Linked Lists: Operations and LRU Cache Implementation",
+          "type": "concept"
+        },
+        {
+          "slug": "stack-implementation",
+          "title": "Stack Implementation: Array and Linked List Backed, Monotonic Stack Uses",
+          "type": "concept"
+        },
+        {
+          "slug": "queue-deque",
+          "title": "Queue and Deque: Circular Buffer, Priority Queue, and Sliding Window Maximum",
+          "type": "concept"
+        },
+        {
+          "slug": "binary-tree-fundamentals",
+          "title": "Binary Tree Fundamentals: Properties, Traversals, and Reconstruction",
+          "type": "concept"
+        },
+        {
+          "slug": "bst-operations",
+          "title": "Binary Search Tree Operations: Search, Insert, Delete, and Successor",
+          "type": "concept"
+        },
+        {
+          "slug": "avl-trees",
+          "title": "AVL Trees: Rotation Operations, Balance Factor, and Height Analysis",
+          "type": "concept"
+        },
+        {
+          "slug": "red-black-trees",
+          "title": "Red-Black Trees: Color Properties, Insertions, and Deletions",
+          "type": "concept"
+        },
+        {
+          "slug": "b-trees-and-variants",
+          "title": "B-Trees and B+ Trees: Disk-Based Storage and Database Indexing",
+          "type": "concept"
+        },
+        {
+          "slug": "trie-data-structure",
+          "title": "Trie (Prefix Tree): Insert, Search, Autocomplete, and Compressed Trie",
+          "type": "concept"
+        },
+        {
+          "slug": "segment-tree-ds",
+          "title": "Segment Trees: Range Sum, Range Minimum, and Lazy Propagation",
+          "type": "concept"
+        },
+        {
+          "slug": "fenwick-tree-ds",
+          "title": "Fenwick Tree (Binary Indexed Tree): Point Updates and Prefix Queries",
+          "type": "concept"
+        },
+        {
+          "slug": "heap-operations",
+          "title": "Heap Operations: Heapify, Extract-Min/Max, Heap Sort, and k-th Largest",
+          "type": "concept"
+        },
+        {
+          "slug": "hash-table-internals",
+          "title": "Hash Table Internals: Hash Functions, Chaining, and Open Addressing",
+          "type": "concept"
+        },
+        {
+          "slug": "bloom-filters",
+          "title": "Bloom Filters and Probabilistic Data Structures: Count-Min Sketch",
+          "type": "concept"
+        },
+        {
+          "slug": "graph-representation",
+          "title": "Graph Representation: Adjacency Matrix, List, and Edge List Comparison",
+          "type": "concept"
+        },
+        {
+          "slug": "bfs-dfs-algorithms",
+          "title": "BFS and DFS: Traversal, Connected Components, and Cycle Detection",
+          "type": "concept"
+        },
+        {
+          "slug": "union-find-ds",
+          "title": "Union-Find (Disjoint Sets): Union by Rank and Path Compression",
+          "type": "concept"
+        },
+        {
+          "slug": "skip-list-ds",
+          "title": "Skip List: Probabilistic Layered Structure and O(log n) Operations",
+          "type": "concept"
+        },
+        {
+          "slug": "van-emde-boas",
+          "title": "Van Emde Boas Trees and Integer Data Structure Optimizations",
+          "type": "concept"
+        },
+        {
+          "slug": "persistent-data-structures",
+          "title": "Persistent Data Structures: Immutable Updates and Functional Trees",
+          "type": "concept"
+        },
+        {
+          "slug": "external-data-structures",
+          "title": "External Memory Data Structures: Buffer Trees and Cache-Oblivious Layouts",
+          "type": "concept"
+        },
+        {
+          "slug": "arrays-lists",
+          "title": "Arrays and Linked Lists",
+          "type": "concept"
+        },
+        {
+          "slug": "graphs",
+          "title": "Graph Data Structures and Traversals",
+          "type": "concept"
+        },
+        {
+          "slug": "hash-tables",
+          "title": "Hash Tables",
+          "type": "concept"
+        },
+        {
+          "slug": "heaps",
+          "title": "Heap Data Structure",
+          "type": "concept"
+        },
+        {
+          "slug": "searching",
+          "title": "Searching Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "sorting",
+          "title": "Sorting Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "stacks-queues",
+          "title": "Stacks and Queues",
+          "type": "concept"
+        },
+        {
+          "slug": "trees",
+          "title": "Tree Data Structures",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": []
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "placement-guide",
+          "title": "Placement Guide: Data Structures Interview Tips and Common Patterns",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Data Structures",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Data Structures — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Data Structures — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "complexity-analysis",
+          "title": "Complexity Analysis: Big-O, Theta, Omega, and Space Complexity",
+          "type": "concept"
+        },
+        {
+          "slug": "recursion-basics",
+          "title": "Recursion: Base Cases, Call Stack, and Tail Recursion Optimization",
+          "type": "concept"
+        },
+        {
+          "slug": "dynamic-arrays",
+          "title": "Dynamic Arrays: Amortized Analysis and ArrayList Internals",
+          "type": "concept"
+        },
+        {
+          "slug": "string-operations",
+          "title": "String Operations: Manipulation, Pattern Matching, and StringBuilder",
+          "type": "concept"
+        },
+        {
+          "slug": "matrix-operations",
+          "title": "Matrix Operations: 2D Arrays, Rotation, Transposition, and Spiral Traversal",
+          "type": "concept"
+        },
+        {
+          "slug": "singly-linked-list",
+          "title": "Singly Linked List: Insertion, Deletion, Reversal, and Floyd’s Cycle Detection",
+          "type": "concept"
+        },
+        {
+          "slug": "doubly-circular-linked",
+          "title": "Doubly and Circular Linked Lists: Operations and LRU Cache Implementation",
+          "type": "concept"
+        },
+        {
+          "slug": "stack-implementation",
+          "title": "Stack Implementation: Array and Linked List Backed, Monotonic Stack Uses",
+          "type": "concept"
+        },
+        {
+          "slug": "queue-deque",
+          "title": "Queue and Deque: Circular Buffer, Priority Queue, and Sliding Window Maximum",
+          "type": "concept"
+        },
+        {
+          "slug": "binary-tree-fundamentals",
+          "title": "Binary Tree Fundamentals: Properties, Traversals, and Reconstruction",
+          "type": "concept"
+        },
+        {
+          "slug": "bst-operations",
+          "title": "Binary Search Tree Operations: Search, Insert, Delete, and Successor",
+          "type": "concept"
+        },
+        {
+          "slug": "avl-trees",
+          "title": "AVL Trees: Rotation Operations, Balance Factor, and Height Analysis",
+          "type": "concept"
+        },
+        {
+          "slug": "red-black-trees",
+          "title": "Red-Black Trees: Color Properties, Insertions, and Deletions",
+          "type": "concept"
+        },
+        {
+          "slug": "b-trees-and-variants",
+          "title": "B-Trees and B+ Trees: Disk-Based Storage and Database Indexing",
+          "type": "concept"
+        },
+        {
+          "slug": "trie-data-structure",
+          "title": "Trie (Prefix Tree): Insert, Search, Autocomplete, and Compressed Trie",
+          "type": "concept"
+        },
+        {
+          "slug": "segment-tree-ds",
+          "title": "Segment Trees: Range Sum, Range Minimum, and Lazy Propagation",
+          "type": "concept"
+        },
+        {
+          "slug": "fenwick-tree-ds",
+          "title": "Fenwick Tree (Binary Indexed Tree): Point Updates and Prefix Queries",
+          "type": "concept"
+        },
+        {
+          "slug": "heap-operations",
+          "title": "Heap Operations: Heapify, Extract-Min/Max, Heap Sort, and k-th Largest",
+          "type": "concept"
+        },
+        {
+          "slug": "hash-table-internals",
+          "title": "Hash Table Internals: Hash Functions, Chaining, and Open Addressing",
+          "type": "concept"
+        },
+        {
+          "slug": "bloom-filters",
+          "title": "Bloom Filters and Probabilistic Data Structures: Count-Min Sketch",
+          "type": "concept"
+        },
+        {
+          "slug": "graph-representation",
+          "title": "Graph Representation: Adjacency Matrix, List, and Edge List Comparison",
+          "type": "concept"
+        },
+        {
+          "slug": "bfs-dfs-algorithms",
+          "title": "BFS and DFS: Traversal, Connected Components, and Cycle Detection",
+          "type": "concept"
+        },
+        {
+          "slug": "union-find-ds",
+          "title": "Union-Find (Disjoint Sets): Union by Rank and Path Compression",
+          "type": "concept"
+        },
+        {
+          "slug": "skip-list-ds",
+          "title": "Skip List: Probabilistic Layered Structure and O(log n) Operations",
+          "type": "concept"
+        },
+        {
+          "slug": "van-emde-boas",
+          "title": "Van Emde Boas Trees and Integer Data Structure Optimizations",
+          "type": "concept"
+        },
+        {
+          "slug": "persistent-data-structures",
+          "title": "Persistent Data Structures: Immutable Updates and Functional Trees",
+          "type": "concept"
+        },
+        {
+          "slug": "external-data-structures",
+          "title": "External Memory Data Structures: Buffer Trees and Cache-Oblivious Layouts",
+          "type": "concept"
+        },
+        {
+          "slug": "arrays-lists",
+          "title": "Arrays and Linked Lists",
+          "type": "concept"
+        },
+        {
+          "slug": "graphs",
+          "title": "Graph Data Structures and Traversals",
+          "type": "concept"
+        },
+        {
+          "slug": "hash-tables",
+          "title": "Hash Tables",
+          "type": "concept"
+        },
+        {
+          "slug": "heaps",
+          "title": "Heap Data Structure",
+          "type": "concept"
+        },
+        {
+          "slug": "searching",
+          "title": "Searching Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "sorting",
+          "title": "Sorting Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "stacks-queues",
+          "title": "Stacks and Queues",
+          "type": "concept"
+        },
+        {
+          "slug": "trees",
+          "title": "Tree Data Structures",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": []
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "placement-guide",
+          "title": "Placement Guide: Data Structures Interview Tips and Common Patterns",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

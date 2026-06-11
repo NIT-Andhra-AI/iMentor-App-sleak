@@ -1,0 +1,281 @@
+{
+  "course": "dsa-placement",
+  "title": "DSA for Placement: Complete Interview Preparation",
+  "textbook_refs": [
+    "CLRS 4th Ed",
+    "Narasimha Karumanchi: Data Structures and Algorithms Made Easy",
+    "Aziz, Lee, Prakash: Elements of Programming Interviews"
+  ],
+  "topics": [
+    {
+      "slug": "matrix-problems",
+      "title": "Matrix Problems: Spiral Order, Rotation, Flood Fill, and Word Search",
+      "section": "Arrays and Strings",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "string-hashing",
+      "title": "String Hashing: Polynomial Rolling Hash and Anti-Hash Techniques",
+      "section": "Arrays and Strings",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "number-theory",
+      "title": "Number Theory: GCD, LCM, Modular Arithmetic, and Euler's Totient",
+      "section": "Mathematics",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "sieve-of-eratosthenes",
+      "title": "Sieve of Eratosthenes: Prime Generation and Segmented Sieve",
+      "section": "Mathematics",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "math-for-interviews",
+      "title": "Mathematics for Coding Interviews: Combinatorics, Pigeonhole, and Probability",
+      "section": "Mathematics",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "stack-problems-advanced",
+      "title": "Advanced Stack Problems: Largest Rectangle in Histogram, Stock Span, and Next Greater Element",
+      "section": "Stacks and Queues",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "queue-problems-advanced",
+      "title": "Advanced Queue Problems: First Non-Repeating Character and Sliding Window with Deque",
+      "section": "Stacks and Queues",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "linked-list-advanced",
+      "title": "Advanced Linked List: Merge K Sorted Lists, Flatten Multi-Level, and Copy with Random Pointer",
+      "section": "Linked Lists",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "binary-tree-advanced",
+      "title": "Advanced Binary Tree Problems: LCA, Diameter, Max Path Sum, and Serialize/Deserialize",
+      "section": "Trees",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "tree-dp",
+      "title": "Dynamic Programming on Trees: Subtree DP, Maximum Independent Set, and Tree Diameter",
+      "section": "Trees",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "lca-algorithms",
+      "title": "LCA Algorithms: Binary Lifting, Euler Tour + Sparse Table, and Farach-Colton-Bender",
+      "section": "Trees",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "graph-advanced-algorithms",
+      "title": "Advanced Graph Algorithms: Bridges, Articulation Points, and Biconnected Components",
+      "section": "Graphs",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "strongly-connected-components-placement",
+      "title": "Strongly Connected Components: Kosaraju's and Tarjan's Algorithms with Applications",
+      "section": "Graphs",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "euler-path-circuit",
+      "title": "Euler Path and Hamiltonian Cycle: Hierholzer's Algorithm and Ore's Theorem",
+      "section": "Graphs",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "floyd-warshall",
+      "title": "Floyd-Warshall Algorithm: All-Pairs Shortest Path and Transitive Closure",
+      "section": "Graphs",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dp-strings",
+      "title": "DP on Strings: Edit Distance, LCS, Palindrome Partitioning, and Regular Expression",
+      "section": "Dynamic Programming",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dp-knapsack-variations",
+      "title": "Knapsack Problem Variations: 0/1 Knapsack, Unbounded, Fractional, and Multiple Knapsack",
+      "section": "Dynamic Programming",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dp-grid-problems",
+      "title": "DP on Grids: Unique Paths, Minimum Path Sum, Dungeon Game, and Cherry Pickup",
+      "section": "Dynamic Programming",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "matrix-chain-dp",
+      "title": "Matrix Chain Multiplication and Interval DP: Burst Balloons, Palindrome Removal",
+      "section": "Dynamic Programming",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "bitmask-dp-placement",
+      "title": "Bitmask DP: Travelling Salesman, Assignment Problem, and SOS (Sum over Subsets)",
+      "section": "Dynamic Programming",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "digit-dp-placement",
+      "title": "Digit DP: Count Numbers with Digit Constraints and Digit Sum Problems",
+      "section": "Dynamic Programming",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "aho-corasick-placement",
+      "title": "Aho–Corasick Algorithm: Multi-Pattern Search and Dictionary Matching",
+      "section": "String Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "z-algorithm",
+      "title": "Z-Algorithm: Linear Preprocessing for Pattern Matching Applications",
+      "section": "String Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "manacher-palindromes",
+      "title": "Manacher's Algorithm: Longest Palindromic Substring in O(n)",
+      "section": "String Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "suffix-array-placement",
+      "title": "Suffix Arrays: SA-IS Construction, LCP Array, and Applications",
+      "section": "String Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "sqrt-decomposition",
+      "title": "Square Root Decomposition: Range Queries, Block Preprocessing, and Mo's Algorithm",
+      "section": "Advanced Data Structures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "sparse-table-placement",
+      "title": "Sparse Table: O(1) RMQ, Static Range Queries, and Disjoint Sparse Table",
+      "section": "Advanced Data Structures",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "heavy-light-decomp",
+      "title": "Heavy-Light Decomposition: Path Queries and Updates on Trees",
+      "section": "Advanced Data Structures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "centroid-decomp",
+      "title": "Centroid Decomposition: Distance Problems, Path Counting, and Centroid Tree",
+      "section": "Advanced Data Structures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "treap",
+      "title": "Treap and Implicit Key Treap: Split, Merge, and Sequence Operations",
+      "section": "Advanced Data Structures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "persistent-segment-tree",
+      "title": "Persistent Segment Tree: Versioned Updates and K-th Order Statistics",
+      "section": "Advanced Data Structures",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "convex-hull-trick",
+      "title": "Convex Hull Trick and Li Chao Tree: DP Optimization Techniques",
+      "section": "DP Optimization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "divide-conquer-dp-opt",
+      "title": "Divide and Conquer DP Optimization: Opt-Monotone DP and SMAWK Algorithm",
+      "section": "DP Optimization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "game-theory",
+      "title": "Game Theory: Nim, Sprague-Grundy Theorem, and Combinatorial Games",
+      "section": "Mathematics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "fast-fourier-transform-placement",
+      "title": "FFT and NTT: Polynomial Multiplication, Convolution, and Number Theoretic Transform",
+      "section": "Mathematics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "xor-problems",
+      "title": "XOR Tricks and Bit Manipulation Patterns: XOR Basis, Maximum XOR Subarray",
+      "section": "Bit Manipulation",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "meet-in-middle",
+      "title": "Meet in the Middle: Divide-and-Enumerate and Birthday Attack Applications",
+      "section": "Advanced Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "two-sat",
+      "title": "2-SAT: Implication Graph, SCC-Based Solution, and Applications",
+      "section": "Advanced Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "offline-algorithms",
+      "title": "Offline Algorithms: Mo's Algorithm, CDQ Divide and Conquer, and Offline LCT",
+      "section": "Advanced Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "system-design-dsa",
+      "title": "System Design for Interviews: LRU Cache, LFU Cache, and Consistent Hashing",
+      "section": "System Design",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "competitive-programming-tips",
+      "title": "Competitive Programming Patterns: Template Code, I/O Optimization, and Problem Taxonomy",
+      "section": "Competitive Programming",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "top-interview-patterns",
+      "title": "Top Interview Patterns: Two Pointers, Backtracking, BFS/DFS Templates",
+      "section": "Interview Patterns",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "faang-problem-patterns",
+      "title": "FAANG Problem Patterns: Amazon, Google, Microsoft, and Meta Common Topics",
+      "section": "Interview Patterns",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "mock-interview-problems",
+      "title": "Mock Interview Problems: Curated Set from Real Company Interviews",
+      "section": "Practice",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Resume Tips, Coding Round Strategy, and Negotiation",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+  <title>ER Diagram — Student Course Enrollment</title>
+  <style>
+    .bg{fill:#f8fafc}
+    .entity{fill:#e0f2fe;stroke:#0284c7;stroke-width:2;rx:6}
+    .rel{fill:#fef9c3;stroke:#ca8a04;stroke-width:2;transform-origin:center}
+    text{font-family:system-ui,sans-serif;font-size:13px;fill:#1e293b;text-anchor:middle;dominant-baseline:middle}
+    .title{font-size:20px;font-weight:bold;fill:#0369a1}
+    .attr{font-size:11px;fill:#475569}
+    line{stroke:#64748b;stroke-width:1.5}
+  </style>
+  <rect class="bg" width="640" height="360"/>
+  <text class="title" x="320" y="26">Entity-Relationship Diagram</text>
+
+  <!-- STUDENT entity -->
+  <rect class="entity" x="30" y="60" width="150" height="200" rx="6"/>
+  <text x="105" y="80" font-weight="bold" font-size="15">STUDENT</text>
+  <line x1="30" y1="96" x2="180" y2="96"/>
+  <text class="attr" x="105" y="115"><tspan text-decoration="underline">student_id (PK)</tspan></text>
+  <text class="attr" x="105" y="138">name</text>
+  <text class="attr" x="105" y="158">email</text>
+  <text class="attr" x="105" y="178">branch</text>
+  <text class="attr" x="105" y="198">year</text>
+
+  <!-- COURSE entity -->
+  <rect class="entity" x="460" y="60" width="150" height="200" rx="6"/>
+  <text x="535" y="80" font-weight="bold" font-size="15">COURSE</text>
+  <line x1="460" y1="96" x2="610" y2="96"/>
+  <text class="attr" x="535" y="115"><tspan text-decoration="underline">course_id (PK)</tspan></text>
+  <text class="attr" x="535" y="138">title</text>
+  <text class="attr" x="535" y="158">credits</text>
+  <text class="attr" x="535" y="178">department</text>
+  <text class="attr" x="535" y="198">instructor</text>
+
+  <!-- ENROLLMENT relationship diamond -->
+  <polygon points="320,130 390,170 320,210 250,170" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="320" y="170" font-weight="bold" font-size="13">ENROLLS</text>
+
+  <!-- Relationship attributes -->
+  <rect fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5" x="270" y="230" width="100" height="50" rx="4"/>
+  <text x="320" y="252" font-size="12">grade</text>
+  <text class="attr" x="320" y="268">enroll_date</text>
+  <line x1="320" y1="210" x2="320" y2="230"/>
+
+  <!-- Connecting lines with cardinality -->
+  <line x1="180" y1="170" x2="250" y2="170"/>
+  <text font-size="14" fill="#0284c7" x="200" y="158">M</text>
+  <line x1="390" y1="170" x2="460" y2="170"/>
+  <text font-size="14" fill="#0284c7" x="430" y="158">N</text>
+
+  <!-- Crow's foot notation hints -->
+  <text font-size="11" fill="#64748b" x="320" y="340">Many students enroll in many courses (M:N relationship)</text>
+</svg>

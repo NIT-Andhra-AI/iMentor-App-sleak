@@ -1,0 +1,264 @@
+{
+  "id": "jntuk-oop-cpp",
+  "title": "Object-Oriented Programming with C++ (JNTUK R20)",
+  "version": "1.0.0",
+  "description": "JNTUK R20 Year 2 Sem 1 — Complete OOP with C++ covering classes, inheritance, polymorphism, templates, STL, and file I/O aligned to JNTUK B.Tech CSE R20 syllabus.",
+  "placement_domains": [
+    "Software Engineer",
+    "SDE"
+  ],
+  "wiki_page_count": 16,
+  "module_count": 5,
+  "built_with": "jntuk-r20-manual",
+  "built_at": "2026-06-11",
+  "tags": [
+    "oop",
+    "cpp",
+    "c++",
+    "jntuk",
+    "r20",
+    "year2"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Object-Oriented Programming with C++ (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "OOP with C++ — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "OOP with C++ — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "cpp-intro",
+          "title": "Introduction to C++: History, Features, Differences from C",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-classes-objects",
+          "title": "Classes and Objects: Access Specifiers, Member Functions, Constructors",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-constructors-destructors",
+          "title": "Constructors and Destructors: Default, Parameterized, Copy, Destructor Order",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-inheritance",
+          "title": "Inheritance in C++: Single, Multiple, Multilevel, Hierarchical, Hybrid",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-polymorphism",
+          "title": "Polymorphism: Function Overloading, Operator Overloading, Virtual Functions",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-abstract-classes",
+          "title": "Abstract Classes and Pure Virtual Functions, Interfaces in C++",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-templates",
+          "title": "Templates: Function Templates, Class Templates, Generic Programming",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-stl",
+          "title": "Standard Template Library (STL): Containers, Iterators, Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-exception-handling",
+          "title": "Exception Handling in C++: try-catch-throw, Custom Exceptions",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-file-io",
+          "title": "File I/O in C++: fstream, ifstream, ofstream, Binary Files",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-smart-pointers",
+          "title": "Smart Pointers and RAII: unique_ptr, shared_ptr, Memory Management",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "cpp-lab-oop",
+          "title": "C++ Lab: OOP Design Exercises — Bank, Library, Student Systems",
+          "type": "lab"
+        },
+        {
+          "slug": "cpp-lab-stl",
+          "title": "C++ Lab: STL Algorithms and Container Practice Problems",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "cpp-placement-guide",
+          "title": "C++ Placement Interview Guide: JNTUK-Pattern OOP Questions",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Object-Oriented Programming with C++ (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "OOP with C++ — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "OOP with C++ — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "cpp-intro",
+          "title": "Introduction to C++: History, Features, Differences from C",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-classes-objects",
+          "title": "Classes and Objects: Access Specifiers, Member Functions, Constructors",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-constructors-destructors",
+          "title": "Constructors and Destructors: Default, Parameterized, Copy, Destructor Order",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-inheritance",
+          "title": "Inheritance in C++: Single, Multiple, Multilevel, Hierarchical, Hybrid",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-polymorphism",
+          "title": "Polymorphism: Function Overloading, Operator Overloading, Virtual Functions",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-abstract-classes",
+          "title": "Abstract Classes and Pure Virtual Functions, Interfaces in C++",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-templates",
+          "title": "Templates: Function Templates, Class Templates, Generic Programming",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-stl",
+          "title": "Standard Template Library (STL): Containers, Iterators, Algorithms",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-exception-handling",
+          "title": "Exception Handling in C++: try-catch-throw, Custom Exceptions",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-file-io",
+          "title": "File I/O in C++: fstream, ifstream, ofstream, Binary Files",
+          "type": "concept"
+        },
+        {
+          "slug": "cpp-smart-pointers",
+          "title": "Smart Pointers and RAII: unique_ptr, shared_ptr, Memory Management",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "cpp-lab-oop",
+          "title": "C++ Lab: OOP Design Exercises — Bank, Library, Student Systems",
+          "type": "lab"
+        },
+        {
+          "slug": "cpp-lab-stl",
+          "title": "C++ Lab: STL Algorithms and Container Practice Problems",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "cpp-placement-guide",
+          "title": "C++ Placement Interview Guide: JNTUK-Pattern OOP Questions",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

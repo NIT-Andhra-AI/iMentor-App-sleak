@@ -1,0 +1,263 @@
+{
+  "course": "computer-networks",
+  "title": "Computer Networks: A Top-Down Approach",
+  "textbook_refs": [
+    "Kurose & Ross: Computer Networking 8th Ed",
+    "Tanenbaum & Wetherall: Computer Networks 6th Ed",
+    "Stevens: TCP/IP Illustrated Vol 1"
+  ],
+  "topics": [
+    {
+      "slug": "network-history-evolution",
+      "title": "History and Evolution of Computer Networks: ARPANET to 5G",
+      "section": "Introduction",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "osi-model-deep-dive",
+      "title": "OSI Seven-Layer Model: Detailed Functions and Service Primitives",
+      "section": "Network Models",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "tcp-ip-stack",
+      "title": "TCP/IP Protocol Stack: Layers, Encapsulation, and Demultiplexing",
+      "section": "Network Models",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "physical-layer",
+      "title": "Physical Layer: Signals, Bandwidth, Nyquist Theorem, and Shannon's Capacity",
+      "section": "Physical Layer",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "transmission-media",
+      "title": "Transmission Media: Guided (Copper, Fiber) and Unguided (Wireless)",
+      "section": "Physical Layer",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "encoding-modulation",
+      "title": "Digital Encoding and Modulation: NRZ, Manchester, QAM, and OFDM",
+      "section": "Physical Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "error-detection-correction",
+      "title": "Error Detection and Correction: CRC, Hamming Codes, and Reed-Solomon",
+      "section": "Data Link Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "framing-protocols",
+      "title": "Framing Protocols: Byte Stuffing, Bit Stuffing, and HDLC",
+      "section": "Data Link Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "mac-protocols",
+      "title": "Multiple Access Protocols: TDMA, FDMA, CDMA, and Contention-Based",
+      "section": "Data Link Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "csma-cd-ca",
+      "title": "CSMA/CD and CSMA/CA: Collision Detection and Avoidance",
+      "section": "Data Link Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "ethernet-standards",
+      "title": "Ethernet Standards: 10/100/1G/10G Ethernet and Frame Format",
+      "section": "LAN Technologies",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "switching-bridging",
+      "title": "Switches and Bridges: MAC Learning, Forwarding Tables, and STP",
+      "section": "LAN Technologies",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "vlans-trunking",
+      "title": "VLANs and Trunking: 802.1Q Tagging and Inter-VLAN Routing",
+      "section": "LAN Technologies",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "ip-addressing-subnetting",
+      "title": "IP Addressing and Subnetting: CIDR, VLSM, and Supernetting",
+      "section": "Network Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "ipv6",
+      "title": "IPv6: Address Space, Header Format, Transition Mechanisms, and NDP",
+      "section": "Network Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "arp-rarp",
+      "title": "ARP and RARP: Address Resolution and Reverse Address Resolution",
+      "section": "Network Layer",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "icmp-ping-traceroute",
+      "title": "ICMP: Error Reporting, Ping, and Traceroute Implementation",
+      "section": "Network Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "routing-protocols-rip-ospf",
+      "title": "Intra-Domain Routing: RIP (Distance Vector) and OSPF (Link State)",
+      "section": "Network Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bgp-interdomain-routing",
+      "title": "BGP: Internet's Inter-Domain Routing Protocol and Policy Routing",
+      "section": "Network Layer",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "nat-pat",
+      "title": "NAT and PAT: Network Address Translation, Port Forwarding, and Traversal",
+      "section": "Network Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "multicast-routing",
+      "title": "IP Multicasting: IGMP, PIM, and Multicast Routing Trees",
+      "section": "Network Layer",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "tcp-deep-dive",
+      "title": "TCP Protocol Deep Dive: Connection Setup, Teardown, and State Machine",
+      "section": "Transport Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "tcp-flow-congestion-control",
+      "title": "TCP Flow and Congestion Control: Slow Start, CUBIC, and BBR",
+      "section": "Transport Layer",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "udp-real-time",
+      "title": "UDP and Real-Time Protocols: RTP, RTCP, and WebRTC",
+      "section": "Transport Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "socket-programming",
+      "title": "Socket Programming: TCP/UDP Sockets, Non-Blocking I/O, and epoll",
+      "section": "Transport Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "quic-http3",
+      "title": "QUIC and HTTP/3: Modern Transport Protocol Design",
+      "section": "Transport Layer",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "dns",
+      "title": "DNS: Hierarchical Resolution, Caching, Resource Records, and DNSSEC",
+      "section": "Application Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "http-https",
+      "title": "HTTP/1.1 to HTTP/2: Request-Response, Caching, and Multiplexing",
+      "section": "Application Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "smtp-pop3-imap",
+      "title": "Email Protocols: SMTP, POP3, IMAP, and MIME Encoding",
+      "section": "Application Layer",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "ftp-ssh-protocols",
+      "title": "FTP, SSH, and Telnet: File Transfer and Secure Remote Access",
+      "section": "Application Layer",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "cdn-content-delivery",
+      "title": "Content Delivery Networks: Anycast, Edge Caching, and Load Balancing",
+      "section": "Application Layer",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dhcp-protocol",
+      "title": "DHCP: Dynamic Host Configuration, DORA Process, and Options",
+      "section": "Application Layer",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "ssl-tls-certificates",
+      "title": "SSL/TLS: Handshake Protocol, Certificate Chains, and PKI",
+      "section": "Network Security",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "firewall-ids-ips",
+      "title": "Firewalls, IDS, and IPS: Packet Filtering, Deep Inspection, and Snort",
+      "section": "Network Security",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "vpn-tunneling",
+      "title": "VPN Technologies: IPSec, L2TP, OpenVPN, and WireGuard",
+      "section": "Network Security",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "wireless-networks-80211",
+      "title": "IEEE 802.11 Wi-Fi: MAC Protocol, CSMA/CA, and 802.11ax (Wi-Fi 6)",
+      "section": "Wireless Networks",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "mobile-networks-4g-5g",
+      "title": "Cellular Networks: LTE/4G Architecture and 5G NR Technologies",
+      "section": "Wireless Networks",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "sdn-network-virtualization",
+      "title": "Software-Defined Networking: OpenFlow, Control Plane Separation, and NFV",
+      "section": "Modern Networks",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "overlay-p2p-networks",
+      "title": "Overlay Networks and P2P: DHT, Chord, BitTorrent, and Kademlia",
+      "section": "Modern Networks",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "network-qos",
+      "title": "Quality of Service: DiffServ, IntServ, Traffic Shaping, and RSVP",
+      "section": "Network Performance",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "network-measurement-tools",
+      "title": "Network Measurement and Monitoring: Wireshark, NetFlow, and SNMP",
+      "section": "Network Management",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Computer Networks Interview Questions and Career Paths",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

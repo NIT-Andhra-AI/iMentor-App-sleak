@@ -1,0 +1,22 @@
+# Student AI — Model Configuration: Gemma 4 E4B-IT Q4_K_M
+#
+# RAM tier: 16 GB+  (5.1 GB model + ~512 MB KV cache + ~1 GB app overhead)
+# Architecture: MoE (4B effective / ~7.5B total parameters)
+# Context: up to 128k tokens capacity
+#
+# To activate: set STUDENT_AI_MODELS=models-gemma-e4b.toml before build
+# or reference this file from a tauri config overlay.
+
+[llm]
+display_name = "AI Language Model"
+source_file  = "gemma-4-E4B-it-Q4_K_M.gguf"
+file_name    = "chat-model-2.gguf"
+url          = "https://huggingface.co/ggml-org/gemma-4-e4b-it-GGUF/resolve/main/gemma-4-E4B-it-Q4_K_M.gguf?download=true"
+size_mb      = 5088
+
+[embedding]
+display_name = "Document Search Model"
+source_file  = "bge-small-en-v1.5-q8_0.gguf"
+file_name    = "rag-model-1.gguf"
+url          = "https://huggingface.co/CompendiumLabs/bge-small-en-v1.5-gguf/resolve/main/bge-small-en-v1.5-q8_0.gguf"
+size_mb      = 35

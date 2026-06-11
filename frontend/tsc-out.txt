@@ -1,0 +1,38 @@
+src/stores/agentStore.ts(1,24): error TS2307: Cannot find module 'zustand' or its corresponding type declarations.
+src/stores/agentStore.ts(23,50): error TS7006: Parameter 'set' implicitly has an 'any' type.
+src/stores/agentStore.ts(28,15): error TS7006: Parameter 'agents' implicitly has an 'any' type.
+src/stores/agentStore.ts(29,20): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/stores/agentStore.ts(31,21): error TS7006: Parameter 'agentId' implicitly has an 'any' type.
+src/stores/agentStore.ts(31,30): error TS7006: Parameter 'msg' implicitly has an 'any' type.
+src/stores/agentStore.ts(32,10): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/stores/agentStore.ts(39,22): error TS7006: Parameter 'agentId' implicitly has an 'any' type.
+src/stores/agentStore.ts(39,31): error TS7006: Parameter 'msgId' implicitly has an 'any' type.
+src/stores/agentStore.ts(39,38): error TS7006: Parameter 'token' implicitly has an 'any' type.
+src/stores/agentStore.ts(40,10): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/stores/agentStore.ts(43,62): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/stores/agentStore.ts(49,26): error TS7006: Parameter 'agentId' implicitly has an 'any' type.
+src/stores/agentStore.ts(49,35): error TS7006: Parameter 'msgId' implicitly has an 'any' type.
+src/stores/agentStore.ts(50,10): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/stores/agentStore.ts(53,62): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/stores/chatStore.ts(1,24): error TS2307: Cannot find module 'zustand' or its corresponding type declarations.
+src/stores/chatStore.ts(33,48): error TS7006: Parameter 'set' implicitly has an 'any' type.
+src/stores/chatStore.ts(33,53): error TS7006: Parameter 'get' implicitly has an 'any' type.
+src/stores/chatStore.ts(39,23): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/stores/chatStore.ts(41,16): error TS7006: Parameter 'session' implicitly has an 'any' type.
+src/stores/chatStore.ts(42,10): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/stores/chatStore.ts(44,16): error TS7006: Parameter 'sessionId' implicitly has an 'any' type.
+src/stores/chatStore.ts(44,27): error TS7006: Parameter 'message' implicitly has an 'any' type.
+src/stores/chatStore.ts(45,10): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/stores/chatStore.ts(52,17): error TS7006: Parameter 'sessionId' implicitly has an 'any' type.
+src/stores/chatStore.ts(52,28): error TS7006: Parameter 'messageId' implicitly has an 'any' type.
+src/stores/chatStore.ts(52,39): error TS7006: Parameter 'token' implicitly has an 'any' type.
+src/stores/chatStore.ts(53,10): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/stores/chatStore.ts(56,61): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/stores/chatStore.ts(62,19): error TS7006: Parameter 'isGenerating' implicitly has an 'any' type.
+src/stores/chatStore.ts(64,21): error TS7006: Parameter 'sessionId' implicitly has an 'any' type.
+src/stores/chatStore.ts(64,32): error TS7006: Parameter 'messageId' implicitly has an 'any' type.
+src/stores/chatStore.ts(65,10): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/stores/chatStore.ts(68,61): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/stores/modeStore.ts(1,24): error TS2307: Cannot find module 'zustand' or its corresponding type declarations.
+src/stores/modeStore.ts(9,48): error TS7006: Parameter 'set' implicitly has an 'any' type.
+src/stores/modeStore.ts(11,13): error TS7006: Parameter 'mode' implicitly has an 'any' type.

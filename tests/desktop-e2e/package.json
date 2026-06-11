@@ -1,0 +1,25 @@
+{
+  "name": "student-ai-desktop-e2e",
+  "private": true,
+  "version": "0.3.0",
+  "packageManager": "bun@1.2.13",
+  "type": "module",
+  "scripts": {
+    "smoke":            "bunx playwright test --project=smoke",
+    "general-chat":     "bunx playwright test --project=general-chat",
+    "course-chat":      "bunx playwright test --project=course-chat",
+    "rag":              "bunx playwright test --project=rag-documents",
+    "agents":           "bunx playwright test --project=agents",
+    "visualizations":   "bunx playwright test --project=visualizations",
+    "stress":           "bunx playwright test --project=stress",
+    "course-crawl":     "bunx playwright test --project=course-crawl",
+    "latency":          "bunx playwright test --project=latency-quality",
+    "core":             "bunx playwright test --project=smoke --project=general-chat --project=rag-documents --project=course-chat --project=agents",
+    "all":              "bunx playwright test",
+    "report":           "bunx playwright show-report test-results/html",
+    "open-metrics":     "node -e \"const fs=require('fs'); console.log(fs.readFileSync('test-results/latency-quality-report.md','utf-8'));\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.1"
+  }
+}

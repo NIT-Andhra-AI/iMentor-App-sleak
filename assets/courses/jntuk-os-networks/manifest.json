@@ -1,0 +1,285 @@
+{
+  "id": "jntuk-os-networks",
+  "title": "Operating Systems & Computer Networks (JNTUK R20)",
+  "version": "1.0.0",
+  "description": "JNTUK R20 Year 2-3 — Complete coverage of Operating Systems (process management, memory, file systems) and Computer Networks (OSI/TCP model, protocols, security) aligned to JNTUK B.Tech CSE R20 syllabus.",
+  "placement_domains": [
+    "Systems Engineer",
+    "Network Engineer",
+    "Software Engineer"
+  ],
+  "wiki_page_count": 18,
+  "module_count": 5,
+  "built_with": "jntuk-r20-manual",
+  "built_at": "2026-06-11",
+  "tags": [
+    "operating-systems",
+    "computer-networks",
+    "jntuk",
+    "r20",
+    "year2",
+    "year3"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Operating Systems & Computer Networks (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "OS & Networks — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "OS & Networks — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "os-intro",
+          "title": "Introduction to OS: Goals, Types, System Calls, OS Structure",
+          "type": "concept"
+        },
+        {
+          "slug": "process-management",
+          "title": "Process Management: Process States, PCB, Context Switch, Threads vs Processes",
+          "type": "concept"
+        },
+        {
+          "slug": "cpu-scheduling",
+          "title": "CPU Scheduling: FCFS, SJF, Priority, Round Robin, Multilevel Queue",
+          "type": "concept"
+        },
+        {
+          "slug": "process-synchronization",
+          "title": "Process Synchronization: Race Conditions, Mutex, Semaphores, Monitors",
+          "type": "concept"
+        },
+        {
+          "slug": "deadlocks",
+          "title": "Deadlocks: Conditions, Prevention, Avoidance (Banker's Algorithm), Detection",
+          "type": "concept"
+        },
+        {
+          "slug": "memory-management",
+          "title": "Memory Management: Paging, Segmentation, Virtual Memory, Page Replacement",
+          "type": "concept"
+        },
+        {
+          "slug": "file-systems-os",
+          "title": "File Systems: FAT, NTFS, Ext4, Inodes, Directory Structures, Disk Scheduling",
+          "type": "concept"
+        },
+        {
+          "slug": "network-fundamentals",
+          "title": "Network Fundamentals: Types, Topologies, OSI vs TCP/IP Model, Transmission Media",
+          "type": "concept"
+        },
+        {
+          "slug": "network-layer",
+          "title": "Network Layer: IP Addressing, Subnetting, CIDR, Routing Algorithms (Dijkstra, DVR)",
+          "type": "concept"
+        },
+        {
+          "slug": "transport-layer",
+          "title": "Transport Layer: TCP vs UDP, 3-Way Handshake, Flow Control, Congestion Control",
+          "type": "concept"
+        },
+        {
+          "slug": "application-layer",
+          "title": "Application Layer Protocols: HTTP/HTTPS, DNS, SMTP, FTP, DHCP",
+          "type": "concept"
+        },
+        {
+          "slug": "network-security",
+          "title": "Network Security: Cryptography, SSL/TLS, Firewalls, VPN, Common Attacks",
+          "type": "concept"
+        },
+        {
+          "slug": "wireless-networks",
+          "title": "Wireless Networks: WiFi (802.11), Bluetooth, 4G/5G, Mobile IP",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "os-lab-simulation",
+          "title": "OS Lab: CPU Scheduling and Page Replacement Algorithm Simulations",
+          "type": "lab"
+        },
+        {
+          "slug": "networks-lab",
+          "title": "Networks Lab: Socket Programming, Wireshark Analysis, Ping/Traceroute",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "os-networks-placement",
+          "title": "Placement Guide: OS and Networks Interview Q&A for JNTUK Students",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Operating Systems & Computer Networks (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "OS & Networks — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "OS & Networks — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "os-intro",
+          "title": "Introduction to OS: Goals, Types, System Calls, OS Structure",
+          "type": "concept"
+        },
+        {
+          "slug": "process-management",
+          "title": "Process Management: Process States, PCB, Context Switch, Threads vs Processes",
+          "type": "concept"
+        },
+        {
+          "slug": "cpu-scheduling",
+          "title": "CPU Scheduling: FCFS, SJF, Priority, Round Robin, Multilevel Queue",
+          "type": "concept"
+        },
+        {
+          "slug": "process-synchronization",
+          "title": "Process Synchronization: Race Conditions, Mutex, Semaphores, Monitors",
+          "type": "concept"
+        },
+        {
+          "slug": "deadlocks",
+          "title": "Deadlocks: Conditions, Prevention, Avoidance (Banker's Algorithm), Detection",
+          "type": "concept"
+        },
+        {
+          "slug": "memory-management",
+          "title": "Memory Management: Paging, Segmentation, Virtual Memory, Page Replacement",
+          "type": "concept"
+        },
+        {
+          "slug": "file-systems-os",
+          "title": "File Systems: FAT, NTFS, Ext4, Inodes, Directory Structures, Disk Scheduling",
+          "type": "concept"
+        },
+        {
+          "slug": "network-fundamentals",
+          "title": "Network Fundamentals: Types, Topologies, OSI vs TCP/IP Model, Transmission Media",
+          "type": "concept"
+        },
+        {
+          "slug": "network-layer",
+          "title": "Network Layer: IP Addressing, Subnetting, CIDR, Routing Algorithms (Dijkstra, DVR)",
+          "type": "concept"
+        },
+        {
+          "slug": "transport-layer",
+          "title": "Transport Layer: TCP vs UDP, 3-Way Handshake, Flow Control, Congestion Control",
+          "type": "concept"
+        },
+        {
+          "slug": "application-layer",
+          "title": "Application Layer Protocols: HTTP/HTTPS, DNS, SMTP, FTP, DHCP",
+          "type": "concept"
+        },
+        {
+          "slug": "network-security",
+          "title": "Network Security: Cryptography, SSL/TLS, Firewalls, VPN, Common Attacks",
+          "type": "concept"
+        },
+        {
+          "slug": "wireless-networks",
+          "title": "Wireless Networks: WiFi (802.11), Bluetooth, 4G/5G, Mobile IP",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "os-lab-simulation",
+          "title": "OS Lab: CPU Scheduling and Page Replacement Algorithm Simulations",
+          "type": "lab"
+        },
+        {
+          "slug": "networks-lab",
+          "title": "Networks Lab: Socket Programming, Wireshark Analysis, Ping/Traceroute",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "os-networks-placement",
+          "title": "Placement Guide: OS and Networks Interview Q&A for JNTUK Students",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

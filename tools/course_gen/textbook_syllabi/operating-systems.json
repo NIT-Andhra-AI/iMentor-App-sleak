@@ -1,0 +1,203 @@
+{
+  "course": "operating-systems",
+  "title": "Operating Systems: Three Easy Pieces",
+  "textbook_refs": [
+    "Arpaci-Dusseau: Operating Systems: Three Easy Pieces",
+    "Silberschatz, Galvin, Gagne: Operating System Concepts 10th Ed",
+    "Tanenbaum & Bos: Modern Operating Systems 5th Ed"
+  ],
+  "topics": [
+    {
+      "slug": "os-history-structure",
+      "title": "OS History and Structure: Monolithic, Microkernel, and Hybrid Architectures",
+      "section": "Introduction",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "system-calls-api",
+      "title": "System Calls and OS API: User Mode, Kernel Mode, and Trap Mechanism",
+      "section": "Introduction",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "process-creation-fork-exec",
+      "title": "Process Creation: fork(), exec(), wait(), and Process Lifecycle",
+      "section": "Process Management",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "threads-concurrency",
+      "title": "Threads and Concurrency: POSIX Threads, Thread Models, and Concurrency Hazards",
+      "section": "Concurrency",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "inter-process-communication",
+      "title": "Inter-Process Communication: Pipes, FIFOs, Message Queues, Shared Memory, Sockets",
+      "section": "Process Management",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "mutex-semaphores-monitors",
+      "title": "Mutex, Semaphores, and Monitors: Classical Synchronization Primitives",
+      "section": "Synchronization",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "classical-sync-problems",
+      "title": "Classical Synchronization Problems: Producer-Consumer, Readers-Writers, Dining Philosophers",
+      "section": "Synchronization",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "condition-variables",
+      "title": "Condition Variables: Mesa vs Hoare Semantics and Spurious Wakeups",
+      "section": "Synchronization",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "lock-free-concurrent",
+      "title": "Lock-Free Data Structures: CAS Operations, ABA Problem, and Memory Ordering",
+      "section": "Advanced Synchronization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "scheduling-algorithms-deep-dive",
+      "title": "CPU Scheduling Algorithms: FCFS, SJF, SRTF, Round Robin, Multilevel Queues",
+      "section": "CPU Scheduling",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "real-time-scheduling",
+      "title": "Real-Time Scheduling: EDF, RMS, and Hard vs Soft Real-Time Constraints",
+      "section": "CPU Scheduling",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "multiprocessor-scheduling",
+      "title": "Multiprocessor and Gang Scheduling: Load Balancing and CPU Affinity",
+      "section": "CPU Scheduling",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "deadlock-detection-recovery",
+      "title": "Deadlock Detection and Recovery: Resource Allocation Graphs and Banker's Algorithm",
+      "section": "Deadlocks",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "paging-segmentation",
+      "title": "Paging and Segmentation: Address Translation, Page Tables, and Segfaults",
+      "section": "Memory Management",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "tlb-address-translation",
+      "title": "TLB and Multi-Level Page Tables: CR3 Register, ASID, and Inverted Page Tables",
+      "section": "Memory Management",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "page-replacement-algorithms",
+      "title": "Page Replacement Algorithms: FIFO, LRU, Clock, Working Set, and Thrashing",
+      "section": "Virtual Memory",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "demand-paging-copy-on-write",
+      "title": "Demand Paging and Copy-on-Write: mmap(), Memory-Mapped Files, and Swapping",
+      "section": "Virtual Memory",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "memory-allocators",
+      "title": "Memory Allocators: Buddy System, Slab Allocator, and dlmalloc Internals",
+      "section": "Memory Management",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "file-system-implementation",
+      "title": "File System Implementation: Inodes, Directory Structure, and Block Allocation",
+      "section": "File Systems",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "directory-structures",
+      "title": "Directory Structures: Tree, Acyclic Graph, and Hard Links vs Symbolic Links",
+      "section": "File Systems",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "journaling-log-structured",
+      "title": "Journaling and Log-Structured File Systems: Crash Consistency and Ext4/ZFS",
+      "section": "File Systems",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "disk-scheduling",
+      "title": "Disk Scheduling: FCFS, SSTF, SCAN, C-SCAN, and Look Algorithms",
+      "section": "I/O Management",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "io-management-devices",
+      "title": "I/O Subsystem: Device Drivers, IRQs, DMA, and I/O Schedulers",
+      "section": "I/O Management",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "linux-kernel-internals",
+      "title": "Linux Kernel Internals: Process Scheduler, VFS Layer, and Kernel Modules",
+      "section": "OS Implementations",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "windows-internals",
+      "title": "Windows OS Architecture: NT Kernel, HAL, Win32 API, and Registry",
+      "section": "OS Implementations",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "boot-process-bios-uefi",
+      "title": "Boot Process: BIOS/UEFI, GRUB, Kernel Initialization, and init/systemd",
+      "section": "OS Internals",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "virtualization-hypervisors",
+      "title": "Virtualization: Type-1/Type-2 Hypervisors, KVM, VMware, and Paravirtualization",
+      "section": "Virtualization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "containers-namespaces",
+      "title": "Containers and Namespaces: Linux cgroups, namespaces, Docker, and OCI",
+      "section": "Virtualization",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "os-security-protection",
+      "title": "OS Security: Access Control, Capabilities, SELinux, and Privilege Escalation",
+      "section": "Security",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "garbage-collection-os",
+      "title": "Memory Reclamation: Garbage Collection in OS Context and RCU Mechanism",
+      "section": "Advanced Memory",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "distributed-os-concepts",
+      "title": "Distributed OS Concepts: Remote Procedure Calls, Distributed Shared Memory",
+      "section": "Advanced Topics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: OS Interview Questions, GATE Preparation, and Kernel Programming",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "course": "computer-organization",
+  "title": "Computer Organization and Architecture",
+  "textbook_refs": [
+    "Patterson & Hennessy: Computer Organization and Design (RISC-V Ed)",
+    "Tanenbaum: Structured Computer Organization 6th Ed",
+    "Hamacher: Computer Organization and Embedded Systems"
+  ],
+  "topics": [
+    {
+      "slug": "boolean-functions-minimization",
+      "title": "Boolean Functions and Minimization: Karnaugh Maps and Quine-McCluskey",
+      "section": "Digital Circuits",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "combinational-circuit-design",
+      "title": "Combinational Circuit Design: Adders, Subtractors, Comparators, and Muxes",
+      "section": "Digital Circuits",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "sequential-circuit-design",
+      "title": "Sequential Circuit Design: Flip-Flops, Registers, and Counters",
+      "section": "Digital Circuits",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "number-representations",
+      "title": "Number Representations: Twos Complement, IEEE 754 Floating Point",
+      "section": "Data Representation",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "integer-arithmetic-unit",
+      "title": "Integer Arithmetic Unit: Carry-Lookahead Adders and Booth Multiplier",
+      "section": "ALU Design",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "floating-point-arithmetic",
+      "title": "Floating-Point Arithmetic: IEEE 754 Operations and Rounding Modes",
+      "section": "ALU Design",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "risc-vs-cisc",
+      "title": "RISC vs CISC: Architecture Philosophy and Real-World Trade-offs",
+      "section": "ISA",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "risc-v-isa",
+      "title": "RISC-V ISA: Instruction Formats, Registers, and Base Integer Instructions",
+      "section": "ISA",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "x86-isa",
+      "title": "x86 and x86-64 ISA: Key Instructions and Programming Model",
+      "section": "ISA",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "addressing-modes",
+      "title": "Addressing Modes: Immediate, Register, Direct, Indirect, and Indexed",
+      "section": "ISA",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "datapath-design",
+      "title": "Single-Cycle Datapath Design: ALU, Register File, and Control",
+      "section": "CPU Design",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "control-unit-design",
+      "title": "Control Unit Design: Hardwired and Microprogrammed Control",
+      "section": "CPU Design",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "pipeline-hazards",
+      "title": "Pipeline Hazards: Data, Control, and Structural Hazards and Solutions",
+      "section": "Pipelining",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "out-of-order-execution",
+      "title": "Out-of-Order Execution: Tomasulo Algorithm and Reorder Buffer",
+      "section": "Pipelining",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "branch-prediction",
+      "title": "Branch Prediction: Static, Dynamic, and Tournament Predictors",
+      "section": "Pipelining",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "superscalar-vliw",
+      "title": "Superscalar and VLIW Processors: Instruction-Level Parallelism",
+      "section": "Advanced CPU",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "cache-design",
+      "title": "Cache Design: Direct-Mapped, Set-Associative, and Fully-Associative",
+      "section": "Memory Hierarchy",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "cache-replacement-policies",
+      "title": "Cache Replacement Policies: LRU, FIFO, Clock, and Belady's Optimal",
+      "section": "Memory Hierarchy",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "cache-coherence",
+      "title": "Cache Coherence Protocols: MSI, MESI, and Directory-Based Coherence",
+      "section": "Memory Hierarchy",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "virtual-memory-hardware",
+      "title": "Virtual Memory Hardware: TLB, Page Tables, and Multi-Level Paging",
+      "section": "Memory Hierarchy",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dram-sdram",
+      "title": "DRAM and SDRAM: Internal Organization, Timing, and DDR Standards",
+      "section": "Memory Devices",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "storage-systems",
+      "title": "Storage Systems: HDD Mechanics, SSD Flash, and NVMe Interface",
+      "section": "I/O Systems",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "io-interface-buses",
+      "title": "I/O Interfaces and Buses: PCI Express, USB, SATA, and I2C",
+      "section": "I/O Systems",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "interrupt-dma",
+      "title": "Interrupts and DMA: Programmed I/O, Interrupt-Driven, and DMA Transfer",
+      "section": "I/O Systems",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "multicore-smp",
+      "title": "Multicore and SMP Architecture: Memory Consistency and Synchronization",
+      "section": "Parallel Architecture",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "gpu-architecture",
+      "title": "GPU Architecture: SIMD, Warps, Memory Hierarchy, and CUDA Model",
+      "section": "Parallel Architecture",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "embedded-systems-arch",
+      "title": "Embedded Systems Architecture: Microcontrollers, Real-Time Constraints",
+      "section": "Embedded Systems",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "power-performance-design",
+      "title": "Power and Performance: Dynamic Voltage Scaling, Amdahl's Law, Roofline Model",
+      "section": "Performance Analysis",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "memory-consistency-models",
+      "title": "Memory Consistency Models: Sequential Consistency, TSO, and RVWMO",
+      "section": "Parallel Architecture",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: Computer Organization Interview Questions and GATE Preparation",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

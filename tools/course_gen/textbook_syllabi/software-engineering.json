@@ -1,0 +1,119 @@
+{
+  "course": "software-engineering",
+  "title": "Software Engineering: Principles and Practice",
+  "textbook_refs": [
+    "Pressman & Maxim: Software Engineering 9th Ed",
+    "Sommerville: Software Engineering 10th Ed",
+    "Fowler: Patterns of Enterprise Application Architecture"
+  ],
+  "topics": [
+    {
+      "slug": "software-process-models-advanced",
+      "title": "Advanced Process Models: SAFe, LeSS, and Disciplined Agile Delivery",
+      "section": "Process",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "use-case-user-stories",
+      "title": "Use Cases and User Stories: INVEST Criteria, Acceptance Criteria, and Story Mapping",
+      "section": "Requirements",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "software-metrics",
+      "title": "Software Metrics: Halstead Metrics, McCabe Complexity, and Code Churn",
+      "section": "Quality",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "formal-methods-verification",
+      "title": "Formal Methods and Verification: Model Checking, Z Notation, and TLA+",
+      "section": "Quality",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "event-driven-architecture",
+      "title": "Event-Driven Architecture: Event Sourcing, CQRS, and Saga Pattern",
+      "section": "Architecture",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "hexagonal-architecture",
+      "title": "Hexagonal and Clean Architecture: Ports, Adapters, and Dependency Inversion",
+      "section": "Architecture",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "microservices-patterns",
+      "title": "Microservices Patterns: Service Mesh, Sidecar, Circuit Breaker, and Strangler Fig",
+      "section": "Architecture",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "feature-flags-progressive-delivery",
+      "title": "Feature Flags and Progressive Delivery: Canary Releases and A/B Testing",
+      "section": "DevOps",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "infrastructure-as-code",
+      "title": "Infrastructure as Code: Terraform, Pulumi, and Cloud Formation Templates",
+      "section": "DevOps",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "site-reliability-engineering",
+      "title": "Site Reliability Engineering: SLO/SLA/SLI, Error Budgets, and Toil Reduction",
+      "section": "Reliability",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "chaos-engineering",
+      "title": "Chaos Engineering: Principles, Netflix Chaos Monkey, and Resilience Testing",
+      "section": "Reliability",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "technical-debt-management",
+      "title": "Technical Debt Management: Identification, Measurement, and Strategic Repayment",
+      "section": "Code Quality",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "pair-programming-code-review",
+      "title": "Pair Programming and Code Review: Best Practices, Psychological Safety",
+      "section": "Development Practices",
+      "difficulty": "beginner"
+    },
+    {
+      "slug": "mutation-testing",
+      "title": "Mutation Testing: Test Suite Quality and Mutation Score Analysis",
+      "section": "Testing",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "property-based-testing",
+      "title": "Property-Based Testing: QuickCheck, Hypothesis, and Shrinking Counterexamples",
+      "section": "Testing",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "platform-engineering",
+      "title": "Platform Engineering: Internal Developer Platforms and Golden Paths",
+      "section": "Modern SE",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "ai-assisted-development",
+      "title": "AI-Assisted Development: Copilot, Code Generation, and Prompt Engineering for SE",
+      "section": "Modern SE",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "placement-guide",
+      "title": "Placement Guide: SE Interview Questions, LLD Design Rounds, and SDI Resources",
+      "section": "Career",
+      "difficulty": "beginner"
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "course": "algorithms",
+  "title": "Design and Analysis of Algorithms",
+  "textbook_refs": [
+    "CLRS 4th Ed",
+    "Kleinberg & Tardos: Algorithm Design",
+    "Skiena: Algorithm Design Manual 3rd Ed"
+  ],
+  "topics": [
+    {
+      "slug": "master-theorem",
+      "title": "Master Theorem: Solving Divide-and-Conquer Recurrences",
+      "section": "Recurrences",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "akra-bazzi-method",
+      "title": "Akra–Bazzi Method: Generalized Recurrence Analysis",
+      "section": "Recurrences",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "substitution-method",
+      "title": "Substitution Method and Recursion Tree Technique",
+      "section": "Recurrences",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "binary-search-variations",
+      "title": "Binary Search Variations: Rotated Arrays and Fractional Cascading",
+      "section": "Searching",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "merge-sort-analysis",
+      "title": "Merge Sort: Inversion Counting and External Sorting",
+      "section": "Sorting",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "quicksort-analysis",
+      "title": "Quicksort Analysis: Randomized Pivot and Expected Time",
+      "section": "Sorting",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "comparison-lower-bounds",
+      "title": "Comparison-Based Sorting Lower Bound: Decision Tree Model",
+      "section": "Sorting",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "order-statistics",
+      "title": "Order Statistics: Median-of-Medians and Linear Selection",
+      "section": "Searching",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "dag-algorithms",
+      "title": "DAG Algorithms: Topological Sort and Longest Path",
+      "section": "Graph Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "strongly-connected-components",
+      "title": "Strongly Connected Components: Kosaraju and Tarjan Algorithms",
+      "section": "Graph Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bridge-articulation-points",
+      "title": "Bridges and Articulation Points: Tarjan's DFS-Based Algorithm",
+      "section": "Graph Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "euler-circuits",
+      "title": "Euler Circuits and Paths: Hierholzer's Algorithm",
+      "section": "Graph Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "bipartite-matching",
+      "title": "Bipartite Matching: Hopcroft–Karp and Hungarian Algorithms",
+      "section": "Network Flow",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "matrix-chain-multiplication",
+      "title": "Matrix Chain Multiplication: Optimal Parenthesization via DP",
+      "section": "Dynamic Programming",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "lcs-edit-distance",
+      "title": "LCS and Edit Distance: Sequence Alignment Problems",
+      "section": "Dynamic Programming",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "knapsack-variants",
+      "title": "Knapsack Problem Variants: 0/1, Bounded, and Unbounded",
+      "section": "Dynamic Programming",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "dp-on-trees",
+      "title": "Dynamic Programming on Trees: Subtree DP and Rerooting",
+      "section": "Dynamic Programming",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "bitmask-dp",
+      "title": "Bitmask Dynamic Programming: TSP and Set-Cover Problems",
+      "section": "Dynamic Programming",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "digit-dp",
+      "title": "Digit Dynamic Programming: Counting Numbers with Constraints",
+      "section": "Dynamic Programming",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "fast-fourier-transform",
+      "title": "Fast Fourier Transform: Polynomial Multiplication and NTT",
+      "section": "Advanced Topics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "matrix-multiplication-strassen",
+      "title": "Matrix Multiplication: Strassen's Algorithm and Cache-Oblivious Methods",
+      "section": "Divide and Conquer",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "segment-tree-algorithms",
+      "title": "Segment Trees and Lazy Propagation for Range Queries",
+      "section": "Data Structures for Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "fenwick-tree-algorithms",
+      "title": "Fenwick Trees (BIT): Prefix Sums and Point Updates",
+      "section": "Data Structures for Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "sparse-table",
+      "title": "Sparse Table and Range Minimum Query in O(1)",
+      "section": "Data Structures for Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "string-kmp-z",
+      "title": "KMP and Z-Algorithm: Linear-Time String Matching",
+      "section": "String Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "aho-corasick",
+      "title": "Aho–Corasick Automaton: Multi-Pattern String Matching",
+      "section": "String Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "suffix-automaton",
+      "title": "Suffix Automaton: Optimal Substring Data Structure",
+      "section": "String Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "manacher-algorithm",
+      "title": "Manacher's Algorithm: All Palindromic Substrings in Linear Time",
+      "section": "String Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "convex-hull-algorithms",
+      "title": "Convex Hull: Graham Scan, Jarvis March, and Chan's Algorithm",
+      "section": "Computational Geometry",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "sweep-line-algorithms",
+      "title": "Sweep Line Algorithms: Interval Scheduling and Segment Intersection",
+      "section": "Computational Geometry",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "flow-matching-advanced",
+      "title": "Advanced Flow: Min-Cost Max-Flow and Circulation Problems",
+      "section": "Network Flow",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "np-completeness-reductions",
+      "title": "NP-Completeness: Polynomial Reductions and Cook–Levin Theorem",
+      "section": "Complexity Theory",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "approximation-schemes",
+      "title": "Approximation Schemes: PTAS, FPTAS, and Inapproximability",
+      "section": "Approximation Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "lp-based-algorithms",
+      "title": "LP Relaxation and Primal-Dual Algorithms",
+      "section": "Approximation Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "cache-oblivious-algorithms",
+      "title": "Cache-Oblivious Algorithms: Memory-Efficient Computation Models",
+      "section": "Advanced Topics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "external-memory-algorithms",
+      "title": "External Memory Algorithms: I/O Complexity and B-Trees",
+      "section": "Advanced Topics",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "skip-lists",
+      "title": "Skip Lists: Probabilistic Data Structure for Search",
+      "section": "Data Structures for Algorithms",
+      "difficulty": "intermediate"
+    },
+    {
+      "slug": "treap-algorithms",
+      "title": "Treap: Randomized BST with Implicit Keys",
+      "section": "Data Structures for Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "heavy-light-decomposition",
+      "title": "Heavy-Light Decomposition: Path Queries on Trees",
+      "section": "Data Structures for Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "centroid-decomposition",
+      "title": "Centroid Decomposition: Distance Problems on Trees",
+      "section": "Data Structures for Algorithms",
+      "difficulty": "advanced"
+    },
+    {
+      "slug": "mo-algorithm",
+      "title": "Mo's Algorithm: Offline Range Queries in O((N+Q)√N)",
+      "section": "Advanced Topics",
+      "difficulty": "advanced"
+    }
+  ]
+}

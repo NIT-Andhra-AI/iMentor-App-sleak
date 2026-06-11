@@ -1,0 +1,30 @@
+[setup] killing any existing student-ai process
+[setup] cleaning stale RAG index
+[setup] removed stale C:\Users\sriph\AppData\Roaming\com.studentai.app\rag_index.bin
+[setup] launching C:\Users\sriph\AppData\Local\Student AI\student-ai.exe
+[setup] waiting for WebView2 CDPΓÇª
+[app] page at http://tauri.localhost/
+[app] connected to "Student AI" at http://tauri.localhost/
+[rag] opening documents view
+[rag] uploading CS229 PDF (227 pages): D:\app2\app\RAG_test.pdf
+[rag] waiting for chunking + embedding (up to 10 min for 227-page PDF)ΓÇª
+[rag] upload ok ΓÇö id=af2f09dc-e5ea-4641-88be-b80f639a7113  chunks=323
+[rag] [1/8] asking [cost-function-J-theta]: According to the CS229 notes, what is the exact definition of the costΓÇª
+[rag] === RAG quality report (0/8 attempted) ===
+[rag]   Correct:   0/0  (threshold: 6/8)
+[rag]   Citations: 0/0  (threshold: 4)
+[rag] 
+[rag] ΓÜá App crashed after question 1 ([cost-function-J-theta]) ΓÇö recording partial results
+[rag] ΓÜá App crashed after question 1 ΓÇö only 0/8 questions evaluated
+[rag] ΓÜá Only 0/8 questions attempted (app crashed) ΓÇö skipping pass/fail threshold
+[animations] opening courses view
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Target page, context or browser has been closed
+    at clickNav (D:\app2\app\scripts\test-rag-and-animations.mjs:169:52)
+    at async testAllCourseAnimations (D:\app2\app\scripts\test-rag-and-animations.mjs:388:3)
+    at async file:///D:/app2/app/scripts/test-rag-and-animations.mjs:541:3
+
+Node.js v25.8.1

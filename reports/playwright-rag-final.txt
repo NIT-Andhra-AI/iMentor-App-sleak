@@ -1,0 +1,19 @@
+
+Running 10 tests using 1 worker
+
+[1A[2K[1/10] [smoke] ΓÇ║ smoke.spec.ts:8:1 ΓÇ║ tauri window loads app shell
+[1A[2K[2/10] [rag-documents] ΓÇ║ rag-documents.spec.ts:45:1 ΓÇ║ documents sidebar shows the upload area and title
+[1A[2K[3/10] [rag-documents] ΓÇ║ rag-documents.spec.ts:51:1 ΓÇ║ chat panel mode pill shows 'My Documents' in documents view
+[1A[2K[4/10] [rag-documents] ΓÇ║ rag-documents.spec.ts:59:1 ΓÇ║ uploading sample PDF shows it in the knowledge base list
+[1A[2K[5/10] [rag-documents] ΓÇ║ rag-documents.spec.ts:72:1 ΓÇ║ chat in user_docs mode returns a reply (sample PDF uploaded)
+[1A[2K[6/10] [rag-documents] ΓÇ║ rag-documents.spec.ts:82:1 ΓÇ║ RAG answer references content from the uploaded document
+[1A[2K[7/10] [rag-documents] ΓÇ║ rag-documents.spec.ts:92:1 ΓÇ║ deleting an uploaded document removes it from the knowledge base
+[1A[2K[8/10] [rag-documents] ΓÇ║ rag-documents.spec.ts:109:1 ΓÇ║ asking in user_docs mode with no documents uploaded returns a graceful reply
+[1A[2K[9/10] [rag-documents] ΓÇ║ rag-documents.spec.ts:118:1 ΓÇ║ RAG chat reply with a markdown table renders as HTML table, not raw pipes
+[1A[2K[10/10] [rag-documents] ΓÇ║ rag-documents.spec.ts:131:1 ΓÇ║ RAG chat reply with LaTeX formula renders KaTeX element
+[1A[2K  10 passed (38.7s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report test-results\html[39m
+[36m[39m

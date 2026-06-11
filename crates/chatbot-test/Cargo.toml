@@ -1,0 +1,23 @@
+[package]
+name = "chatbot-test"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+# No production code — this crate exists solely to run integration tests.
+path = "src/lib.rs"
+
+[dependencies]
+
+[dev-dependencies]
+agents = { path = "../agents" }
+inference = { path = "../inference" }
+rag = { path = "../rag" }
+storage = { path = "../storage" }
+wiki = { path = "../wiki" }
+telemetry = { path = "../telemetry" }
+anyhow = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+tempfile = "3"
+chrono = { version = "0.4", features = ["serde"] }

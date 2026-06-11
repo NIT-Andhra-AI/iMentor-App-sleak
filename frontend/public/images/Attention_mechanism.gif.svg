@@ -1,0 +1,93 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+    <title>Transformer Attention Mechanism</title>
+    <desc>A conceptual animation of the attention mechanism in a Transformer model, showing how a query interacts with keys to compute attention scores, which then weight values to produce an output.</desc>
+    <style>
+        .bg { fill: #f8fafc; }
+        .title { font-family: system-ui, sans-serif; font-size: 24px; text-anchor: middle; fill: #334155; }
+        .desc-text { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #475569; }
+        .label { font-family: system-ui, sans-serif; font-size: 14px; text-anchor: middle; }
+        .matrix-label { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+
+        .q { fill: #ec4899; } .k { fill: #8b5cf6; } .v { fill: #2563eb; }
+        .score { fill: #f59e0b; } .output { fill: #10b981; }
+        
+        .matrix rect { stroke: #9ca3af; stroke-width: 1; fill: none; }
+        .matrix text { font-size: 12px; }
+
+        .flow-line { stroke: #9ca3af; stroke-width: 2; marker-end: url(#arrowhead); }
+        .highlight-line { stroke-width: 3; marker-end: url(#arrowhead); animation: flow 8s infinite ease-in-out; }
+        
+        .q-flow { stroke: #ec4899; }
+        .k-flow { stroke: #8b5cf6; }
+        .v-flow { stroke: #2563eb; }
+        .score-flow { stroke: #f59e0b; }
+        .output-flow { stroke: #10b981; }
+
+        .q-elem, .k-elem, .v-elem, .score-elem, .out-elem { opacity: 0; animation: fade-in 1s forwards; }
+
+        .q-elem { animation-delay: 1s; }
+        .k-elem { animation-delay: 1.5s; }
+        .v-elem { animation-delay: 2s; }
+        .score-elem { animation-delay: 4.5s; }
+        .out-elem { animation-delay: 6.5s; }
+        
+        @keyframes flow {
+            0%, 20% { stroke-dasharray: 200; stroke-dashoffset: 200; }
+            40%, 100% { stroke-dasharray: 200; stroke-dashoffset: 0; }
+        }
+        @keyframes fade-in { to { opacity: 1; } }
+    </style>
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af" />
+        </marker>
+    </defs>
+    <rect width="640" height="360" class="bg" />
+    <text x="320" y="30" class="title">Attention Mechanism</text>
+    <text x="320" y="55" class="desc-text">Query, Key, and Value matrices interaction.</text>
+
+    <!-- Q, K, V Matrices -->
+    <g class="q-elem" transform="translate(50, 100)">
+        <text class="matrix-label q" x="40" y="-5">Query (Q)</text>
+        <rect width="80" height="120" />
+        <circle cx="40" cy="60" r="10" class="q"/>
+        <text class="label" y="140">Current Word</text>
+    </g>
+    <g class="k-elem" transform="translate(180, 100)">
+        <text class="matrix-label k" x="40" y="-5">Key (K)</text>
+        <rect width="80" height="120" />
+        <circle cx="40" cy="20" r="10" class="k"/><circle cx="40" cy="60" r="10" class="k"/><circle cx="40" cy="100" r="10" class="k"/>
+        <text class="label" y="140">All Words in Seq</text>
+    </g>
+     <g class="v-elem" transform="translate(400, 100)">
+        <text class="matrix-label v" x="40" y="-5">Value (V)</text>
+        <rect width="80" height="120" />
+        <circle cx="40" cy="20" r="10" class="v"/><circle cx="40" cy="60" r="10" class="v"/><circle cx="40" cy="100" r="10" class="v"/>
+        <text class="label" y="140">All Words in Seq</text>
+    </g>
+
+    <!-- Score and Output -->
+     <g class="score-elem" transform="translate(290, 140)">
+        <text class="matrix-label score" x="25" y="-5">Scores</text>
+        <rect width="50" height="80" />
+        <circle cx="25" cy="40" r="8" class="score" />
+    </g>
+     <g class="out-elem" transform="translate(520, 140)">
+        <text class="matrix-label output" x="25" y="-5">Output</text>
+        <rect width="50" height="80" />
+        <circle cx="25" cy="40" r="10" class="output" />
+    </g>
+    
+    <!-- Flow Lines -->
+    <path class="flow-line highlight-line q-flow" d="M 130 160 C 150 160, 170 160, 180 160" style="animation-delay: 2s;"/>
+    <text class="label q-elem" x="155" y="155" style="animation-delay: 2.5s;">Q·Kᵀ</text>
+    
+    <path class="flow-line highlight-line score-flow" d="M 260 160 C 270 160, 280 160, 290 160" style="animation-delay: 3s;"/>
+    <text class="label score-elem" x="275" y="185" style="animation-delay: 3.5s;">Softmax</text>
+    
+    <path class="flow-line highlight-line score-flow" d="M 340 180 C 360 180, 380 180, 400 180" style="animation-delay: 5s;"/>
+    <path class="flow-line v-flow" d="M 440 100 V 170" style="animation-delay: 5s;"/>
+    <text class="label score-elem" x="370" y="175" style="animation-delay: 5.5s;">Scores · V</text>
+    
+    <path class="flow-line highlight-line output-flow" d="M 480 180 C 495 180, 510 180, 520 180" style="animation-delay: 6s;"/>
+</svg>

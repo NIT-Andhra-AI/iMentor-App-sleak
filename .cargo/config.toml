@@ -1,0 +1,65 @@
+# .cargo/config.toml
+# Build configuration for Student AI
+#
+# Environment:
+#   Development  — Ubuntu Linux (x86_64-unknown-linux-gnu, native default)
+#   Build/Deploy — Windows  (x86_64-pc-windows-msvc or aarch64-pc-windows-msvc)
+#                  Run: cargo tauri build --target x86_64-pc-windows-msvc
+#
+# Targets:
+#   x86_64-pc-windows-msvc  — Intel Core / AMD Ryzen (2013+ with AVX2)
+#   aarch64-pc-windows-msvc — ARM native (Snapdragon X, Surface Pro ARM)
+
+# ── x86_64 — Intel Core + AMD Ryzen ──────────────────────────────────────────
+#
+# target-cpu=x86-64-v3 enables AVX2 + FMA + F16C + BMI2 + POPCNT.
+# These map directly to GGML_AVX2, GGML_FMA, GGML_F16C, GGML_BMI2 in
+# llama-cpp-sys-2/build.rs, which enables the AVX2 quantised-weight kernels
+# (Q4_K_M decode, GEMV, GEMM).  This is the single largest perf lever for
+# CPU-only Q4 GGUF inference — typically 2–3× faster than the SSE4.2 fallback.
+#
+# IMPORTANT: llama.cpp does NOT auto-detect and use AVX2 at runtime if the
+# binary was compiled without it.  The GGML_AVX2 CMake flag gates which kernel
+# files are compiled in.  A runtime CPUID check only selects between already-
+# compiled backends.  Compiling with x86-64-v2 (SSE4.2 only) permanently
+# disables the AVX2 kernel path regardless of the host CPU's capabilities.
+#
+# Minimum CPU requirement for this build: Intel Haswell (2013) / AMD Ryzen (2017).
+# All student laptops sold after 2016 support x86-64-v3.  Pre-2013 hardware
+# would crash with an illegal instruction — acceptable for this product.
+#
+# Additionally enables AVX-VNNI (Intel Meteor Lake / Alder Lake +) when present:
+# set LLAMA_AVX_VNNI=ON via CMAKE_ env var if you want to add that.
+[target.x86_64-pc-windows-msvc]
+rustflags = [
+    "-C", "target-cpu=x86-64-v3",
+    "-C", "opt-level=3",
+    # lto=thin is in [profile.release] — conflicts with embed-bitcode=no in dev/test.
+]
+
+# ── ARM64 native — Snapdragon X Elite, Surface Pro X/9/10 5G ─────────────────
+# llama.cpp uses NEON/ASIMD intrinsics on aarch64 automatically.
+# native is safe here since all supported ARM Windows devices are Snapdragon X.
+[target.aarch64-pc-windows-msvc]
+rustflags = [
+    "-C", "target-cpu=native",
+    "-C", "opt-level=3",
+]
+
+# ── Linux x86_64 — Ubuntu dev machine (wiki building / cargo check) ───────────
+[target.x86_64-unknown-linux-gnu]
+rustflags = [
+    "-C", "target-cpu=native",
+    "-C", "opt-level=3",
+]
+
+# ── llama.cpp C++ build profile ───────────────────────────────────────────────
+# Without this, llama-cpp-sys-2 builds the CMake C++ library in Debug mode
+# (no -O3), which is 10–20× slower than Release for CPU inference.
+# This env var is read by llama-cpp-sys-2/build.rs to set CMAKE_BUILD_TYPE.
+[env]
+LLAMA_LIB_PROFILE = "Release"
+# bindgen needs a C stdlib include path when the `clang` compiler binary is not
+# installed. Pointing it at the GCC 13 sysroot headers fixes the
+# "stdbool.h not found" error. This is a no-op when clang is present.
+BINDGEN_EXTRA_CLANG_ARGS_x86_64_unknown_linux_gnu = "-I/usr/lib/gcc/x86_64-linux-gnu/13/include"

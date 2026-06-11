@@ -1,0 +1,93 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+    <title>Hash Table with Chaining</title>
+    <desc>An animation showing keys being inserted into a hash table. A hash function maps keys to array indices (buckets), and collisions are resolved using chaining.</desc>
+    <style>
+        .bg { fill: #f8fafc; }
+        .title { font-family: system-ui, sans-serif; font-size: 24px; text-anchor: middle; fill: #334155; }
+        .desc-text { font-family: system-ui, sans-serif; font-size: 16px; text-anchor: middle; fill: #475569; }
+        .label { font-family: system-ui, sans-serif; font-size: 14px; text-anchor: middle; }
+
+        .bucket { fill: #f1f5f9; stroke: #94a3b8; }
+        .node { fill: #e0f2fe; stroke: #0ea5e9; }
+        .node text { font-size: 12px; text-anchor: middle; dominant-baseline: central; }
+        .key-text { font-weight: bold; }
+        
+        .key, .line, .chain-node, .chain-line { opacity: 0; }
+        
+        #key1 { animation: drop-key 1.5s forwards 1s; }
+        #line1 { animation: draw-line 0.5s forwards 2.5s; }
+        #node1 { animation: show-node 0.5s forwards 3s; }
+        
+        #key2 { animation: drop-key 1.5s forwards 4s; }
+        #line2 { animation: draw-line 0.5s forwards 5.5s; }
+        #node2 { animation: show-node 0.5s forwards 6s; }
+
+        #key3 { animation: drop-key 1.5s forwards 7s; }
+        #line3 { animation: draw-line 0.5s forwards 8.5s; }
+        #node3 { animation: show-node 0.5s forwards 9s; }
+        #chain-line1 { animation: show-node 0.5s forwards 9.5s; }
+        #node4 { animation: show-node 0.5s forwards 10s; }
+
+        @keyframes drop-key {
+            from { opacity: 1; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes draw-line {
+            from { opacity: 0; stroke-dasharray: 100; stroke-dashoffset: 100; }
+            to { opacity: 1; stroke-dasharray: 100; stroke-dashoffset: 0; }
+        }
+        @keyframes show-node { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+    <rect width="640" height="360" class="bg" />
+    <text x="320" y="30" class="title">Hash Table (with Chaining for Collisions)</text>
+    <text x="320" y="55" class="desc-text">Keys are mapped to buckets. Collisions form a linked list (chain).</text>
+
+    <!-- Keys to be inserted -->
+    <g transform="translate(100, 100)">
+        <text class="label" y="-10">Keys to Insert</text>
+        <g id="key1" transform="translate(0, 0)"><text>"apple"</text></g>
+        <g id="key2" transform="translate(0, 50)"><text>"banana"</text></g>
+        <g id="key3" transform="translate(0, 100)"><text>"orange"</text></g>
+    </g>
+
+    <!-- Hash Function -->
+    <g transform="translate(220, 150)">
+        <rect x="-40" y="-20" width="80" height="40" rx="5" fill="#f0e6ff" stroke="#a78bfa" />
+        <text text-anchor="middle" dominant-baseline="central">hash(key)</text>
+        <text text-anchor="middle" y="30" font-size="12px">% 4</text>
+    </g>
+
+    <!-- Hash Table Array -->
+    <g transform="translate(320, 80)">
+        <text class="label" x="35" y="10">Buckets</text>
+        <rect class="bucket" x="0" y="20" width="70" height="50" /><text class="label" x="35" y="45">[0]</text>
+        <rect class="bucket" x="0" y="70" width="70" height="50" /><text class="label" x="35" y="95">[1]</text>
+        <rect class="bucket" x="0" y="120" width="70" height="50" /><text class="label" x="35" y="145">[2]</text>
+        <rect class="bucket" x="0" y="170" width="70" height="50" /><text class="label" x="35" y="195">[3]</text>
+    </g>
+
+    <!-- Lines and Nodes -->
+    <!-- "apple" -> hash("apple") % 4 = 1 -->
+    <line id="line1" class="line" x1="140" y1="100" x2="320" y2="145" stroke="#9ca3af" stroke-dasharray="4 2" />
+    <g id="node1" class="chain-node" transform="translate(420, 145)">
+        <rect class="node" x="-30" y="-15" width="60" height="30" /><text y="0"><tspan class="key-text">"apple"</tspan></text>
+    </g>
+
+    <!-- "banana" -> hash("banana") % 4 = 2 -->
+    <line id="line2" class="line" x1="140" y1="150" x2="320" y2="195" stroke="#9ca3af" stroke-dasharray="4 2"/>
+    <g id="node2" class="chain-node" transform="translate(420, 195)">
+        <rect class="node" x="-30" y="-15" width="60" height="30" /><text y="0"><tspan class="key-text">"banana"</tspan></text>
+    </g>
+
+    <!-- "orange" -> hash("orange") % 4 = 1 (Collision) -->
+    <line id="line3" class="line" x1="140" y1="200" x2="320" y2="145" stroke="#be185d" stroke-dasharray="4 2"/>
+    <g id="node3" class="chain-node" transform="translate(420, 145)">
+        <rect class="node" x="-30" y="-15" width="60" height="30" fill="#fecdd3" stroke="#e11d48"/>
+        <text y="0"><tspan class="key-text">"apple"</tspan></text>
+    </g>
+    <line id="chain-line1" class="chain-line" x1="450" y1="145" x2="480" y2="145" stroke="#e11d48" stroke-width="2"/>
+    <g id="node4" class="chain-node" transform="translate(510, 145)">
+        <rect class="node" x="-30" y="-15" width="60" height="30" fill="#fecdd3" stroke="#e11d48"/>
+        <text y="0"><tspan class="key-text">"orange"</tspan></text>
+    </g>
+</svg>

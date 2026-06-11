@@ -1,0 +1,251 @@
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║         Student AI — Single Source of Truth Configuration               ║
+# ║                                                                          ║
+# ║  Core direction (non-negotiable):                                        ║
+# ║  - Student runtime features must flow through Tauri commands only.       ║
+# ║  - No browser-runtime fallback for chat/docs/courses/agents/settings.    ║
+# ║  - Admin server/dashboard is operations plane, not runtime inference.     ║
+# ║                                                                          ║
+# ║  Edit THIS FILE only.  Do NOT edit the generated files below:           ║
+# ║    src-tauri/build_config.toml   (generated — gitignored)               ║
+# ║    src-tauri/models.toml         (generated — gitignored)               ║
+# ║    src-tauri/tauri.conf.json     (generated — gitignored)               ║
+# ║    src-tauri/tauri-withmodel.conf.json   (generated — gitignored)       ║
+# ║    src-tauri/tauri-gpu-withmodel.conf.json (generated — gitignored)     ║
+# ║                                                                          ║
+# ║  To apply changes:                                                       ║
+# ║    python3 scripts/gen-config.py          (manual regeneration)         ║
+# ║    cargo tauri dev                        (auto-regenerates via hook)   ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+# ── App Identity ────────────────────────────────────────────────────────────
+[app]
+product_name = "Student AI"
+identifier   = "com.studentai.app"
+version      = "0.1.0"
+
+# ── Window Defaults ─────────────────────────────────────────────────────────
+[window]
+width      = 1280
+height     = 800
+min_width  = 900
+min_height = 600
+
+# ── LLM / RAG Inference Knobs ───────────────────────────────────────────────
+# These are baked in at compile time. Students cannot modify them.
+[inference]
+
+# CEILING for the LLM context window (tokens).
+# The actual runtime value may be LOWER when available RAM is limited.
+# See: src-tauri/src/runtime_tuning.rs → adaptive_n_ctx_from_ram()
+# 1024 balances TTFT and context depth for 8 GB laptops with Qwen3-4B.
+# compute_effective_n_ctx() returns this ceiling when free RAM >= 3 GB.
+# Options: 1024 | 2048 | 4096
+n_ctx = 1024
+
+# RAG chunk size in characters.
+# Smaller = shorter context injected → faster TTFT, lower memory.
+# Reduced to 1200 for 2GB RAM constraint.
+# Options: 512 | 800 | 1200 | 1600
+chunk_size = 1200
+
+# Number of document chunks retrieved per query.
+# Options: 1 | 2 | 3
+rag_top_k = 2
+
+# Hard ceiling on inference thread count regardless of CPU core count.
+# Set to 0 to fall back to pure runtime auto-detection (recommended).
+# The runtime already caps at 4 (laptop) or 6 (desktop) via mem-bandwidth
+# analysis, and never exceeds 8 regardless.
+max_inference_threads = 0
+
+# Quantization format used when selecting GGUF files.
+# q4_0   = fastest, smallest, lowest quality
+# q4_k_m = balanced (recommended)
+# q5_k_m = better quality, ~15% slower
+# q8_0   = near-float quality, largest, slowest
+quant_format = "q4_k_m"
+
+# ── Deployment / Expiry ─────────────────────────────────────────────────────
+[deployment]
+
+# Public server URL for telemetry and course updates (no trailing slash).
+server_url = "https://your-server-ip-or-domain"
+
+# Campus LAN URL — used when the public URL is unreachable from inside the
+# campus network (NAT hairpin issue). Leave empty to disable.
+server_url_lan = ""
+
+# ISO 8601 expiry date. Leave empty ("") to disable expiry entirely.
+# Example: expiry_date = "2026-12-31"
+expiry_date = "2027-05-28"
+
+# When true AND expiry_date is set AND the app has expired:
+#   - User sees expiry_warning_message
+#   - After self_delete_grace_days the app wipes user data and uninstalls
+self_delete_on_expiry  = true
+self_delete_grace_days = 0
+expiry_warning_message = "This version of Student AI has expired. Your access will end soon."
+
+# Activity-based license — app auto-uninstalls when EITHER fires first:
+#   1. max_install_days since first launch (absolute limit)
+#   2. inactivity_days without a successful telemetry poll (offline/unused)
+# Set to 0 to disable the respective check.
+max_install_days = 7
+inactivity_days  = 0
+
+# ── Bundle / Packaging ──────────────────────────────────────────────────────
+[bundle]
+
+# true  → include assets/courses/** in the installer (for development)
+# false → courses NOT bundled; students download courses OTA from server
+#         (use false for production NSIS EXE)
+courses_in_bundle = true
+
+# Installer targets — NSIS (EXE) only on Windows.
+# Linux builds use the DEB target via scripts/build-all-linux.sh.
+targets = ["nsis"]
+
+# App icons
+icon = ["icons/32x32.png", "icons/128x128.png", "icons/icon.ico"]
+
+# License file shown during installation
+license_file = "../assets/license.txt"
+
+# ── Active LLM (Chat Model) ─────────────────────────────────────────────────
+# To switch models: copy the desired catalogue entry's fields here and rebuild.
+# Qwen3-4B chosen over Qwen3.5-4B: same quality family, 2.5 GB vs 3.0 GB
+# → ~17% less DRAM per decode step → ~17% faster token generation.
+# Both support /no_think for instant-mode responses.
+[models.llm]
+display_name = "AI Language Model"
+source_file  = "Qwen3-4B-Q4_K_M.gguf"
+file_name    = "chat-model-5.gguf"
+url          = "https://huggingface.co/unsloth/Qwen3-4B-GGUF/resolve/main/Qwen3-4B-Q4_K_M.gguf?download=true"
+size_mb      = 2330
+no_think     = true
+
+# ── Active Embedding Model (RAG / Document Search) ──────────────────────────
+[models.embedding]
+display_name = "Document Search Model"
+source_file  = "bge-small-en-v1.5-q8_0.gguf"
+file_name    = "rag-model-1.gguf"
+url          = "https://huggingface.co/CompendiumLabs/bge-small-en-v1.5-gguf/resolve/main/bge-small-en-v1.5-q8_0.gguf"
+size_mb      = 35
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Model Catalogue — all available models with their permanent slot numbers.
+#
+# Slot numbers are PERMANENT. Never renumber existing entries.
+# When adding a new model, append a new entry with the next available slot
+# number (chat-model-5, chat-model-6, …).
+#
+# Students NEVER see source_file or file_name — only display_name.
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── LLM Catalogue ───────────────────────────────────────────────────────────
+
+[[models.catalogue.llm]]
+id          = "phi4-mini-unsloth"
+label       = "Phi-4-mini-instruct Q4_K_M (Unsloth, ~2.4 GB)"
+source_file = "Phi-4-mini-instruct-Q4_K_M.gguf"
+file_name   = "chat-model-1.gguf"
+url         = "https://huggingface.co/unsloth/Phi-4-mini-instruct-GGUF/resolve/main/Phi-4-mini-instruct-Q4_K_M.gguf?download=true"
+size_mb     = 2376
+notes       = "Recommended for student laptops. Fast, good quality."
+
+[[models.catalogue.llm]]
+id          = "gemma4-e4b-ggml"
+label       = "Gemma 4 E4B-IT Q4_K_M (ggml-org, ~5.1 GB)"
+source_file = "gemma-4-E4B-it-Q4_K_M.gguf"
+file_name   = "chat-model-2.gguf"
+url         = "https://huggingface.co/ggml-org/gemma-4-e4b-it-GGUF/resolve/main/gemma-4-E4B-it-Q4_K_M.gguf?download=true"
+size_mb     = 5088
+notes       = "Requires 16 GB+ RAM. High quality reasoning. MoE: 4B active / ~7.5B total params."
+
+[[models.catalogue.llm]]
+id          = "gemma4-e4b-unsloth"
+label       = "Gemma 4 E4B-IT Q4_K_M (Unsloth, ~5.1 GB)"
+source_file = "gemma-4-E4B-it-Q4_K_M.gguf"
+file_name   = "chat-model-2.gguf"
+url         = "https://huggingface.co/unsloth/gemma-4-e4b-GGUF/resolve/main/gemma-4-e4b-it-Q4_K_M.gguf?download=true"
+size_mb     = 5088
+notes       = "Gemma 4 E4B from Unsloth (optimized upload). Same slot as gemma4-e4b-ggml."
+
+[[models.catalogue.llm]]
+id          = "qwen25-4b-bartowski"
+label       = "Qwen2.5-4B-Instruct Q4_K_M (Bartowski, ~2.7 GB)"
+source_file = "Qwen2.5-4B-Instruct-Q4_K_M.gguf"
+file_name   = "chat-model-3.gguf"
+url         = "https://huggingface.co/bartowski/Qwen2.5-4B-Instruct-GGUF/resolve/main/Qwen2.5-4B-Instruct-Q4_K_M.gguf?download=true"
+size_mb     = 2694
+notes       = "Strong instruction following, 32k context. No CoT/no_think (Qwen2.5 does not support that feature)."
+
+[[models.catalogue.llm]]
+id          = "gemma4-e2b-unsloth"
+label       = "Gemma 4 E2B-IT Q4_K_M (Unsloth, ~2.9 GB)"
+source_file = "gemma-4-E2B-it-Q4_K_M.gguf"
+file_name   = "chat-model-4.gguf"
+url         = "https://huggingface.co/unsloth/gemma-4-E2B-it-GGUF/resolve/main/gemma-4-E2B-it-Q4_K_M.gguf?download=true"
+size_mb     = 2963
+notes       = "Gemma 4 E2B: 2B active / ~4.6B total params (MoE). Fits in 10 GB+ RAM."
+
+[[models.catalogue.llm]]
+id          = "qwen3-4b-unsloth"
+label       = "Qwen3-4B-Instruct Q4_K_M (Unsloth, ~2.5 GB)"
+source_file = "Qwen3-4B-Q4_K_M.gguf"
+file_name   = "chat-model-5.gguf"
+url         = "https://huggingface.co/unsloth/Qwen3-4B-GGUF/resolve/main/Qwen3-4B-Q4_K_M.gguf?download=true"
+size_mb     = 2500
+notes       = "Latest Qwen3 dense model. Built-in /think /no_think mode. Best quality for 8 GB laptops. Recommended for BTech engineering subjects."
+
+[[models.catalogue.llm]]
+id          = "qwen3-4b-official"
+label       = "Qwen3-4B-Instruct Q4_K_M (Official Qwen, ~2.5 GB)"
+source_file = "Qwen3-4B-Q4_K_M.gguf"
+file_name   = "chat-model-5.gguf"
+url         = "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/main/Qwen3-4B-Q4_K_M.gguf?download=true"
+size_mb     = 2500
+notes       = "Same model as qwen3-4b-unsloth from the official Qwen org repo. Same slot."
+
+[[models.catalogue.llm]]
+id          = "qwen35-4b-bartowski"
+label       = "Qwen3.5-4B-Instruct Q4_K_M (Bartowski, ~3.0 GB)"
+source_file = "Qwen_Qwen3.5-4B-Q4_K_M.gguf"
+file_name   = "chat-model-6.gguf"
+url         = "https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF/resolve/main/Qwen_Qwen3.5-4B-Q4_K_M.gguf?download=true"
+size_mb     = 3010
+notes       = "Qwen3.5-4B dense model. Built-in /think /no_think mode. Vision-capable (multimodal). Slightly larger than Qwen3-4B."
+
+# ── Embedding Catalogue ──────────────────────────────────────────────────────
+
+[[models.catalogue.embedding]]
+id          = "bge-small-v1.5"
+label       = "BGE-small-en-v1.5 Q8_0 (CompendiumLabs, ~35 MB)"
+source_file = "bge-small-en-v1.5-q8_0.gguf"
+file_name   = "rag-model-1.gguf"
+url         = "https://huggingface.co/CompendiumLabs/bge-small-en-v1.5-gguf/resolve/main/bge-small-en-v1.5-q8_0.gguf"
+size_mb     = 35
+notes       = "Recommended. Small, fast, good retrieval quality."
+
+[[models.catalogue.embedding]]
+id          = "bge-base-v1.5"
+label       = "BGE-base-en-v1.5 Q8_0 (CompendiumLabs, ~210 MB)"
+source_file = "bge-base-en-v1.5-q8_0.gguf"
+file_name   = "rag-model-2.gguf"
+url         = "https://huggingface.co/CompendiumLabs/bge-base-en-v1.5-gguf/resolve/main/bge-base-en-v1.5-q8_0.gguf"
+size_mb     = 210
+notes       = "Higher quality embeddings. Use if RAG accuracy needs improvement."
+
+
+
+
+
+
+
+
+
+
+
+
+

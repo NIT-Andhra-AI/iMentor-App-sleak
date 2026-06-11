@@ -1,0 +1,33 @@
+{
+  "course": "algorithms",
+  "master_topics": [
+    {"slug": "overview", "title": "Algorithms: Overview and Introduction", "source_universities": ["MIT 6.006", "Stanford CS161", "CMU 15-451"]},
+    {"slug": "asymptotic-analysis", "title": "Asymptotic Analysis and Big-O Notation", "source_universities": ["MIT 6.006", "Stanford CS161"]},
+    {"slug": "sorting-algorithms", "title": "Sorting Algorithms: Comparison-Based", "source_universities": ["MIT 6.006", "Stanford CS161"]},
+    {"slug": "linear-sorting", "title": "Linear-Time Sorting: Radix, Counting, Bucket Sort", "source_universities": ["MIT 6.006", "CMU 15-451"]},
+    {"slug": "divide-conquer", "title": "Divide and Conquer Paradigm", "source_universities": ["MIT 6.006", "Stanford CS161"]},
+    {"slug": "recurrence-relations", "title": "Recurrence Relations and Master Theorem", "source_universities": ["MIT 6.006", "CMU 15-451"]},
+    {"slug": "dynamic-programming", "title": "Dynamic Programming: Principles and Patterns", "source_universities": ["MIT 6.006", "Stanford CS161"]},
+    {"slug": "dp-advanced", "title": "Advanced Dynamic Programming: Bitmask, Tree DP, Digit DP", "source_universities": ["CMU 15-451", "IIT Bombay"]},
+    {"slug": "greedy", "title": "Greedy Algorithms and Correctness Proofs", "source_universities": ["Stanford CS161", "MIT 6.006"]},
+    {"slug": "graph-algorithms", "title": "Graph Algorithms: BFS, DFS, and Applications", "source_universities": ["MIT 6.006", "Stanford CS161"]},
+    {"slug": "shortest-path", "title": "Shortest Path Algorithms: Dijkstra, Bellman-Ford, Floyd-Warshall", "source_universities": ["MIT 6.006", "CMU 15-451"]},
+    {"slug": "minimum-spanning-tree", "title": "Minimum Spanning Trees: Prim and Kruskal", "source_universities": ["MIT 6.006", "Stanford CS161"]},
+    {"slug": "network-flow", "title": "Network Flow: Max-Flow Min-Cut, Ford-Fulkerson", "source_universities": ["Stanford CS161", "CMU 15-451"]},
+    {"slug": "backtracking", "title": "Backtracking Algorithms and Pruning", "source_universities": ["Stanford CS161", "MIT 6.006"]},
+    {"slug": "string-algorithms", "title": "String Algorithms: KMP, Rabin-Karp, Z-Algorithm", "source_universities": ["CMU 15-451", "Stanford CS161"]},
+    {"slug": "suffix-arrays", "title": "Suffix Arrays, Suffix Trees, and Aho-Corasick", "source_universities": ["CMU 15-451", "IIT Bombay"]},
+    {"slug": "computational-geometry", "title": "Computational Geometry: Convex Hull, Line Sweep", "source_universities": ["Stanford CS161", "CMU 15-451"]},
+    {"slug": "randomized-algorithms", "title": "Randomized Algorithms: Quickselect, Hashing, Monte Carlo", "source_universities": ["CMU 15-451", "Stanford CS161"]},
+    {"slug": "amortized-analysis", "title": "Amortized Analysis: Aggregate, Accounting, Potential Methods", "source_universities": ["MIT 6.006", "CMU 15-451"]},
+    {"slug": "complexity-theory", "title": "Computational Complexity: P, NP, NP-Completeness", "source_universities": ["CMU 15-451", "MIT 6.042"]},
+    {"slug": "approximation-algorithms", "title": "Approximation Algorithms for NP-Hard Problems", "source_universities": ["CMU 15-451", "Stanford CS261"]},
+    {"slug": "online-algorithms", "title": "Online Algorithms and Competitive Analysis", "source_universities": ["CMU 15-451", "Stanford CS261"]},
+    {"slug": "parallel-algorithms", "title": "Parallel Algorithms: PRAM, Work-Span, MapReduce", "source_universities": ["CMU 15-210", "MIT 6.046"]},
+    {"slug": "number-theory-algorithms", "title": "Number Theory and Cryptographic Algorithms: GCD, Modular Exponentiation", "source_universities": ["CMU 15-451", "MIT 6.046"]},
+    {"slug": "competitive-programming", "title": "Competitive Programming Patterns and Templates", "source_universities": ["ICPC", "Codeforces", "LeetCode"]},
+    {"slug": "interview-prep", "title": "Algorithms Interview Preparation Guide", "source_universities": ["FAANG", "Google", "Amazon"]},
+    {"slug": "placement-guide", "title": "Algorithms Placement and Technical Interview Guide", "source_universities": ["FAANG", "Infosys", "TCS"]},
+    {"slug": "index", "title": "Algorithms — Wiki Index", "source_universities": []}
+  ]
+}

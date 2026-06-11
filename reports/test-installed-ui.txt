@@ -1,0 +1,22 @@
+[setup] killing any existing student-ai process
+[setup] cleaning stale RAG index
+[setup] removed stale C:\Users\sriph\AppData\Roaming\com.studentai.app\rag_index.bin
+[setup] launching C:\Users\sriph\AppData\Local\Student AI\student-ai.exe
+[setup] waiting for WebView2 CDPΓÇª
+[app] page ready at: about:blank
+[app] connected to Student AI at http://tauri.localhost/
+[chat] opening sessions view
+[chat] sending message
+[chat] reply ok: Gradient descent is an iterative technique used to minimize a function by updating parameters in the opposite direction 
+[courses] opening courses view
+[courses] page and floating chat ok: The Wiki Index page for "Design and Analysis of Algorithms" likely provides an overview or table of contents that lists 
+[animations] searching for a wiki page that contains imagesΓÇª
+[animations] found page with 1 image(s) ΓÇö waiting for cache fetchΓÇª
+[animations] images ok ΓÇö 1 loaded, 0 still showing fallback (may be genuinely 404)
+[rag] opening documents view
+[rag] uploading RAG_test.pdf via Tauri IPC
+[rag] waiting for embedding model + upload (up to 5 min)ΓÇª
+[rag] upload ok ΓÇô id=25da100b-9406-44ec-a98c-8f4da9cad333 chunks=323
+[rag] doc row: RAG_test.pdf 323 chunks ┬╖ 83,249 words
+[rag] upload and reply ok: The uploaded documents discuss two types of gradient descent methods used in machine learning and optimization: batch gr
+[done] installed UI validation passed

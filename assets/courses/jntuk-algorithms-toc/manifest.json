@@ -1,0 +1,266 @@
+{
+  "id": "jntuk-algorithms-toc",
+  "title": "Design of Algorithms & Theory of Computation (JNTUK R20)",
+  "version": "1.0.0",
+  "description": "JNTUK R20 Year 3 — Design and Analysis of Algorithms (DAA) covering complexity, greedy, DP, backtracking; Theory of Computation (TOC/FLAT) covering automata, grammars, and computability. Aligned to JNTUK B.Tech CSE R20 syllabus.",
+  "placement_domains": [
+    "SDE",
+    "Software Engineer",
+    "Algorithm Engineer"
+  ],
+  "wiki_page_count": 16,
+  "module_count": 5,
+  "built_with": "jntuk-r20-manual",
+  "built_at": "2026-06-11",
+  "tags": [
+    "algorithms",
+    "theory-of-computation",
+    "daa",
+    "flat",
+    "jntuk",
+    "r20",
+    "year3"
+  ],
+  "modules": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Design of Algorithms & Theory of Computation (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Algorithms & TOC — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Algorithms & TOC — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "complexity-analysis-daa",
+          "title": "Algorithm Analysis: Asymptotic Notation, Recurrences, Master Theorem",
+          "type": "concept"
+        },
+        {
+          "slug": "divide-and-conquer",
+          "title": "Divide and Conquer: Merge Sort, Quick Sort, Binary Search, Strassen's Matrix",
+          "type": "concept"
+        },
+        {
+          "slug": "greedy-algorithms",
+          "title": "Greedy Algorithms: Activity Selection, Huffman Coding, Kruskal, Prim",
+          "type": "concept"
+        },
+        {
+          "slug": "dynamic-programming",
+          "title": "Dynamic Programming: Memoization, Tabulation, LCS, Knapsack, Matrix Chain",
+          "type": "concept"
+        },
+        {
+          "slug": "backtracking",
+          "title": "Backtracking: N-Queens, Graph Coloring, Subset Sum, Sudoku Solver",
+          "type": "concept"
+        },
+        {
+          "slug": "graph-algorithms",
+          "title": "Graph Algorithms: BFS, DFS, Dijkstra, Bellman-Ford, Floyd-Warshall, Topological Sort",
+          "type": "concept"
+        },
+        {
+          "slug": "np-completeness",
+          "title": "NP-Completeness: P vs NP, NP-Hard, NP-Complete Problems, Cook's Theorem",
+          "type": "concept"
+        },
+        {
+          "slug": "automata-intro",
+          "title": "Introduction to Automata: DFA, NFA, Equivalence, ε-NFA and Closure Properties",
+          "type": "concept"
+        },
+        {
+          "slug": "regular-languages",
+          "title": "Regular Languages: Regular Expressions, Pumping Lemma, Minimization of DFA",
+          "type": "concept"
+        },
+        {
+          "slug": "context-free-grammars",
+          "title": "Context-Free Grammars: Derivations, Parse Trees, Ambiguity, CNF, GNF",
+          "type": "concept"
+        },
+        {
+          "slug": "pushdown-automata",
+          "title": "Pushdown Automata: Definition, DPDA vs NPDA, CFL Closure Properties",
+          "type": "concept"
+        },
+        {
+          "slug": "turing-machines",
+          "title": "Turing Machines: Definition, Variants, Decidability, Halting Problem, Undecidability",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "daa-lab",
+          "title": "DAA Lab: Implementation of Greedy, DP, and Backtracking Algorithms in C++/Java",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "daa-toc-placement",
+          "title": "Placement Guide: Algorithms and TOC Interview Questions — JNTUK Pattern",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ],
+  "topics": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "Introduction and overview of Design of Algorithms & Theory of Computation (JNTUK R20)",
+      "icon": "🎓",
+      "pages": [
+        {
+          "slug": "overview",
+          "title": "Algorithms & TOC — Course Overview",
+          "type": "overview"
+        },
+        {
+          "slug": "index",
+          "title": "Algorithms & TOC — Wiki Index",
+          "type": "overview"
+        }
+      ]
+    },
+    {
+      "id": "core-lectures",
+      "title": "Core Lectures",
+      "description": "All lectures and concept pages for this course",
+      "icon": "📘",
+      "pages": [
+        {
+          "slug": "complexity-analysis-daa",
+          "title": "Algorithm Analysis: Asymptotic Notation, Recurrences, Master Theorem",
+          "type": "concept"
+        },
+        {
+          "slug": "divide-and-conquer",
+          "title": "Divide and Conquer: Merge Sort, Quick Sort, Binary Search, Strassen's Matrix",
+          "type": "concept"
+        },
+        {
+          "slug": "greedy-algorithms",
+          "title": "Greedy Algorithms: Activity Selection, Huffman Coding, Kruskal, Prim",
+          "type": "concept"
+        },
+        {
+          "slug": "dynamic-programming",
+          "title": "Dynamic Programming: Memoization, Tabulation, LCS, Knapsack, Matrix Chain",
+          "type": "concept"
+        },
+        {
+          "slug": "backtracking",
+          "title": "Backtracking: N-Queens, Graph Coloring, Subset Sum, Sudoku Solver",
+          "type": "concept"
+        },
+        {
+          "slug": "graph-algorithms",
+          "title": "Graph Algorithms: BFS, DFS, Dijkstra, Bellman-Ford, Floyd-Warshall, Topological Sort",
+          "type": "concept"
+        },
+        {
+          "slug": "np-completeness",
+          "title": "NP-Completeness: P vs NP, NP-Hard, NP-Complete Problems, Cook's Theorem",
+          "type": "concept"
+        },
+        {
+          "slug": "automata-intro",
+          "title": "Introduction to Automata: DFA, NFA, Equivalence, ε-NFA and Closure Properties",
+          "type": "concept"
+        },
+        {
+          "slug": "regular-languages",
+          "title": "Regular Languages: Regular Expressions, Pumping Lemma, Minimization of DFA",
+          "type": "concept"
+        },
+        {
+          "slug": "context-free-grammars",
+          "title": "Context-Free Grammars: Derivations, Parse Trees, Ambiguity, CNF, GNF",
+          "type": "concept"
+        },
+        {
+          "slug": "pushdown-automata",
+          "title": "Pushdown Automata: Definition, DPDA vs NPDA, CFL Closure Properties",
+          "type": "concept"
+        },
+        {
+          "slug": "turing-machines",
+          "title": "Turing Machines: Definition, Variants, Decidability, Halting Problem, Undecidability",
+          "type": "concept"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "description": "Practice, quizzes, coding, and project pages",
+      "icon": "🧪",
+      "pages": [
+        {
+          "slug": "daa-lab",
+          "title": "DAA Lab: Implementation of Greedy, DP, and Backtracking Algorithms in C++/Java",
+          "type": "lab"
+        }
+      ]
+    },
+    {
+      "id": "career-prep",
+      "title": "Career Prep",
+      "description": "Interview and placement focused pages",
+      "icon": "💼",
+      "pages": [
+        {
+          "slug": "daa-toc-placement",
+          "title": "Placement Guide: Algorithms and TOC Interview Questions — JNTUK Pattern",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "description": "Reference and operational pages",
+      "icon": "📎",
+      "pages": []
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<svg viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
+  <title>TCP 3-Way Handshake</title>
+  <rect width="640" height="360" fill="#f8fafc"/>
+  <text x="320" y="28" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#0369a1" text-anchor="middle">TCP 3-Way Handshake</text>
+  <rect x="40" y="50" width="110" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="95" y="77" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">CLIENT</text>
+  <rect x="490" y="50" width="110" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="545" y="77" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">SERVER</text>
+  <line x1="95" y1="94" x2="95" y2="320" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="545" y1="94" x2="545" y2="320" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="105" y1="140" x2="535" y2="175" stroke="#0369a1" stroke-width="2" marker-end="url(#arr1)"/>
+  <text x="320" y="133" font-family="system-ui,sans-serif" font-size="12" fill="#0369a1" text-anchor="middle" font-weight="bold">SYN (seq=100)</text>
+  <text x="95" y="132" font-family="system-ui,sans-serif" font-size="10" fill="#475569" text-anchor="middle">SYN_SENT</text>
+  <line x1="535" y1="205" x2="105" y2="240" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr2)"/>
+  <text x="320" y="200" font-family="system-ui,sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="bold">SYN-ACK (seq=300, ack=101)</text>
+  <text x="545" y="198" font-family="system-ui,sans-serif" font-size="10" fill="#475569" text-anchor="middle">SYN_RCVD</text>
+  <line x1="105" y1="268" x2="535" y2="288" stroke="#16a34a" stroke-width="2" marker-end="url(#arr3)"/>
+  <text x="320" y="262" font-family="system-ui,sans-serif" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="bold">ACK (ack=301)</text>
+  <text x="95" y="310" font-family="system-ui,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="bold">ESTABLISHED</text>
+  <text x="545" y="310" font-family="system-ui,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="bold">ESTABLISHED</text>
+  <text x="320" y="348" font-family="system-ui,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Connection ESTABLISHED after 3 messages</text>
+  <defs>
+    <marker id="arr1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#0369a1"/></marker>
+    <marker id="arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker>
+    <marker id="arr3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#16a34a"/></marker>
+  </defs>
+</svg>
