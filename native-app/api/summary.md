@@ -38,4 +38,35 @@ The request expects a JSON payload with the following fields:
   - In case of unexpected server or database connection failures.
 
 ---
-*Note: Additional routes (e.g., login, profile management) will be documented here as they are developed.*
+
+### 2. Authentication: Login
+**Endpoint:** `POST /api/login`
+
+Authenticates an existing user by verifying their email and password against the securely hashed data in MongoDB.
+
+#### Request Body
+The request expects a JSON payload with the following fields:
+- `email` *(String, Required)*: The user's registered email address.
+- `password` *(String, Required)*: The user's password.
+
+#### Success Response
+- **Status Code:** `200 OK`
+- **Payload:**
+  ```json
+  {
+    "message": "Login successful",
+    "user": {
+      "id": "64abcdef1234567890abcdef",
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    }
+  }
+  ```
+
+#### Error Responses
+- **`400 Bad Request`**: Missing email or password.
+- **`401 Unauthorized`**: Incorrect email or password.
+- **`500 Internal Server Error`**: Unexpected server or database connection failures.
+
+---
+*Note: Additional routes (e.g., profile management) will be documented here as they are developed.*
