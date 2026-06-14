@@ -1,3 +1,5 @@
+import Constants from 'expo-constants';
+import { Platform } from 'react-native';
 import { createStore } from './store';
 
 export interface User {
@@ -46,17 +48,43 @@ export const useAuthStore = createStore<AuthState>((set) => ({
 
   signUp: async (name, email, password) => {
     set({ isLoading: true });
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    const mockUser: User = {
-      id: 'usr-123',
-      name: name,
-      email: email,
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
-    };
-    
-    set({ isAuthenticated: true, user: mockUser, isLoading: false });
-    return true;
+    try {
+      let apiUrl = 'http://localhost:3000/api/signup';
+      if (Constants.expoConfig?.hostUri) {
+        const hostIp = Constants.expoConfig.hostUri.split(':')[0];
+        apiUrl = `http://${hostIp}:3000/api/signup`;
+      } else if (Platform.OS === 'android') {
+        apiUrl = 'http://10.0.2.2:3000/api/signup';
+      }
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to sign up');
+      }
+
+      const newUser: User = {
+        id: data.user.id,
+        name: data.user.name,
+        email: data.user.email,
+        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
+      };
+      
+      set({ isAuthenticated: true, user: newUser, isLoading: false });
+      return true;
+    } catch (error) {
+      console.error('Signup error:', error);
+      set({ isLoading: false });
+      throw error;
+    }
   },
 
   logout: () => {
