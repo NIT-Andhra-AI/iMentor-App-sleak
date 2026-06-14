@@ -31,19 +31,43 @@ export const useAuthStore = createStore<AuthState>((set) => ({
 
   login: async (email, password) => {
     set({ isLoading: true });
-    // Simulate API request
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    // Simple mock authentication success
-    const mockUser: User = {
-      id: 'usr-123',
-      name: email.split('@')[0].toUpperCase(),
-      email: email,
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
-    };
-    
-    set({ isAuthenticated: true, user: mockUser, isLoading: false });
-    return true;
+    try {
+      let apiUrl = 'http://localhost:3000/api/login';
+      if (Constants.expoConfig?.hostUri) {
+        const hostIp = Constants.expoConfig.hostUri.split(':')[0];
+        apiUrl = `http://${hostIp}:3000/api/login`;
+      } else if (Platform.OS === 'android') {
+        apiUrl = 'http://10.0.2.2:3000/api/login';
+      }
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to log in');
+      }
+
+      const user: User = {
+        id: data.user.id,
+        name: data.user.name,
+        email: data.user.email,
+        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
+      };
+      
+      set({ isAuthenticated: true, user, isLoading: false });
+      return true;
+    } catch (error) {
+      console.error('Login error:', error);
+      set({ isLoading: false });
+      throw error;
+    }
   },
 
   signUp: async (name, email, password) => {
