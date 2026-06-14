@@ -12,6 +12,7 @@ export interface User {
 interface AuthState {
   isAuthenticated: boolean;
   user: User | null;
+  token: string | null;
   isModelDownloaded: boolean;
   modelBypassed: boolean;
   isLoading: boolean;
@@ -25,6 +26,7 @@ interface AuthState {
 export const useAuthStore = createStore<AuthState>((set) => ({
   isAuthenticated: false,
   user: null,
+  token: null,
   isModelDownloaded: false,
   modelBypassed: false,
   isLoading: false,
@@ -61,7 +63,7 @@ export const useAuthStore = createStore<AuthState>((set) => ({
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
       };
       
-      set({ isAuthenticated: true, user, isLoading: false });
+      set({ isAuthenticated: true, user, token: data.token, isLoading: false });
       return true;
     } catch (error) {
       console.error('Login error:', error);
@@ -102,7 +104,7 @@ export const useAuthStore = createStore<AuthState>((set) => ({
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
       };
       
-      set({ isAuthenticated: true, user: newUser, isLoading: false });
+      set({ isAuthenticated: true, user: newUser, token: data.token, isLoading: false });
       return true;
     } catch (error) {
       console.error('Signup error:', error);
@@ -112,7 +114,7 @@ export const useAuthStore = createStore<AuthState>((set) => ({
   },
 
   logout: () => {
-    set({ isAuthenticated: false, user: null, isModelDownloaded: false, modelBypassed: false });
+    set({ isAuthenticated: false, user: null, token: null, isModelDownloaded: false, modelBypassed: false });
   },
 
   setDownloaded: (downloaded) => {

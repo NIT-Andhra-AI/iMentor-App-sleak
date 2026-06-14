@@ -7,7 +7,7 @@ This directory (`native-app/api`) contains the backend services and routes for t
 ### 1. Authentication: Signup
 **Endpoint:** `POST /api/signup`
 
-Registers a new user in the system, securely hashes their password using `bcryptjs`, and stores their details in the local MongoDB database.
+Registers a new user in the system, securely hashes their password using `bcryptjs`, stores their details in the local MongoDB database, and returns a JSON Web Token (JWT) for authentication.
 
 #### Request Body
 The request expects a JSON payload with the following fields:
@@ -21,6 +21,7 @@ The request expects a JSON payload with the following fields:
   ```json
   {
     "message": "User created successfully",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
     "user": {
       "id": "64abcdef1234567890abcdef",
       "name": "John Doe",
@@ -42,7 +43,7 @@ The request expects a JSON payload with the following fields:
 ### 2. Authentication: Login
 **Endpoint:** `POST /api/login`
 
-Authenticates an existing user by verifying their email and password against the securely hashed data in MongoDB.
+Authenticates an existing user by verifying their email and password against the securely hashed data in MongoDB, and returns a JSON Web Token (JWT) for subsequent authenticated requests.
 
 #### Request Body
 The request expects a JSON payload with the following fields:
@@ -55,6 +56,7 @@ The request expects a JSON payload with the following fields:
   ```json
   {
     "message": "Login successful",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
     "user": {
       "id": "64abcdef1234567890abcdef",
       "name": "John Doe",
