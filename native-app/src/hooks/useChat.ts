@@ -95,6 +95,13 @@ export const useChat = (offlineChat?: OfflineChatRuntime) => {
       store.addMessage(userMessage);
     }
 
+    // Sync user message to MongoDB FIRST to preserve chronological order
+    try {
+      await apiService.createMessage(conversationId, 'user', content);
+    } catch (err) {
+      console.error('Failed to sync user message to MongoDB', err);
+    }
+
     let sendSuccess = false;
 
     // 1. Try Groq API if connected
@@ -187,13 +194,6 @@ export const useChat = (offlineChat?: OfflineChatRuntime) => {
       } catch (err) {
         console.error('Failed to sync offline assistant reply to MongoDB', err);
       }
-    }
-
-    // Sync user message to MongoDB
-    try {
-      await apiService.createMessage(conversationId, 'user', content);
-    } catch (err) {
-      console.error('Failed to sync user message to MongoDB', err);
     }
 
     // Update conversation title and updatedAt locally

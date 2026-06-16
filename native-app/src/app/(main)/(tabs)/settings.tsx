@@ -25,7 +25,7 @@ export default function SettingsScreen() {
       setIsLoadingHistory(false);
     };
     fetchHistory();
-  }, [loadConversations]);
+  }, []); // Run only once on mount to prevent infinite loops
 
   const handleSaveKey = async () => {
     if (!apiKey.trim()) {
