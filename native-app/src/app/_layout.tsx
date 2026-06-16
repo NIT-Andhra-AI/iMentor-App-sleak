@@ -5,6 +5,13 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import Toast from "@/components/Toast";
 import "./globals.css";
 
+import { initExecutorch } from "react-native-executorch";
+import { ExpoResourceFetcher } from "react-native-executorch-expo-resource-fetcher";
+
+initExecutorch({
+  resourceFetcher: ExpoResourceFetcher,
+});
+
 export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>

@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const { encrypt, decrypt } = require('../utils/encryption');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'super_secret_jwt_key_imentor';
 
@@ -49,7 +50,8 @@ exports.signup = async (req, res) => {
       user: {
         id: newUser._id,
         name: newUser.name,
-        email: newUser.email
+        email: newUser.email,
+        groqApiKey: null
       }
     });
   } catch (error) {
@@ -89,11 +91,33 @@ exports.login = async (req, res) => {
       user: {
         id: user._id,
         name: user.name,
-        email: user.email
+        email: user.email,
+        groqApiKey: user.groqApiKey ? decrypt(user.groqApiKey) : null
       }
     });
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ message: 'Server error during login', error: error.message });
+  }
+};
+
+exports.saveGroqKey = async (req, res) => {
+  try {
+    const { groqApiKey } = req.body;
+    // We assume authMiddleware adds req.user.id
+    const userId = req.user.id;
+
+    if (!userId) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    const encryptedKey = groqApiKey ? encrypt(groqApiKey) : null;
+    
+    await User.findByIdAndUpdate(userId, { groqApiKey: encryptedKey });
+
+    res.status(200).json({ message: 'Groq API Key saved successfully' });
+  } catch (error) {
+    console.error('Save API key error:', error);
+    res.status(500).json({ message: 'Server error saving API key', error: error.message });
   }
 };

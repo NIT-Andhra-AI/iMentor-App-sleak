@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
+const chatRoutes = require('./routes/chatRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api', authRoutes);
+app.use('/api/chat', chatRoutes);
 
 // MongoDB Connection
 mongoose.connect('mongodb://127.0.0.1:27017/imentor').then(() => {

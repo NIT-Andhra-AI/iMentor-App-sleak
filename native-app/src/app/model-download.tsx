@@ -12,38 +12,32 @@ export default function ModelDownloadScreen() {
   const [downloadSpeed, setDownloadSpeed] = useState('14.2 MB/s');
 
   useEffect(() => {
-    // Fast mock downloader ticking every 150ms
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        
-        // Random incremental steps
-        const step = Math.floor(Math.random() * 8) + 4;
-        const next = Math.min(prev + step, 100);
-        
-        // Slightly vary simulated download speed
-        const speedValue = (12 + Math.random() * 4).toFixed(1);
-        setDownloadSpeed(`${speedValue} MB/s`);
-        
-        return next;
-      });
-    }, 150);
+    let mounted = true;
 
-    return () => clearInterval(interval);
+    const startDownload = async () => {
+      const { downloadModel } = await import('@/services/modelDownload.service');
+      const success = await downloadModel((prog, speed) => {
+        if (mounted) {
+          setProgress(Math.floor(prog * 100));
+          setDownloadSpeed(`${speed} MB`);
+        }
+      });
+
+      if (success && mounted) {
+        toast.success('Llama 3.2 weights downloaded and verified successfully!');
+        setDownloaded(true);
+        router.replace('/(main)/(tabs)/chat');
+      }
+    };
+
+    startDownload();
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
-  useEffect(() => {
-    if (progress === 100) {
-      toast.success('Gemma model weights downloaded and verified successfully!');
-      setDownloaded(true);
-      router.replace('/(main)/(tabs)/chat');
-    }
-  }, [progress]);
-
-  const downloadedMB = ((progress / 100) * 1228.8).toFixed(1);
+  const downloadedMB = ((progress / 100) * 1280).toFixed(1);
 
   return (
     <ScreenContainer
@@ -68,7 +62,7 @@ export default function ModelDownloadScreen() {
         </View>
 
         <Text className="text-white text-2xl font-extrabold text-center tracking-tight">
-          Downloading Gemma AI
+          Downloading Llama 3.2
         </Text>
         <Text className="text-zinc-500 text-xs mt-1 font-semibold tracking-wide uppercase">
           Do not close the app or lock your screen
@@ -92,7 +86,7 @@ export default function ModelDownloadScreen() {
           <View className="flex-row justify-between items-center border-t border-zinc-900 pt-4">
             <View>
               <Text className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider">Downloaded</Text>
-              <Text className="text-zinc-300 text-xs font-semibold mt-0.5">{downloadedMB} MB / 1.20 GB</Text>
+              <Text className="text-zinc-300 text-xs font-semibold mt-0.5">{downloadedMB} MB / 1.28 GB</Text>
             </View>
 
             <View className="items-end">
