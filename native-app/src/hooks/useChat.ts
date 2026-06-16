@@ -5,6 +5,8 @@ import { useChatStore } from '../store/chat.store';
 import { useAuthStore } from '../store/authStore';
 import { streamService } from '../services/stream.service';
 import { apiService } from '../services/api.service';
+import { queueConversation } from '../services/offlineQueue.service';
+import { syncOfflineQueue } from '../services/network.service';
 import { Conversation, Message } from '../types/chat.types';
 import { OfflineChatRuntime } from './useOfflineChat';
 
@@ -46,16 +48,30 @@ export const useChat = (offlineChat?: OfflineChatRuntime) => {
   };
 
   const createNewChat = async (): Promise<Conversation | null> => {
-    try {
-      const conv = await apiService.createConversation('New Conversation');
-      store.setConversations([conv, ...store.conversations]);
-      store.setActiveConversation(conv);
-      store.setMessages([]);
-      return conv;
-    } catch (err) {
-      console.error('Failed to create MongoDB conversation:', err);
-      return null;
+    if (store.isConnected) {
+      try {
+        const conv = await apiService.createConversation('New Conversation');
+        store.setConversations([conv, ...store.conversations]);
+        store.setActiveConversation(conv);
+        store.setMessages([]);
+        return conv;
+      } catch (err) {
+        console.error('Failed to create MongoDB conversation, falling back to local:', err);
+      }
     }
+    
+    // Fallback to local offline conversation
+    const now = new Date();
+    const localConv: Conversation = {
+      _id: `local-${Date.now()}`,
+      title: 'New Conversation',
+      createdAt: now,
+      updatedAt: now,
+    };
+    store.setConversations([localConv, ...store.conversations]);
+    store.setActiveConversation(localConv);
+    store.setMessages([]);
+    return localConv;
   };
 
   const deleteConversation = async (id: string) => {
@@ -97,9 +113,20 @@ export const useChat = (offlineChat?: OfflineChatRuntime) => {
 
     // Sync user message to MongoDB FIRST to preserve chronological order
     try {
+      if (conversationId.startsWith('local-')) {
+        throw new Error('Local conversation ID cannot be sent to MongoDB. Forcing local queue.');
+      }
       await apiService.createMessage(conversationId, 'user', content);
     } catch (err) {
-      console.error('Failed to sync user message to MongoDB', err);
+      console.log('Queueing user message locally:', err instanceof Error ? err.message : err);
+      await queueConversation({
+        conversationId,
+        conversationTitle: conversation.title || 'New Conversation',
+        messages: [{ role: 'user', content, createdAt: new Date().toISOString() }],
+      });
+      if (store.isConnected) {
+        syncOfflineQueue();
+      }
     }
 
     let sendSuccess = false;
@@ -129,13 +156,6 @@ export const useChat = (offlineChat?: OfflineChatRuntime) => {
           [{ text: 'OK' }]
         );
       }
-    } else {
-      // User explicitly disconnected
-      Alert.alert(
-        'Offline Mode',
-        'No internet connection detected. Using offline model.',
-        [{ text: 'OK' }]
-      );
     }
 
     // 2. Fallback to Offline Llama Model
@@ -153,7 +173,8 @@ export const useChat = (offlineChat?: OfflineChatRuntime) => {
             throw new Error('Offline chat runtime is not mounted.');
           }
           store.setStreaming(true);
-          replyContent = await offlineChat.sendOfflineMessage(content);
+          const rawReply = await offlineChat.sendOfflineMessage(content);
+          replyContent = rawReply || useChatStore.getState().streamingText;
         } catch (error: any) {
           console.error('Offline inference failed:', error);
           replyContent = `Offline model error: ${error.message || 'Unable to generate a response.'}`;
@@ -178,6 +199,12 @@ export const useChat = (offlineChat?: OfflineChatRuntime) => {
         return;
       }
 
+      // Check if the background sync elevated this conversation ID to MongoDB while we were generating!
+      const mappedId = useChatStore.getState().idMappings[conversationId];
+      if (mappedId) {
+        conversationId = mappedId;
+      }
+
       const assistantMessage: Message = {
         conversationId,
         role: 'assistant',
@@ -188,11 +215,22 @@ export const useChat = (offlineChat?: OfflineChatRuntime) => {
       store.addMessage(assistantMessage);
       store.setThinking(false);
 
-      // Save assistant message to MongoDB
+      // Save assistant message to MongoDB or offline queue
       try {
+        if (conversationId.startsWith('local-')) {
+          throw new Error('Local conversation ID cannot be sent to MongoDB. Forcing local queue.');
+        }
         await apiService.createMessage(conversationId, 'assistant', replyContent);
       } catch (err) {
-        console.error('Failed to sync offline assistant reply to MongoDB', err);
+        console.log('Queueing assistant message locally');
+        await queueConversation({
+          conversationId,
+          conversationTitle: conversation.title || 'New Conversation',
+          messages: [{ role: 'assistant', content: replyContent, createdAt: new Date().toISOString() }],
+        });
+        if (store.isConnected) {
+          syncOfflineQueue();
+        }
       }
     }
 

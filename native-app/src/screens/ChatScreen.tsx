@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useRef } from 'react';
-import { FlatList, KeyboardAvoidingView, Platform, Text, View } from 'react-native';
+import { FlatList, KeyboardAvoidingView, Platform, Text, View, Alert, Animated } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ChatBubble } from '../components/ChatBubble';
 import { ChatHeader } from '../components/ChatHeader';
@@ -8,16 +8,54 @@ import { ChatInput } from '../components/ChatInput';
 import { TypingIndicator } from '../components/TypingIndicator';
 import { useChat } from '../hooks/useChat';
 import { useOfflineChat } from '../hooks/useOfflineChat';
+import { useAuthStore } from '../store/authStore';
+import { useChatStore } from '../store/chat.store';
+
+const SyncIndicator = () => {
+  const syncing = useChatStore((state) => state.syncing);
+  const translateX = useRef(new Animated.Value(-400)).current;
+
+  useEffect(() => {
+    if (syncing) {
+      Animated.loop(
+        Animated.timing(translateX, {
+          toValue: 400,
+          duration: 2000,
+          useNativeDriver: true,
+        })
+      ).start();
+    } else {
+      translateX.setValue(-400);
+    }
+  }, [syncing, translateX]);
+
+  if (!syncing) return null;
+
+  return (
+    <View style={{ height: 26, backgroundColor: '#064e3b', overflow: 'hidden', justifyContent: 'center' }}>
+      <Animated.View style={{ transform: [{ translateX }], flexDirection: 'row', alignItems: 'center', width: 400 }}>
+        <Ionicons name="cloud-upload" size={14} color="#34d399" style={{ marginRight: 8 }} />
+        <Text style={{ color: '#34d399', fontSize: 12, fontWeight: 'bold', letterSpacing: 0.5 }}>
+          Syncing offline chats to MongoDB...
+        </Text>
+      </Animated.View>
+    </View>
+  );
+};
 
 export const ChatScreen = () => {
   const insets = useSafeAreaInsets();
   const offlineChat = useOfflineChat();
+  const { isModelDownloaded } = useAuthStore();
   const { 
     messages, 
     isStreaming, 
     isThinking, 
     streamingText, 
-    sendMessage 
+    sendMessage,
+    isConnected,
+    createNewChat,
+    setOfflineModelReady
   } = useChat(offlineChat);
 
   const flatListRef = useRef<FlatList>(null);
@@ -32,6 +70,23 @@ export const ChatScreen = () => {
     scrollToEnd();
   }, [messages.length, streamingText]);
 
+  const prevIsConnected = useRef(isConnected);
+
+  useEffect(() => {
+    if (prevIsConnected.current && !isConnected) {
+      if (isModelDownloaded) {
+        Alert.alert(
+          'Connection Lost',
+          'You are disconnected from the internet. Instantly switching to your offline local model.',
+          [{ text: 'OK' }]
+        );
+        createNewChat();
+        setOfflineModelReady(true);
+      }
+    }
+    prevIsConnected.current = isConnected;
+  }, [isConnected, isModelDownloaded, createNewChat, setOfflineModelReady]);
+
   return (
     <KeyboardAvoidingView
       style={{ flex: 1, backgroundColor: '#09090B' }}
@@ -45,6 +100,7 @@ export const ChatScreen = () => {
         }}
       >
         <ChatHeader />
+        <SyncIndicator />
 
         <View style={{ flex: 1 }}>
           {messages.length === 0 && !isStreaming && !isThinking ? (

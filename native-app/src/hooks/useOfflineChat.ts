@@ -51,15 +51,14 @@ export const useOfflineChat = () => {
   // This prevents rapid concurrent load/unload race conditions in the native JNI layer
   // during network flickering, startup network monitoring updates, or hot-reloading.
   useEffect(() => {
-    if (offlineModelReady && !isConnected) {
+    if (offlineModelReady && !shouldLoad) {
+      // Only delay the INITIAL load, never unload it based on network toggling to prevent C++ segfaults
       const timer = setTimeout(() => {
         setShouldLoad(true);
-      }, 1000); // 1 second stable settle time
+      }, 1000); 
       return () => clearTimeout(timer);
-    } else {
-      setShouldLoad(false);
     }
-  }, [offlineModelReady, isConnected]);
+  }, [offlineModelReady, shouldLoad]);
 
   const preventLoad = !shouldLoad || !localModel;
   const llm = useLLM({ 

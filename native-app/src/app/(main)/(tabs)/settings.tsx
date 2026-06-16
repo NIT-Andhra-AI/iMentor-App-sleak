@@ -6,17 +6,22 @@ import { useRouter } from 'expo-router';
 import { useAuthStore } from '@/store/authStore';
 import { useChat } from '@/hooks/useChat';
 import { Conversation } from '@/types/chat.types';
+import { downloadModel, isModelDownloaded as verifyModelExists } from '@/services/modelDownload.service';
 
 export default function SettingsScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { user, saveGroqApiKey, logout } = useAuthStore();
+  const { user, saveGroqApiKey, logout, isModelDownloaded, setDownloaded } = useAuthStore();
   const { conversations, loadConversations, selectConversation, deleteConversation } = useChat();
   
   // Initialize with the user's saved key if it exists
   const [apiKey, setApiKey] = useState(user?.groqApiKey || '');
   const [isSaving, setIsSaving] = useState(false);
   const [isLoadingHistory, setIsLoadingHistory] = useState(false);
+  
+  // Offline Model Download State
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [downloadProgress, setDownloadProgress] = useState(0);
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -25,7 +30,40 @@ export default function SettingsScreen() {
       setIsLoadingHistory(false);
     };
     fetchHistory();
-  }, []); // Run only once on mount to prevent infinite loops
+  }, []);
+
+  const handleDownloadModel = async () => {
+    if (isModelDownloaded) {
+      Alert.alert("Already Downloaded", "The Llama 3.2 offline model is already downloaded and ready to use!");
+      return;
+    }
+
+    Alert.alert(
+      "Download Offline Model",
+      "This will download the Llama 3.2 1B SpinQuant model (~1.3 GB). It is highly recommended to connect to Wi-Fi before proceeding.",
+      [
+        { text: "Cancel", style: "cancel" },
+        { 
+          text: "Download", 
+          onPress: async () => {
+            setIsDownloading(true);
+            setDownloadProgress(0);
+            const success = await downloadModel((progress) => {
+              setDownloadProgress(progress);
+            });
+            setIsDownloading(false);
+            
+            if (success) {
+              setDownloaded(true);
+              Alert.alert("Success", "Offline model downloaded successfully!");
+            } else {
+              Alert.alert("Error", "Failed to download the offline model. Please try again.");
+            }
+          }
+        }
+      ]
+    );
+  };
 
   const handleSaveKey = async () => {
     if (!apiKey.trim()) {
@@ -64,7 +102,40 @@ export default function SettingsScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       <ScrollView className="flex-1 px-5" style={{ paddingTop: insets.top + 20 }} contentContainerStyle={{ paddingBottom: 40 }}>
-        <Text className="text-white text-3xl font-extrabold tracking-tight mb-8">Settings</Text>
+        <View className="flex-row items-center justify-between mb-8">
+          <Text className="text-white text-3xl font-extrabold tracking-tight">Settings</Text>
+          
+          <TouchableOpacity 
+            onPress={handleDownloadModel}
+            disabled={isDownloading || isModelDownloaded}
+            className={`px-4 py-2 rounded-full border ${
+              isModelDownloaded 
+                ? 'bg-emerald-500/10 border-emerald-500/20' 
+                : isDownloading 
+                  ? 'bg-blue-500/10 border-blue-500/20'
+                  : 'bg-zinc-800 border-zinc-700'
+            }`}
+          >
+            {isModelDownloaded ? (
+              <View className="flex-row items-center">
+                <Ionicons name="checkmark-circle" size={16} color="#10B981" />
+                <Text className="text-emerald-500 font-bold ml-1 text-xs">Model Ready</Text>
+              </View>
+            ) : isDownloading ? (
+              <View className="flex-row items-center">
+                <ActivityIndicator size="small" color="#3B82F6" style={{ transform: [{ scale: 0.7 }] }} />
+                <Text className="text-blue-500 font-bold ml-1 text-xs">
+                  {Math.round(downloadProgress * 100)}%
+                </Text>
+              </View>
+            ) : (
+              <View className="flex-row items-center">
+                <Feather name="download-cloud" size={16} color="#E4E4E7" />
+                <Text className="text-zinc-200 font-bold ml-1 text-xs">Download Model</Text>
+              </View>
+            )}
+          </TouchableOpacity>
+        </View>
 
         {/* Profile Section */}
         <View className="bg-zinc-900 rounded-3xl p-5 mb-8 border border-zinc-800">

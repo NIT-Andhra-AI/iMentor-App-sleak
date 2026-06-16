@@ -19,6 +19,7 @@ interface ChatStore {
   isStreaming: boolean;
   isThinking: boolean;
   streamingText: string;
+  idMappings: Record<string, string>;
 
   // Actions
   setConnected: (connected: boolean) => void;
@@ -40,6 +41,7 @@ interface ChatStore {
   setStreaming: (isStreaming: boolean) => void;
   setThinking: (isThinking: boolean) => void;
   setStreamingText: (text: string) => void;
+  recordIdMapping: (oldId: string, newId: string) => void;
   resetChat: () => void;
 }
 
@@ -61,6 +63,7 @@ export const useChatStore = create<ChatStore>()(
       isStreaming: false,
       isThinking: false,
       streamingText: '',
+      idMappings: {},
 
       setConnected: (connected) => set({ isConnected: connected }),
       setOfflineModelReady: (ready) => set({ offlineModelReady: ready }),
@@ -84,6 +87,7 @@ export const useChatStore = create<ChatStore>()(
       setStreaming: (isStreaming) => set({ isStreaming }),
       setThinking: (isThinking) => set({ isThinking }),
       setStreamingText: (streamingText) => set({ streamingText }),
+      recordIdMapping: (oldId, newId) => set((state) => ({ idMappings: { ...state.idMappings, [oldId]: newId } })),
       resetChat: () => set({ activeConversation: null, messages: [], isStreaming: false, isThinking: false, streamingText: '' }),
     }),
     {
