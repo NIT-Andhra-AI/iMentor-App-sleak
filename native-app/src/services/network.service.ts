@@ -1,6 +1,6 @@
 import NetInfo from '@react-native-community/netinfo';
 import { useChatStore } from '../store/chat.store';
-import { getQueue, clearQueue } from './offlineQueue.service';
+import { getQueue, clearQueue, removeFromQueue } from './offlineQueue.service';
 import { apiService } from './api.service';
 
 export const syncOfflineQueue = async () => {
@@ -50,11 +50,13 @@ export const syncOfflineQueue = async () => {
             ...syncedMsgs
           ]);
         }
+        
+        // Safely remove only this specific synced conversation from the queue
+        await removeFromQueue(entry.conversationId);
       } catch (e) {
         console.error(`Failed to sync conversation ${entry.conversationId}:`, e);
       }
     }
-    await clearQueue();
     console.log('Offline queue synced successfully!');
     
     // Refresh the frontend state so local offline IDs are replaced with real MongoDB ObjectIds
