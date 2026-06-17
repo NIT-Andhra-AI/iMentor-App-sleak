@@ -44,10 +44,10 @@ export default function ModelDownloadPromptScreen() {
         </View>
 
         <Text className="text-white text-3xl font-extrabold text-center tracking-tight">
-          Download Gemma Model
+          Download Llama 3.2 Model
         </Text>
         <Text className="text-emerald-500 text-xs font-bold tracking-widest uppercase mt-2">
-          Gemma-2-2B-Instruct Quantized
+          Llama-3.2-1B-SpinQuant
         </Text>
 
         <View className="mt-8 bg-zinc-950/40 border border-zinc-900 rounded-2xl p-5 w-full">
@@ -56,17 +56,17 @@ export default function ModelDownloadPromptScreen() {
             <Text className="text-white text-sm font-bold ml-2">Why run locally?</Text>
           </View>
           <Text className="text-zinc-400 text-xs leading-relaxed">
-            By running Gemma directly on your device, all conversations stay private, and you don't require an active internet connection to learn.
+            By running Llama directly on your device, all conversations stay private, and you don't require an active internet connection to learn.
           </Text>
 
           <View className="border-t border-zinc-900 mt-4 pt-4 space-y-2.5">
             <View className="flex-row justify-between">
               <Text className="text-zinc-500 text-xs">Model Size</Text>
-              <Text className="text-zinc-300 text-xs font-semibold">1.20 GB</Text>
+              <Text className="text-zinc-300 text-xs font-semibold">1.28 GB</Text>
             </View>
             <View className="flex-row justify-between">
               <Text className="text-zinc-500 text-xs">Required RAM</Text>
-              <Text className="text-zinc-300 text-xs font-semibold">~1.8 GB</Text>
+              <Text className="text-zinc-300 text-xs font-semibold">~1.5 GB</Text>
             </View>
           </View>
         </View>

@@ -1,11 +1,27 @@
+import React from 'react';
 import { Stack } from "expo-router";
 import { ThemeProvider, DarkTheme } from "@react-navigation/native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import Toast from "@/components/Toast";
+import { initNetworkMonitoring } from "@/services/network.service";
 import "./globals.css";
 
+import { initExecutorch } from "react-native-executorch";
+import { ExpoResourceFetcher } from "react-native-executorch-expo-resource-fetcher";
+
+initExecutorch({
+  resourceFetcher: ExpoResourceFetcher,
+});
+
 export default function RootLayout() {
+  React.useEffect(() => {
+    const unsubscribe = initNetworkMonitoring();
+    return () => {
+      if (unsubscribe) unsubscribe();
+    };
+  }, []);
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
