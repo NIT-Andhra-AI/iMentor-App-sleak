@@ -109,11 +109,13 @@ export const streamService = {
       });
       store.setStreamingText('');
 
-      // Background sync to MongoDB
-      try {
-        await apiService.createMessage(conversationId, 'assistant', assistantText);
-      } catch (err) {
-        console.error('Failed to sync assistant message to MongoDB:', err);
+      // Background sync to MongoDB (only if not a local conversation)
+      if (!conversationId.startsWith('local-')) {
+        try {
+          await apiService.createMessage(conversationId, 'assistant', assistantText);
+        } catch (err) {
+          console.error('Failed to sync assistant message to MongoDB:', err);
+        }
       }
 
     } catch (error: any) {

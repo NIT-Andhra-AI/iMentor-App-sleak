@@ -53,7 +53,10 @@ export const apiService = {
       headers: getAuthHeaders(),
       body: JSON.stringify({ role, content }),
     });
-    if (!response.ok) throw new Error(`Failed to create message: ${response.statusText}`);
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`[${response.status}] ${response.statusText} - ${errorText}`);
+    }
     return response.json();
   },
 
