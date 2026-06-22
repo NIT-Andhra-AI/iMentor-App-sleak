@@ -62,6 +62,20 @@ export const ChatScreen = () => {
   const { isDownloading, downloadProgress, isRecording, isStopping, transcribedText, startRecording, stopRecording } = useWhisper();
   const [inputText, setInputText] = React.useState('');
   const [preRecordText, setPreRecordText] = React.useState('');
+  const [dots, setDots] = React.useState('');
+
+  // Animate the "Transcribing" dots
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isStopping) {
+      interval = setInterval(() => {
+        setDots(prev => prev.length >= 3 ? '' : prev + '.');
+      }, 300);
+    } else {
+      setDots('');
+    }
+    return () => clearInterval(interval);
+  }, [isStopping]);
 
   const handleStartRecord = () => {
     setPreRecordText(inputText);
@@ -70,16 +84,16 @@ export const ChatScreen = () => {
 
   useEffect(() => {
     if (transcribedText !== undefined) {
-      if (transcribedText === '') {
-        setInputText(isStopping ? 'Transcribing...' : preRecordText);
-      } else {
-        const displayText = isStopping 
-            ? `Transcribing...` 
-            : transcribedText;
+      if (isStopping) {
+        const displayText = `Transcribing${dots}`;
         setInputText(preRecordText ? `${preRecordText} ${displayText}` : displayText);
+      } else if (transcribedText === '') {
+        setInputText(preRecordText);
+      } else {
+        setInputText(preRecordText ? `${preRecordText} ${transcribedText}` : transcribedText);
       }
     }
-  }, [transcribedText, preRecordText, isStopping]);
+  }, [transcribedText, preRecordText, isStopping, dots]);
 
   const flatListRef = useRef<FlatList>(null);
 
