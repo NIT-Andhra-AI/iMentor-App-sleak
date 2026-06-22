@@ -8,6 +8,7 @@ import { ChatInput } from '../components/ChatInput';
 import { TypingIndicator } from '../components/TypingIndicator';
 import { useChat } from '../hooks/useChat';
 import { useOfflineChat } from '../hooks/useOfflineChat';
+import { useWhisper } from '../hooks/useWhisper';
 import { useAuthStore } from '../store/authStore';
 import { useChatStore } from '../store/chat.store';
 
@@ -57,6 +58,28 @@ export const ChatScreen = () => {
     createNewChat,
     setOfflineModelReady
   } = useChat(offlineChat);
+
+  const { isDownloading, downloadProgress, isRecording, isStopping, transcribedText, startRecording, stopRecording } = useWhisper();
+  const [inputText, setInputText] = React.useState('');
+  const [preRecordText, setPreRecordText] = React.useState('');
+
+  const handleStartRecord = () => {
+    setPreRecordText(inputText);
+    startRecording();
+  };
+
+  useEffect(() => {
+    if (transcribedText !== undefined) {
+      if (transcribedText === '') {
+        setInputText(isStopping ? 'Transcribing...' : preRecordText);
+      } else {
+        const displayText = isStopping 
+            ? `Transcribing...` 
+            : transcribedText;
+        setInputText(preRecordText ? `${preRecordText} ${displayText}` : displayText);
+      }
+    }
+  }, [transcribedText, preRecordText, isStopping]);
 
   const flatListRef = useRef<FlatList>(null);
 
@@ -145,9 +168,24 @@ export const ChatScreen = () => {
           )}
         </View>
 
+        {isDownloading && (
+          <View className="px-4 py-2 bg-emerald-900/50 border-t border-emerald-800/50 flex-row items-center justify-between">
+            <Text className="text-emerald-400 text-xs font-semibold">Downloading Whisper Engine...</Text>
+            <Text className="text-emerald-400 text-xs font-bold">{downloadProgress.toFixed(1)}%</Text>
+          </View>
+        )}
+
         <ChatInput 
-          onSend={sendMessage} 
-          disabled={isStreaming || isThinking} 
+          onSend={(text) => {
+            sendMessage(text);
+            setInputText('');
+          }} 
+          disabled={isStreaming || isThinking}
+          value={inputText}
+          onChangeText={setInputText}
+          isRecording={isRecording}
+          onStartRecord={handleStartRecord}
+          onStopRecord={stopRecording}
         />
       </View>
     </KeyboardAvoidingView>

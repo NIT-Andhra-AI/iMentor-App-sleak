@@ -84,11 +84,11 @@ export const checkForModelUpdates = (): { updateAvailable: boolean; remoteVersio
 };
 
 export const downloadModel = async (
-  onProgress: (progress: number) => void
+  onProgress: (progress: number, speedMBps: string) => void
 ): Promise<boolean> => {
   try {
     await ensureModelDirectory();
-    onProgress(0);
+    onProgress(0, "0.0");
 
     // Download tokenizer config if not exists
     const tokenizerConfigInfo = await FileSystem.getInfoAsync(TOKENIZER_CONFIG_URI);
@@ -112,32 +112,74 @@ export const downloadModel = async (
       await tokenizerDownload.downloadAsync();
     }
 
+    const RESUME_DATA_URI = `${MODEL_DIR}resume_data.txt`;
+
     // Download model binary if not exists or incomplete (< 1 GB)
     const modelInfo = await FileSystem.getInfoAsync(MODEL_URI);
     if (!modelInfo.exists || (modelInfo.size ?? 0) < 1000 * 1024 * 1024) {
+      let lastBytesWritten = 0;
+      let lastTime = Date.now();
+      let lastSaveTime = Date.now();
+      let currentSpeed = "0.0";
+
+      let resumeDataString;
+      const resumeInfo = await FileSystem.getInfoAsync(RESUME_DATA_URI);
+      if (resumeInfo.exists) {
+        try {
+          resumeDataString = await FileSystem.readAsStringAsync(RESUME_DATA_URI);
+        } catch (e) {}
+      }
+
       const download = FileSystem.createDownloadResumable(
         getRemoteModelUrl(),
         MODEL_URI,
         {},
         ({ totalBytesWritten, totalBytesExpectedToWrite }) => {
           if (totalBytesExpectedToWrite > 0) {
-            onProgress(Math.min(1, totalBytesWritten / totalBytesExpectedToWrite));
+            const now = Date.now();
+            const timeDiff = now - lastTime;
+            
+            if (timeDiff >= 1000) {
+              const bytesDiff = totalBytesWritten - lastBytesWritten;
+              if (bytesDiff > 0) {
+                currentSpeed = ((bytesDiff / (1024 * 1024)) / (timeDiff / 1000)).toFixed(1);
+              }
+              lastTime = now;
+              lastBytesWritten = totalBytesWritten;
+            }
+
+            // Save resume state every 5 seconds to guarantee recovery if internet drops
+            if (now - lastSaveTime >= 5000) {
+              lastSaveTime = now;
+              try {
+                const pauseState = download.savable();
+                if (pauseState.resumeData) {
+                  // Fire and forget to not block download thread
+                  FileSystem.writeAsStringAsync(RESUME_DATA_URI, pauseState.resumeData).catch(() => {});
+                }
+              } catch (e) {}
+            }
+
+            onProgress(Math.min(1, totalBytesWritten / totalBytesExpectedToWrite), currentSpeed);
           }
-        }
+        },
+        resumeDataString
       );
-      await download.downloadAsync();
+      
+      try {
+        await download.downloadAsync();
+        // If completely successful, delete the resume state file
+        await FileSystem.deleteAsync(RESUME_DATA_URI, { idempotent: true }).catch(() => {});
+      } catch (err) {
+        console.warn('Download interrupted. The resume state was saved dynamically during download.');
+        return false;
+      }
     } else {
-      onProgress(1);
+      onProgress(1, "0.0");
     }
     
     const success = await isModelDownloaded();
     if (!success) {
-      // Clean up ONLY if model file is incomplete/corrupted
-      const checkInfo = await FileSystem.getInfoAsync(MODEL_URI);
-      if (checkInfo.exists && (checkInfo.size ?? 0) < 1000 * 1024 * 1024) {
-        await FileSystem.deleteAsync(MODEL_URI, { idempotent: true }).catch(() => {});
-      }
-      useChatStore.getState().resetModelMetadata();
       return false;
     }
 
@@ -151,12 +193,6 @@ export const downloadModel = async (
     return true;
   } catch (error) {
     console.error('Model download failed:', error);
-    // Clean up ONLY if model file is incomplete/corrupted
-    const checkInfo = await FileSystem.getInfoAsync(MODEL_URI);
-    if (checkInfo.exists && (checkInfo.size ?? 0) < 1000 * 1024 * 1024) {
-      await FileSystem.deleteAsync(MODEL_URI, { idempotent: true }).catch(() => {});
-    }
-    useChatStore.getState().resetModelMetadata();
     return false;
   }
 };

@@ -41,6 +41,20 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow iMentor to access your microphone to dictate chat messages offline."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "bridgelessEnabled": false
+          }
+        }
       ]
     ],
     "experiments": {

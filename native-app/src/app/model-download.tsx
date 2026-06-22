@@ -27,6 +27,10 @@ export default function ModelDownloadScreen() {
         toast.success('Llama 3.2 weights downloaded and verified successfully!');
         setDownloaded(true);
         router.replace('/(main)/(tabs)/chat');
+      } else if (!success && mounted) {
+        toast.error('Download failed due to network interruption. Please try again.');
+        setProgress(0);
+        setDownloadSpeed('0.0 MB');
       }
     };
 
