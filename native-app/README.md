@@ -1,50 +1,100 @@
-# Welcome to your Expo app 👋
+# iMentor App (Offline-First AI Assistant) 🎓🤖
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An offline-first, private educational assistant built using **React Native / Expo** and powered by **ExecuTorch** (PyTorch's on-device inference runtime) for fully private, on-device multimodal AI capability.
 
-## Get started
+---
 
-1. Install dependencies
+## 🌟 Key Features
 
-   ```bash
-   npm install
-   ```
+### 1. Document RAG (Retrieval-Augmented Generation)
+* **On-Device PDF Parsing**: Extracts text, headers, lists, and tables locally from imported PDFs.
+* **On-Device VLM (Vision-Language Model)**: Extracted diagrams, figures, and charts are processed locally using **LiquidAI LFM-2.5-VL 450M** (~350MB quantized) to compile descriptive markdown captions of visual data.
+* **Early Captioning Skip**: Visual "Skip Remaining Images & Compile" feature allows early cancellation of the image captioning process, immediately assembling the final document with whatever text and image descriptions were generated.
+* **Local Context Pruning**: Implements a client-side keyword relevance scorer (`getRelevantContext`) that dynamically selects matching paragraphs for the user's query. This prevents context length overflow in the local model, ensuring stable generation without crashing.
 
-2. Start the app
+### 2. Dual LLM Model Switcher
+* Segmented control in the RAG header to toggle between:
+  * 🌐 **Online Mode**: High-performance streaming via the Groq API (`llama-3.1-8b-instant`).
+  * 📴 **Offline Mode**: Fully local inference running **Llama 3.2 1B** via ExecuTorch.
 
-   ```bash
-   npx expo start
-   ```
+### 3. Voice & Speech-to-Text
+* Integrated **Whisper (Tiny.en)** module via ExecuTorch for offline speech dictation.
+* Allows voice queries in both RAG and standard chat screens.
 
-In the output, you'll find options to open the app in a
+### 4. Background Sync & Offline Queue
+* Local conversation queuing: automatically buffers messages when offline.
+* Automatic background synchronization to a MongoDB backend once network connectivity is restored.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🏗️ Technical Stack & Libraries
 
-## Get a fresh project
+* **Framework**: [Expo](https://expo.dev/) (v54.0.0)
+* **Inference Engine**: [react-native-executorch](https://github.com/software-mansion/react-native-executorch)
+* **Models**:
+  * LLM: Llama 3.2 1B (SpinQuant quantized)
+  * VLM: LiquidAI LFM-2.5-VL 450M
+  * Speech: Whisper Tiny.en
+* **Styling**: TailwindCSS via NativeWind
+* **State Management**: Zustand
+* **Database / Backend**: Node.js API with Express & MongoDB
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
+## 📂 Directory Structure
+
+```
+├── api/                     # Node.js backend API
+│   ├── routes/              # Express routes (Multer PDF parser, etc.)
+│   └── server.js            # Express server configuration
+└── src/                     # Expo Native Application
+    ├── app/                 # Expo Router file-based pages
+    ├── components/          # Reusable UI components
+    ├── hooks/               # Custom hooks (useOfflineChat, useWhisper, etc.)
+    ├── screens/             # Main screen layouts (RagScreen, ChatScreen)
+    ├── services/            # APIs, downloader services, & helper scripts
+    └── store/               # Zustand global state (rag.store, chat.store)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🚀 Setup & Installation
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Install Project Dependencies
+Run this in the root directory:
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Install the Expo Document Picker dependency on your host environment:
+```bash
+npx expo install expo-document-picker
+```
 
-## Join the community
+### 2. Configure Environment Variables
+Create a `.env` file in the `native-app` root directory:
+```env
+EXPO_PUBLIC_API_URL=http://<your-local-ip>:5000
+```
 
-Join our community of developers creating universal apps.
+### 3. Start the Backend API
+Navigate to the `api` directory:
+```bash
+cd api
+npm install
+npm start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 4. Run the Mobile App
+Navigate to the `native-app` directory and start the Expo bundler:
+```bash
+npm run dev
+```
+
+---
+
+## ⚙️ How to Test Offline RAG
+1. **Download Local Models**: Open the app, navigate to **Settings**, and download the Whisper, Llama, and VLM model assets.
+2. **Import PDF**: Go to the **Doc RAG** tab, select a PDF textbook containing diagrams or figures.
+3. **On-Device Captioning**: The local VLM will begin analyzing extracted pages. Tap the "Skip" button if you want to skip remaining figures and instantly chat.
+4. **Offline Switcher**: Click the top-left switcher pill to toggle **Offline** mode, and converse with the document fully local and private.
