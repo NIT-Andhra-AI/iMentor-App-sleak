@@ -1,14 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from 'react';
+import RagScreen from '@/screens/RagScreen';
 
-const rag = () => {
-  return (
-    <View className='flex-1 items-center justify-center bg-black'>
-      <Text className='text-white'>the rag service page</Text>
-    </View>
-  )
+export default function RagRoute() {
+  return <RagScreen />;
 }
-
-export default rag
-
-const styles = StyleSheet.create({})

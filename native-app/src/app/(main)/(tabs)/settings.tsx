@@ -7,6 +7,8 @@ import { useAuthStore } from '@/store/authStore';
 import { useChat } from '@/hooks/useChat';
 import { Conversation } from '@/types/chat.types';
 import { downloadModel, isModelDownloaded as verifyModelExists } from '@/services/modelDownload.service';
+import { useRagStore } from '@/store/rag.store';
+import { downloadVlmModel, isVlmModelDownloaded as verifyVlmDownloaded, deleteVlmModel } from '@/services/vlmDownload.service';
 
 export default function SettingsScreen() {
   const insets = useSafeAreaInsets();
@@ -22,6 +24,59 @@ export default function SettingsScreen() {
   // Offline Model Download State
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
+
+  // VLM Model State
+  const { 
+    vlmModelReady, 
+    isVlmDownloading, 
+    vlmDownloadProgress, 
+    vlmSpeedMBps,
+    setVlmModelReady 
+  } = useRagStore();
+
+  useEffect(() => {
+    const checkVlm = async () => {
+      const downloaded = await verifyVlmDownloaded();
+      setVlmModelReady(downloaded);
+    };
+    checkVlm();
+  }, []);
+
+  const handleDownloadVlm = async () => {
+    if (vlmModelReady) {
+      Alert.alert(
+        "Remove VLM Model", 
+        "The RAG Image Captioner model is already downloaded. Do you want to remove it to free up space (~350MB)?",
+        [
+          { text: "Cancel", style: "cancel" },
+          { text: "Remove", style: "destructive", onPress: async () => {
+            await deleteVlmModel();
+            Alert.alert("Removed", "The VLM model has been deleted from your device.");
+          }}
+        ]
+      );
+      return;
+    }
+
+    Alert.alert(
+      "Download Image Captioner",
+      "This will download the LiquidAI LFM 2.5 VL model (~350MB) to allow secure, on-device image description. Wi-Fi is recommended.",
+      [
+        { text: "Cancel", style: "cancel" },
+        { 
+          text: "Download", 
+          onPress: async () => {
+            const success = await downloadVlmModel((progress, speed) => {});
+            if (success) {
+              Alert.alert("Success", "Offline Image Captioner model is ready!");
+            } else {
+              Alert.alert("Error", "Failed to download the VLM model. Please try again.");
+            }
+          }
+        }
+      ]
+    );
+  };
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -185,6 +240,67 @@ export default function SettingsScreen() {
                 </Text>
               )}
             </TouchableOpacity>
+          </View>
+        </View>
+
+        {/* Offline RAG Image Captioner Section */}
+        <View className="mb-8">
+          <Text className="text-white text-lg font-bold mb-2">Offline RAG Image Captioner</Text>
+          <Text className="text-zinc-400 text-sm leading-relaxed mb-4">
+            To ensure absolute privacy and security, we run image descriptions entirely on your device. This Vision-Language Model (<Text className="text-emerald-500 font-semibold">LiquidAI LFM-2.5-VL 450M</Text>) describes any extracted images from your PDFs offline, without uploading them to external cloud APIs.
+          </Text>
+
+          <View className="bg-zinc-900 rounded-2xl border border-zinc-800 p-5">
+            <View className="flex-row items-center justify-between mb-4">
+              <View className="flex-row items-center">
+                <Ionicons name="eye-outline" size={20} color="#10B981" />
+                <Text className="text-white font-semibold ml-2">Local Image Captioner</Text>
+              </View>
+              {vlmModelReady && (
+                <View className="bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                  <Text className="text-emerald-500 text-xs font-bold">Model Ready</Text>
+                </View>
+              )}
+            </View>
+
+            {isVlmDownloading ? (
+              <View className="space-y-2">
+                <View className="flex-row justify-between text-xs text-zinc-400 mb-1">
+                  <Text className="text-zinc-400 text-xs">Downloading Model Files...</Text>
+                  <Text className="text-blue-500 text-xs font-bold">{vlmSpeedMBps} MB/s</Text>
+                </View>
+                <View className="w-full bg-zinc-800 h-2 rounded-full overflow-hidden mb-1">
+                  <View 
+                    style={{ width: `${vlmDownloadProgress * 100}%` }} 
+                    className="bg-blue-600 h-full rounded-full"
+                  />
+                </View>
+                <Text className="text-zinc-500 text-[11px] text-right">
+                  {Math.round(vlmDownloadProgress * 100)}% Complete
+                </Text>
+              </View>
+            ) : (
+              <TouchableOpacity
+                onPress={handleDownloadVlm}
+                className={`py-3.5 px-4 rounded-xl items-center justify-center flex-row ${
+                  vlmModelReady 
+                    ? 'bg-zinc-800 border border-zinc-700' 
+                    : 'bg-emerald-600'
+                }`}
+              >
+                {vlmModelReady ? (
+                  <>
+                    <Feather name="trash-2" size={16} color="#EF4444" />
+                    <Text className="text-red-500 font-bold ml-2">Delete Model (Free ~350MB)</Text>
+                  </>
+                ) : (
+                  <>
+                    <Feather name="download-cloud" size={16} color="#FFF" />
+                    <Text className="text-white font-bold ml-2">Download VLM Model (350MB)</Text>
+                  </>
+                )}
+              </TouchableOpacity>
+            )}
           </View>
         </View>
 
