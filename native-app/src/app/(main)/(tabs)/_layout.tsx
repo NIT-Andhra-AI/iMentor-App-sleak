@@ -60,6 +60,15 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="rag"
+        options={{
+          title: 'RAG',
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="database" size={20} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
