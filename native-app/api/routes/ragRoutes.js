@@ -19,10 +19,16 @@ const upload = multer({
   }
 });
 
-// Protect RAG routes with authMiddleware
+// Protect all RAG routes with authMiddleware
 router.use(authMiddleware);
 
-// Upload PDF and parse text + extract images
+// Upload PDF and parse text + save in DB
 router.post('/upload', upload.single('pdf'), ragController.uploadAndProcessPdf);
+
+// History & CRUD APIs for RAG documents and conversations
+router.get('/documents', ragController.getDocuments);
+router.delete('/documents/:id', ragController.deleteDocument);
+router.get('/documents/:id/messages', ragController.getMessages);
+router.post('/documents/:id/messages', ragController.addMessage);
 
 module.exports = router;
