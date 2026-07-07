@@ -9,8 +9,15 @@ export interface RagMessage {
   timestamp: string;
 }
 
+export interface RagDocumentItem {
+  _id: string;
+  fileName: string;
+  fileId: string;
+  createdAt: string;
+}
+
 interface RagState {
-  // VLM Model State
+  // VLM Model State (Retained for Settings Tab compatibility)
   vlmModelReady: boolean;
   isVlmDownloading: boolean;
   vlmDownloadProgress: number;
@@ -22,7 +29,7 @@ interface RagState {
   pdfProcessing: boolean;
   pdfProcessStep: PdfProcessStep;
   captionTotalImages: number;
-  captionCurrentIndex: number; // For step-by-step captioning progress (e.g., Image 2 of 5)
+  captionCurrentIndex: number;
   cancelCaptioningRequested: boolean;
 
   selectedModel: 'online' | 'offline';
@@ -30,6 +37,11 @@ interface RagState {
   // Document State
   markdownDoc: string | null;
   activeFileName: string | null;
+  activeDocumentId: string | null; // MongoDB ID of the active document
+
+  // History State
+  documents: RagDocumentItem[];
+  isHistoryLoading: boolean;
 
   // Conversation State
   ragMessages: RagMessage[];
@@ -52,6 +64,14 @@ interface RagState {
   setSelectedModel: (model: 'online' | 'offline') => void;
   
   setMarkdownDoc: (doc: string | null, fileName: string | null) => void;
+  setActiveDocumentId: (id: string | null) => void;
+  
+  // History Actions
+  setDocuments: (docs: RagDocumentItem[]) => void;
+  setHistoryLoading: (loading: boolean) => void;
+  addDocument: (doc: RagDocumentItem) => void;
+  removeDocument: (id: string) => void;
+
   setRagMessages: (messages: RagMessage[]) => void;
   addRagMessage: (message: RagMessage) => void;
   setThinking: (thinking: boolean) => void;
@@ -73,10 +93,14 @@ export const useRagStore = createStore<RagState>((set) => ({
   captionTotalImages: 0,
   captionCurrentIndex: 0,
   cancelCaptioningRequested: false,
-  selectedModel: 'online',
+  selectedModel: 'offline',
 
   markdownDoc: null,
   activeFileName: null,
+  activeDocumentId: null,
+
+  documents: [],
+  isHistoryLoading: false,
 
   ragMessages: [],
   isThinking: false,
@@ -107,6 +131,13 @@ export const useRagStore = createStore<RagState>((set) => ({
   setSelectedModel: (model) => set({ selectedModel: model }),
 
   setMarkdownDoc: (doc, fileName) => set({ markdownDoc: doc, activeFileName: fileName }),
+  setActiveDocumentId: (id) => set({ activeDocumentId: id }),
+
+  setDocuments: (docs) => set({ documents: docs }),
+  setHistoryLoading: (loading) => set({ isHistoryLoading: loading }),
+  addDocument: (doc) => set((state) => ({ documents: [doc, ...state.documents] })),
+  removeDocument: (id) => set((state) => ({ documents: state.documents.filter(d => d._id !== id) })),
+
   setRagMessages: (messages) => set({ ragMessages: messages }),
   addRagMessage: (message) => set((state) => ({ ragMessages: [...state.ragMessages, message] })),
   setThinking: (thinking) => set({ isThinking: thinking }),
@@ -120,6 +151,7 @@ export const useRagStore = createStore<RagState>((set) => ({
     cancelCaptioningRequested: false,
     markdownDoc: null,
     activeFileName: null,
+    activeDocumentId: null,
     ragMessages: [],
     isThinking: false,
     isStreaming: false,
