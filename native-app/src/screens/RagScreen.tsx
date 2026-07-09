@@ -16,53 +16,12 @@ import { Ionicons, Feather } from '@expo/vector-icons';
 import * as DocumentPicker from 'expo-document-picker';
 import { useRagStore, RagDocumentItem } from '../store/rag.store';
 import { ragService } from '../services/rag.service';
+import { ragRetrievalService } from '../services/ragRetrieval';
 import { useWhisper } from '../hooks/useWhisper';
 import { useAuthStore } from '../store/authStore';
 import { useOfflineChat } from '../hooks/useOfflineChat';
 import { useChatStore } from '../store/chat.store';
 
-function getRelevantContext(doc: string | null, query: string, maxCharacters: number = 3000): string {
-  if (!doc) return '';
-  if (doc.length <= maxCharacters) return doc;
-
-  const paragraphs = doc.split(/\n+/);
-  const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-  
-  if (queryWords.length === 0) {
-    return doc.slice(0, maxCharacters) + '\n\n[Content truncated for offline model...]';
-  }
-
-  const scored = paragraphs.map(p => {
-    let score = 0;
-    const lowerP = p.toLowerCase();
-    queryWords.forEach(word => {
-      if (lowerP.includes(word)) {
-        score += 1;
-      }
-    });
-    return { paragraph: p, score };
-  });
-
-  const relevantParagraphs = scored
-    .filter(x => x.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .map(x => x.paragraph);
-
-  let combined = '';
-  for (const p of relevantParagraphs) {
-    if ((combined.length + p.length) > maxCharacters) {
-      break;
-    }
-    combined += p + '\n\n';
-  }
-
-  if (combined.length < maxCharacters / 2) {
-    const remainingSpace = maxCharacters - combined.length;
-    combined = doc.slice(0, remainingSpace) + '\n\n---\n\n' + combined;
-  }
-
-  return combined.trim() + '\n\n[Content truncated for offline model...]';
-}
 
 export default function RagScreen() {
   const insets = useSafeAreaInsets();
@@ -100,6 +59,18 @@ export default function RagScreen() {
   useEffect(() => {
     ragService.fetchHistory();
   }, []);
+
+  // Synchronize/rebuild index when activeDocumentId or markdownDoc changes
+  useEffect(() => {
+    if (markdownDoc) {
+      ragRetrievalService.indexDocument(markdownDoc);
+    } else {
+      ragRetrievalService.clearCache();
+    }
+    return () => {
+      ragRetrievalService.clearCache();
+    };
+  }, [markdownDoc, activeDocumentId]);
 
   // Initialize offline chat client
   const offlineChat = useOfflineChat();
@@ -253,7 +224,7 @@ export default function RagScreen() {
     useRagStore.getState().setStreamingText('');
 
     try {
-      const offlineContext = getRelevantContext(markdownDoc, msg);
+      const offlineContext = ragRetrievalService.retrieveContext(msg);
       const systemPrompt = `You are iMentor's RAG Assistant. Below is the parsed content of a document.
     
 Use ONLY the provided document context to answer the user's questions. If the answer cannot be found in the document, reply with: "I'm sorry, but that information is not available in the uploaded document." Do not use external knowledge.
