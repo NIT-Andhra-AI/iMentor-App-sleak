@@ -6,6 +6,7 @@ const path = require('path');
 const authRoutes = require('./routes/authRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const ragRoutes = require('./routes/ragRoutes');
+const courseRoutes = require('./routes/courseRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +20,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api', authRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/rag', ragRoutes);
+app.use('/api/courses', courseRoutes);
 
 // MongoDB Connection
 mongoose.connect('mongodb://127.0.0.1:27017/imentor').then(() => {
