@@ -1,14 +1,32 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { useCoursesStore } from '../../../store/courses.store';
+import CourseListScreen from '../../../screens/courses/CourseListScreen';
+import UploadCourseScreen from '../../../screens/courses/UploadCourseScreen';
+import CourseOverviewScreen from '../../../screens/courses/CourseOverviewScreen';
+import LearningSessionScreen from '../../../screens/courses/LearningSessionScreen';
+import CourseChatScreen from '../../../screens/courses/CourseChatScreen';
+import CourseSettingsScreen from '../../../screens/courses/CourseSettingsScreen';
 
-const courses = () => {
-  return (
-    <View className='flex-1 items-center justify-center bg-black'>
-      <Text className='text-white'>courses</Text>
-    </View>
-  )
-}
+const CoursesTab = () => {
+  const navStack = useCoursesStore((state) => state.navStack);
+  const currentScreen = navStack[navStack.length - 1] || { name: 'list' };
 
-export default courses
+  switch (currentScreen.name) {
+    case 'list':
+      return <CourseListScreen />;
+    case 'upload':
+      return <UploadCourseScreen />;
+    case 'overview':
+      return <CourseOverviewScreen />;
+    case 'session':
+      return <LearningSessionScreen />;
+    case 'chat':
+      return <CourseChatScreen />;
+    case 'settings':
+      return <CourseSettingsScreen />;
+    default:
+      return <CourseListScreen />;
+  }
+};
 
-const styles = StyleSheet.create({})
+export default CoursesTab;

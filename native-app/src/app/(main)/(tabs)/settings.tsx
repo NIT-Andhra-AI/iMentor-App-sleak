@@ -18,6 +18,9 @@ export default function SettingsScreen() {
   // Offline Model Download State
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
+  
+  // Interactive Guide tab selection
+  const [activeGuideTab, setActiveGuideTab] = useState<'chat' | 'course' | 'rag'>('chat');
 
   const handleDownloadModel = async () => {
     if (isModelDownloaded) {
@@ -173,6 +176,129 @@ export default function SettingsScreen() {
               )}
             </TouchableOpacity>
           </View>
+        </View>
+
+        {/* Feature Guides & Warnings Accordion */}
+        <View className="mb-8 bg-zinc-900 rounded-3xl p-5 border border-zinc-800">
+          <Text className="text-white text-lg font-bold mb-1.5">Guides & Warnings</Text>
+          <Text className="text-zinc-400 text-xs mb-4">
+            Select a feature tab below to view its basic workflow instructions and critical warnings.
+          </Text>
+
+          {/* Pill Selector */}
+          <View className="flex-row bg-black p-1 rounded-xl mb-5 border border-zinc-900">
+            {(['chat', 'course', 'rag'] as const).map((tab) => (
+              <TouchableOpacity
+                key={tab}
+                onPress={() => setActiveGuideTab(tab)}
+                className={`flex-1 py-2.5 items-center rounded-lg ${
+                  activeGuideTab === tab 
+                    ? 'bg-blue-600 border border-blue-500/10' 
+                    : 'bg-transparent'
+                }`}
+              >
+                <Text className={`font-bold text-xs uppercase tracking-wider ${
+                  activeGuideTab === tab ? 'text-white' : 'text-zinc-500'
+                }`}>
+                  {tab}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+
+          {/* Active Content */}
+          {activeGuideTab === 'chat' && (
+            <View>
+              <Text className="text-blue-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                Chat Workflow
+              </Text>
+              <View className="space-y-2 mb-4">
+                <Text className="text-zinc-300 text-xs leading-normal">
+                  1. Open the **Chat** tab to initiate generic learning dialogues.
+                </Text>
+                <Text className="text-zinc-300 text-xs leading-normal">
+                  2. Use the top toggle to switch between **Online** (Groq) and **Offline** (Local Llama) models.
+                </Text>
+                <Text className="text-zinc-300 text-xs leading-normal">
+                  3. Input queries or press microphone to dictate doubts.
+                </Text>
+              </View>
+
+              <Text className="text-emerald-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                Chat Warnings & Limits
+              </Text>
+              <View className="space-y-2">
+                <Text className="text-zinc-400 text-[11px] leading-relaxed">
+                  • Offline chat requires downloading the 1.3 GB local Llama model file first.
+                </Text>
+                <Text className="text-zinc-400 text-[11px] leading-relaxed">
+                  • Running local generation on-device will increase CPU load and battery consumption.
+                </Text>
+              </View>
+            </View>
+          )}
+
+          {activeGuideTab === 'course' && (
+            <View>
+              <Text className="text-blue-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                Socratic Course Workflow
+              </Text>
+              <View className="space-y-2 mb-4">
+                <Text className="text-zinc-300 text-xs leading-normal">
+                  1. Go to the **Courses** tab and upload your syllabus PDF.
+                </Text>
+                <Text className="text-zinc-300 text-xs leading-normal">
+                  2. Choose your difficulty level and click "Ingest" to compile the chapter tree.
+                </Text>
+                <Text className="text-zinc-300 text-xs leading-normal">
+                  3. Select a subtopic to review Socratic Cards (Explanation ➔ Analogy ➔ MCQ Quiz).
+                </Text>
+              </View>
+
+              <Text className="text-emerald-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                Course Warnings & Limits
+              </Text>
+              <View className="space-y-2">
+                <Text className="text-zinc-400 text-[11px] leading-relaxed">
+                  • Ingestion and Socratic generations are online-dependent.
+                </Text>
+                <Text className="text-zinc-400 text-[11px] leading-relaxed font-semibold">
+                  • This process may hit your Groq API limits. Start your learning, and later manage it with a daily timetable. Good luck!
+                </Text>
+              </View>
+            </View>
+          )}
+
+          {activeGuideTab === 'rag' && (
+            <View>
+              <Text className="text-blue-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                RAG Document Workflow
+              </Text>
+              <View className="space-y-2 mb-4">
+                <Text className="text-zinc-300 text-xs leading-normal">
+                  1. Go to the **Documents** tab and upload reference textbook PDFs.
+                </Text>
+                <Text className="text-zinc-300 text-xs leading-normal">
+                  2. Wait for the server to extract text and index document chunks.
+                </Text>
+                <Text className="text-zinc-300 text-xs leading-normal">
+                  3. Select the document to query it directly, extracting target answers grounded in the text.
+                </Text>
+              </View>
+
+              <Text className="text-emerald-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                RAG Warnings & Limits
+              </Text>
+              <View className="space-y-2">
+                <Text className="text-zinc-400 text-[11px] leading-relaxed">
+                  • Ingesting massive PDFs (e.g., &gt;100 pages) may cause temporary extraction latency.
+                </Text>
+                <Text className="text-zinc-400 text-[11px] leading-relaxed">
+                  • Non-textual components (e.g. photos, charts) are not indexed; only textual contents are queried.
+                </Text>
+              </View>
+            </View>
+          )}
         </View>
 
         {/* Action Buttons */}
